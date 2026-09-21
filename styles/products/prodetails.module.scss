@@ -1,0 +1,971 @@
+.ProDetails {
+  margin-top: 250px;
+
+  .mainImage {
+    height: 450px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      object-fit: fill;
+      object-position: center;
+    }
+  }
+
+  .imageSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+    .imgBox {
+      flex: 0 0 calc(100% / 4 - 10px);
+      position: relative;
+      height: 105px;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        object-position: center;
+        object-fit: fill;
+      }
+    }
+  }
+
+  .ImgContent {
+    padding-left: 30px;
+
+    h2 {
+      margin-bottom: 20px;
+      text-transform: none;
+    }
+
+    p {
+      color: #c0c0c0;
+      font-size: 18px;
+
+      strong {
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+
+    h5 {
+      font-size: 30px;
+      color: #fff;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        color: #c0c0c0;
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+
+        &.iconListItem {
+          gap: 10px;
+        }
+
+        .listIcon {
+          flex: 0 0 20px;
+          display: flex;
+          padding-top: 5px;
+
+          svg {
+            margin: 0;
+            flex: 0 0 14px;
+            width: 14px;
+            height: 14px;
+
+            circle {
+              &:first-child {
+                fill: #0061fe;
+              }
+            }
+          }
+        }
+
+        .listText {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+      }
+    }
+  }
+
+  .tabDescription {
+    border: 1px solid #2a2a2a;
+    border-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .tabList {
+      flex: 0 0 35%;
+      border-right: 1px solid #2a2a2a;
+      padding: 30px 0px;
+
+      .tabItem {
+        h4 {
+          display: flex;
+          align-items: center;
+          color: #ffffff;
+          height: 80px;
+          cursor: pointer;
+          border-bottom: 1px solid #2a2a2a;
+          margin-bottom: 0;
+          padding: 0px 30px;
+
+          svg {
+            margin-left: 20px;
+            width: auto;
+            height: 25px;
+          }
+
+          &:hover {
+            color: #0061fe;
+
+            svg {
+              path {
+                stroke: #0061fe;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          h4 {
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+
+    .tabContent {
+      flex: 0 0 65%;
+      padding: 30px 30px;
+      // height: 400px;
+      // overflow: auto;
+      // &::-webkit-scrollbar {
+      //   width: 3px;
+      // }
+      // &::-webkit-scrollbar-track {
+      //   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: rgba(169, 169, 169, 0.384);
+      //   outline: 1px solid rgba(112, 128, 144, 0.281);
+      // }
+      ul {
+        margin-bottom: 20px;
+
+        li {
+          color: #c0c0c0;
+          font-size: 16px;
+          margin-bottom: 10px;
+          display: flex;
+          align-items: flex-start;
+
+          &.iconListItem {
+            flex-wrap: nowrap;
+            gap: 10px;
+          }
+
+          > div:not(.listText) {
+            display: block;
+            width: 100%;
+            padding: 0px 0px 0px 40px;
+            margin-top: 10px;
+
+            p {
+              margin-bottom: 5px;
+              position: relative;
+
+              &::before {
+                content: "";
+                width: 8px;
+                height: 2px;
+                border-radius: 10px;
+                display: block;
+                background: #fff;
+                position: absolute;
+                left: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+
+          .listIcon {
+            flex: 0 0 20px;
+            display: flex;
+            padding-top: 5px;
+
+            svg {
+              margin: 0;
+              flex: 0 0 14px;
+              width: 14px;
+              height: 14px;
+
+              circle {
+                &:first-child {
+                  fill: #0061fe;
+                }
+              }
+            }
+          }
+
+          .listText {
+            flex: 1 1 auto;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+
+            > div {
+              display: block;
+              width: 100%;
+              padding: 0px 0px 0px 16px;
+              margin-top: 10px;
+
+              p {
+                margin-bottom: 5px;
+                position: relative;
+
+                &::before {
+                  content: "";
+                  width: 8px;
+                  height: 2px;
+                  border-radius: 10px;
+                  display: block;
+                  background: #fff;
+                  position: absolute;
+                  left: -15px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      :global(.ProductimgBox) {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+
+        img {
+          width: 100% !important;
+          height: auto !important;
+          max-width: 100%;
+          object-fit: contain;
+          display: block;
+        }
+      }
+
+      p {
+        color: #c0c0c0;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      h6 {
+        font-size: 24px;
+        color: #fff;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .ProDetails {
+    margin-top: 220px;
+
+    .mainImage {
+      height: 400px;
+      margin-bottom: 10px;
+
+      img {
+        height: 150px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 90px;
+        overflow: hidden;
+
+        img {
+          height: 50px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 30px;
+
+      p {
+        font-size: 18px;
+
+        strong {
+          font-size: 18px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 35px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        li {
+          font-size: 18px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      .tabList {
+        flex: 0 0 35%;
+        padding: 30px 0px;
+
+        .tabItem {
+          h4 {
+            height: 80px;
+            padding: 0px 30px;
+
+            svg {
+              margin-left: 20px;
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 65%;
+        padding: 30px 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .ProDetails {
+    margin-top: 220px;
+
+    .mainImage {
+      height: 400px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+
+      img {
+        height: 150px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 90px;
+        overflow: hidden;
+
+        img {
+          height: 45px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 30px;
+
+      p {
+        font-size: 18px;
+
+        strong {
+          font-size: 18px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 35px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        li {
+          font-size: 18px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      .tabList {
+        flex: 0 0 35%;
+        padding: 30px 0px;
+
+        .tabItem {
+          h4 {
+            height: 80px;
+            padding: 0px 30px;
+
+            svg {
+              margin-left: 20px;
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 65%;
+        padding: 30px 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .ProDetails {
+    margin-top: 220px;
+
+    .mainImage {
+      height: 350px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+
+      img {
+        height: 150px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 90px;
+        overflow: hidden;
+
+        img {
+          height: 45px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 10px;
+
+      p {
+        font-size: 16px;
+
+        strong {
+          font-size: 16px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 35px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        li {
+          font-size: 16px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      .tabList {
+        flex: 0 0 35%;
+        padding: 30px 0px;
+
+        .tabItem {
+          h4 {
+            height: 80px;
+            padding: 0px 30px;
+            font-size: 30px;
+
+            svg {
+              margin-left: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 65%;
+        padding: 30px 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .ProDetails {
+    margin-top: 180px;
+
+    .mainImage {
+      height: 330px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+
+      img {
+        height: 130px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 75px;
+        overflow: hidden;
+
+        img {
+          height: 38px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 0px;
+
+      p {
+        font-size: 15px;
+        margin-bottom: 15px;
+
+        strong {
+          font-size: 15px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          font-size: 15px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 15px;
+            width: auto;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      .tabList {
+        flex: 0 0 35%;
+        padding: 20px 0px;
+
+        .tabItem {
+          h4 {
+            height: 70px;
+            padding: 0px 20px;
+            font-size: 26px;
+
+            svg {
+              margin-left: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 65%;
+        padding: 30px 30px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .ProDetails {
+    margin-top: 160px;
+
+    .mainImage {
+      height: 330px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      img {
+        height: 100px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 60px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+          height: 30px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 0px;
+
+      p {
+        font-size: 15px;
+        margin-bottom: 15px;
+
+        strong {
+          font-size: 15px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          font-size: 15px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 15px;
+            width: auto;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      .tabList {
+        flex: 0 0 35%;
+        padding: 0px 0px;
+
+        .tabItem {
+          h4 {
+            height: 60px;
+            padding: 0px 10px;
+            font-size: 20px;
+
+            svg {
+              margin-left: 10px;
+              height: 15px;
+            }
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 65%;
+        padding: 10px 20px;
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        h4 {
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ProDetails {
+    margin-top: 140px;
+
+    .mainImage {
+      height: 300px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      img {
+        height: 150px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 80px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+          height: 45px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 0px;
+
+      p {
+        font-size: 15px;
+        margin-bottom: 15px;
+
+        strong {
+          font-size: 15px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          font-size: 15px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 15px;
+            width: auto;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      flex-wrap: wrap;
+
+      .tabList {
+        flex: 0 0 100%;
+        padding: 0px 0px;
+
+        .tabItem {
+          h4 {
+            height: 60px;
+            padding: 0px 10px;
+            font-size: 20px;
+
+            svg {
+              margin-left: 10px;
+              height: 15px;
+            }
+          }
+
+          &:last-child {
+            border-bottom: 1px solid #2a2a2a;
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 100%;
+        padding: 10px 20px;
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        h4 {
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .ProDetails {
+    margin-top: 100px;
+
+    .mainImage {
+      height: 200px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      img {
+        height: 120px;
+        width: auto;
+      }
+    }
+
+    .imageSlide {
+      gap: 0px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .imgBox {
+        flex: 0 0 calc(100% / 4 - 5px);
+        height: 70px;
+        overflow: hidden;
+        border-radius: 5px;
+
+        img {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+
+    .ImgContent {
+      padding-left: 0px;
+
+      p {
+        font-size: 15px;
+        margin-bottom: 15px;
+
+        strong {
+          font-size: 15px;
+        }
+      }
+
+      h5 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        li {
+          font-size: 15px;
+
+          svg {
+            margin-right: 10px;
+            margin-top: 5px;
+            flex: 0 0 15px;
+            width: auto;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .tabDescription {
+      flex-wrap: wrap;
+
+      .tabList {
+        flex: 0 0 100%;
+        padding: 0px 0px;
+
+        .tabItem {
+          h4 {
+            height: 60px;
+            padding: 0px 10px;
+            font-size: 24px;
+
+            svg {
+              margin-left: 10px;
+              height: 15px;
+            }
+          }
+
+          &:last-child {
+            border-bottom: 1px solid #2a2a2a;
+          }
+        }
+      }
+
+      .tabContent {
+        flex: 0 0 100%;
+        padding: 10px 20px;
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        h4 {
+          font-size: 30px;
+          line-height: 40px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

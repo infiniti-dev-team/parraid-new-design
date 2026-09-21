@@ -1,0 +1,37 @@
+.termPage {
+    padding: 250px 0px 50px;
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .termBox {
+        margin-bottom: 40px;
+
+        a {
+            background: #fff;
+            width: 300px;
+            height: 60px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(0);
+
+            &:hover {
+                background: #0061fe;
+                color: #fff;
+                transform: translateY(-5px) scale(1.03);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+
+}

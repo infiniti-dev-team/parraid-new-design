@@ -1,0 +1,761 @@
+.contactForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &.productForm {
+    .divField {
+      flex: 0 0 calc(100% - 0px) !important;
+      color: #000 !important;
+
+      input {
+        color: #000;
+        height: 55px;
+        border-radius: 10px;
+        padding-left: 20px;
+        outline: none;
+        width: 100%;
+        background: #fff;
+
+        &::placeholder {
+          color: #000;
+        }
+      }
+
+      textarea {
+        color: #000;
+        background: #fff;
+        padding-left: 20px;
+
+        &::placeholder {
+          color: #000;
+        }
+      }
+
+      &.divProduct {
+        color: #fff !important;
+      }
+
+    }
+
+    .divSubmit {
+      margin: 0px;
+      flex: 0 0 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  &.blogPage {
+    .divField {
+      flex: 0 0 calc(100% - 0px) !important;
+
+      input {
+        border: 0px;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        height: 55px;
+        border-radius: 0px;
+        padding-left: 10px;
+        outline: none;
+        width: 100%;
+        font-size: 15px;
+        line-height: normal;
+
+        &::placeholder {
+          color: #fff;
+        }
+      }
+
+      textarea {
+        border: 0px;
+        border-bottom: 1px solid #fff;
+        padding-left: 10px;
+        border-radius: 0px;
+        font-size: 15px;
+        line-height: normal;
+        height: 150px;
+      }
+
+      &:nth-child(5) {
+        display: block;
+      }
+    }
+
+    .divField.divProduct {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      white-space: normal;
+
+      input {
+        flex: 0 0 15px;
+        margin-top: 4px;
+      }
+
+      .consentText {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      a {
+        padding: 0;
+      }
+    }
+  }
+
+  .divField {
+    flex: 0 0 100%;
+    margin-bottom: 15px;
+
+    &:nth-child(2),
+    &:first-child {
+      flex: 0 0 calc(100% / 2 - 5px);
+    }
+
+    input {
+      width: 100%;
+      height: 60px;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 14px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      padding-left: 10px;
+      color: #ffffff;
+
+      &::placeholder {
+        color: #ffffff;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 14px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      padding-left: 10px;
+      padding-top: 10px;
+      color: #ffffff;
+
+      &::placeholder {
+        color: #ffffff;
+      }
+    }
+
+    &:nth-child(6) {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 22px;
+      color: #ffffff;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      letter-spacing: 0;
+      white-space: nowrap;
+
+      a {
+        text-decoration: underline;
+        transition: all 0.3s ease;
+        padding: 0px 5px;
+
+        &:hover {
+          transition: all 0.3s ease;
+          color: #0061fe;
+        }
+      }
+
+      input {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+      }
+
+      .consentText {
+        display: inline;
+      }
+    }
+  }
+
+  .divSubmit {
+    margin-top: 10px;
+
+    button {
+      background: #0061fe;
+      border-radius: 80px;
+      width: 220px;
+      height: 60px;
+      padding: 0px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: normal;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: -0.126234px;
+      color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 0px;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+        transition: left 0.5s ease;
+      }
+
+      &:hover::after {
+        left: 100%;
+      }
+    }
+  }
+}
+
+.productBox {
+  background: rgba(0, 97, 254, 0.05);
+  border-radius: 30px;
+  padding: 30px;
+
+  h3 {
+    color: #000;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 55px;
+          padding-left: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 18px;
+        line-height: 22px;
+        padding-left: 10px;
+      }
+
+      textarea {
+        height: 150px;
+        font-size: 18px;
+        line-height: 22px;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 25px;
+
+        input {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 250px;
+        height: 60px;
+        padding: 0px 30px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 60px;
+          padding-left: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 20px;
+
+        input {
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 60px;
+          padding-left: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 20px;
+
+        input {
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 55px;
+          padding-left: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+        button {
+          height: 57px;
+        }
+
+      }
+
+
+      .divSubmit {
+        flex: 0 0 25%;
+
+        button {
+          width: 100%;
+          height: 57px;
+        }
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 20px;
+
+        input {
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 55px;
+          padding-left: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+        button {
+          height: 57px;
+        }
+
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 20px;
+
+        input {
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 5px) !important;
+
+        input {
+          height: 55px;
+          padding-left: 20px;
+          font-size: 16px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+        button {
+          width: 100%;
+          height: 57px;
+        }
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% / 2 - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      &:nth-child(5) {
+        font-size: 13px;
+        line-height: 20px;
+
+        input {
+          width: 14px;
+          height: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .contactForm {
+    &.productForm {
+      margin-top: 20px;
+
+      .divField {
+        flex: 0 0 calc(100% - 0px) !important;
+
+        input {
+          height: 55px;
+          padding-left: 20px;
+          font-size: 16px;
+        }
+
+        &.divProduct {
+          flex-wrap: wrap;
+          line-height: 0px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .divSubmit {
+        flex: 0 0 100%;
+
+        button {
+          width: 100%;
+          height: 57px;
+        }
+      }
+    }
+
+    .divField {
+      margin-bottom: 15px;
+
+      &:nth-child(2),
+      &:first-child {
+        flex: 0 0 calc(100% - 5px);
+      }
+
+      input {
+        height: 60px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      textarea {
+        height: 170px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+
+
+
+
+      &:nth-child(6) {
+        flex-wrap: wrap;
+        line-height: 20px;
+        font-size: 14px;
+        margin-bottom: 0px;
+      }
+    }
+
+    .divSubmit {
+      margin-top: 10px;
+
+      button {
+        width: 220px;
+        height: 60px;
+        padding: 0px 25px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .productBox {
+    background: rgba(0, 97, 254, 0.05);
+    border-radius: 30px;
+    padding: 20px 0px;
+
+    h3 {
+      color: #000;
+    }
+  }
+}

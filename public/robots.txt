@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Allow: /*.css
+Allow: /*.js
+Disallow: /thank-you
+
+Sitemap: https://www.parraid.com/sitemap.xml

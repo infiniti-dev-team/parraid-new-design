@@ -1,0 +1,207 @@
+.listingPages {
+    margin-bottom: 100px;
+
+    .listingPageSec {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .listingPageItem {
+            height: 120px;
+            border-radius: 20px;
+            flex: 0 0 calc(100% / 3 - 10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+
+            a {
+                font-size: 20px;
+                color: #fff;
+                font-weight: 500;
+                line-height: 28px;
+                transition: color 0.3s ease;
+            }
+
+            &:hover {
+                background: #fff;
+                transform: translateY(-5px) scale(1.02);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+                a {
+                    color: #0061fe;
+
+                }
+            }
+        }
+    }
+
+    .noResult {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputStyle {
+        position: relative;
+        max-width: 33.33%;
+        margin-left: auto;
+        margin-bottom: 30px;
+
+        input {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            border: 0px;
+            font-size: 16px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0px 20px;
+            color: #ccc;
+            outline: none;
+        }
+
+        svg {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translate(0px, -50%);
+            width: 20px;
+            height: 20px;
+            z-index: 0;
+
+            path {
+                stroke: #ccc
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+    .listingPages {
+        margin-bottom: 100px;
+
+        .listingPageSec {
+            gap: 10px;
+
+            .listingPageItem {
+                height: 120px;
+                flex: 0 0 calc(100% / 3 - 10px);
+
+                a {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1099px) {
+    .listingPages {
+        margin-bottom: 100px;
+
+        .listingPageSec {
+            gap: 10px;
+
+            .listingPageItem {
+                height: 120px;
+                flex: 0 0 calc(100% / 3 - 10px);
+
+                a {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:899px) {
+    .listingPages {
+        margin-bottom: 70px;
+
+        .listingPageSec {
+            gap: 10px;
+
+            .listingPageItem {
+                height: 100px;
+                flex: 0 0 calc(100% / 2 - 10px);
+
+                a {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .inputStyle {
+            max-width: 50%;
+
+            input {
+                height: 45px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width:767px) {
+    .listingPages {
+        margin-bottom: 70px;
+
+        .listingPageSec {
+            gap: 10px;
+
+            .listingPageItem {
+                height: 120px;
+                flex: 0 0 calc(100% / 2 - 10px);
+
+                a {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+    .listingPages {
+        margin-bottom: 50px;
+
+        .listingPageSec {
+            gap: 0px;
+
+            .listingPageItem {
+                height: auto;
+                flex: 0 0 calc(100%);
+
+                a {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .inputStyle {
+            max-width: 100%;
+            margin-bottom: 20px;
+
+            input {
+                height: 45px;
+            }
+        }
+    }
+}

@@ -1,0 +1,363 @@
+.buildListSec {
+  padding-bottom: 100px;
+  .buildWapper {
+    .buildItem {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.4s ease;
+      background: transparent;
+      min-height: 180px;
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      .number {
+        flex: 0 0 60px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+        text-transform: capitalize;
+        color: #fff;
+        padding-top: 5px;
+        transition: color 0.4s ease;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .title {
+        flex: 0 0 calc(100% - 360px);
+        h4 {
+          margin-bottom: 0px;
+          color: #fff;
+          transition: color 0.4s ease;
+        }
+        p {
+          margin-bottom: 0px;
+          display: none;
+        }
+      }
+
+      .btn {
+        flex: 0 0 300px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 25px;
+            text-transform: capitalize;
+            color: #fff;
+            margin-right: 15px;
+            opacity: 0;
+            transition: opacity 0.4s ease, color 0.4s ease;
+          }
+
+          svg {
+            width: auto;
+            height: 40px;
+            transition: transform 0.4s ease, color 0.4s ease;
+          }
+        }
+      }
+      &:hover {
+        background: #fff;
+        border-radius: 20px;
+        border-bottom: 0px;
+        .number,
+        .title h4,
+        .title p,
+        .btn a span {
+          color: #000;
+        }
+        .title p {
+          display: block;
+        }
+        .btn a span {
+          opacity: 1;
+        }
+
+        .btn {
+          a {
+            svg {
+              transform: rotate(-30deg);
+              path {
+                fill: #0061fe;
+                &:first-child {
+                  stroke: #0061fe;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 40px 20px;
+        min-height: 180px;
+
+        .number {
+          flex: 0 0 60px;
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 310px);
+        }
+
+        .btn {
+          flex: 0 0 250px;
+          a {
+            span {
+              font-size: 22px;
+              line-height: 22px;
+              margin-right: 12px;
+            }
+
+            svg {
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 30px 20px;
+        min-height: 160px;
+
+        .number {
+          flex: 0 0 60px;
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 310px);
+        }
+
+        .btn {
+          flex: 0 0 250px;
+          a {
+            span {
+              font-size: 20px;
+              line-height: 20px;
+              margin-right: 12px;
+            }
+
+            svg {
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 30px 20px;
+        min-height: 160px;
+
+        .number {
+          flex: 0 0 60px;
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 310px);
+        }
+
+        .btn {
+          flex: 0 0 250px;
+          a {
+            span {
+              font-size: 20px;
+              line-height: 20px;
+              margin-right: 12px;
+            }
+
+            svg {
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 30px 20px;
+        min-height: 160px;
+
+        .number {
+          flex: 0 0 60px;
+          font-size: 30px;
+          line-height: 30px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 310px);
+        }
+
+        .btn {
+          flex: 0 0 250px;
+          a {
+            span {
+              font-size: 20px;
+              line-height: 20px;
+              margin-right: 12px;
+            }
+
+            svg {
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 20px 20px;
+        min-height: 160px;
+
+        .number {
+          flex: 0 0 50px;
+          font-size: 25px;
+          line-height: 25px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 250px);
+        }
+
+        .btn {
+          flex: 0 0 200px;
+          a {
+            span {
+              font-size: 20px;
+              line-height: 20px;
+              margin-right: 12px;
+            }
+
+            svg {
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .buildListSec {
+    padding-bottom: 100px;
+    .buildWapper {
+      .buildItem {
+        padding: 20px 20px;
+        min-height: 160px;
+
+        .number {
+          flex: 0 0 30px;
+          font-size: 25px;
+          line-height: 25px;
+        }
+
+        .title {
+          flex: 0 0 calc(100% - 230px);
+        }
+
+        .btn {
+          flex: 0 0 150px;
+          a {
+            span {
+              font-size: 16px;
+              line-height: 16px;
+              margin-right: 10px;
+            }
+
+            svg {
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .buildListSec {
+    padding-bottom: 50px;
+    .buildWapper {
+      .buildItem {
+        padding: 20px 20px;
+        min-height: auto;
+        flex-wrap: wrap;
+
+        .number {
+          flex: 0 0 100%;
+          font-size: 25px;
+          line-height: 25px;
+          margin-bottom: 10px;
+        }
+
+        .title {
+          flex: 0 0 100%;
+          font-size: 30px !important;
+        }
+
+        .btn {
+          flex: 0 0 100%;
+          margin-top: 20px;
+          a {
+            span {
+              font-size: 16px;
+              line-height: 16px;
+              margin-right: 10px;
+            }
+
+            svg {
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.faqsBlog {
+  margin-top: 50px;
+
+  .faqsBox {
+    overflow: hidden;
+    transition: height 0.4s ease, opacity 0.4s ease;
+    margin-bottom: 0px;
+
+    .faqsTitle {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.198px;
+      color: #fff;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      position: relative;
+      padding-right: 40px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      .iconBox {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-right: 15px;
+        cursor: pointer;
+
+        svg {
+          height: 30px;
+          width: 30px;
+          transition: all 0.5s ease;
+
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    .faqscontent {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.165px;
+      opacity: 0;
+      max-height: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      padding: 0px 15px;
+
+      ul {
+        list-style: inside;
+      }
+
+      p,
+      li {
+        color: #8c8c8c;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      height: auto;
+
+      .faqscontent {
+        opacity: 1;
+        padding: 15px;
+        max-height: 500px;
+
+        p {
+          margin-bottom: 0px;
+        }
+      }
+
+      .iconBox {
+        svg {
+          transform: rotate(45deg);
+          transition: all 0.5s ease;
+
+          path {
+            fill: #0061fe;
+          }
+        }
+      }
+    }
+  }
+
+  &.BlackColor {
+    .faqsBox {
+      .faqsTitle {
+        color: #333;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        .iconBox {
+
+          svg {
+            path {
+              fill: #000;
+            }
+          }
+        }
+      }
+
+      &.active {
+        .iconBox {
+          svg {
+            path {
+              fill: #0061fe;
+            }
+          }
+        }
+      }
+    }
+  }
+}

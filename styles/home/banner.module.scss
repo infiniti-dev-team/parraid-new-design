@@ -1,0 +1,196 @@
+.bannerSection {
+  height: calc(100vh - 100px);
+  position: relative;
+  top: 70px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+    height: 100%;
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0.42) 21.3%,
+      rgba(0, 0, 0, 0) 108%
+    );
+    border-radius: 50px;
+    z-index: 1;
+  }
+  .bannerText {
+    position: relative;
+    z-index: 2;
+    padding-top: 300px;
+    h1,
+    p {
+      color: #fff;
+    }
+  }
+  .bannerVideo {
+    position: absolute;
+    top: 0px;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+    height: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      border-radius: 50px;
+    }
+    video {
+      object-fit: cover;
+      border-radius: 50px;
+    }
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .bannerSection {
+    height: calc(100vh - 90px);
+    top: 65px;
+    &::before {
+      border-radius: 40px;
+    }
+    .bannerText {
+      padding-top: 180px;
+    }
+    .bannerVideo {
+      border-radius: 40px;
+      img {
+        border-radius: 40px;
+      }
+      video {
+        border-radius: 40px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .bannerSection {
+    height: calc(100vh - 100px);
+    top: 65px;
+    &::before {
+      border-radius: 30px;
+    }
+    .bannerText {
+      padding-top: 180px;
+    }
+    .bannerVideo {
+      border-radius: 30px;
+      img {
+        border-radius: 30px;
+      }
+      video {
+        border-radius: 30px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .bannerSection {
+    height: calc(100vh - 100px);
+    top: 55px;
+    &::before {
+      border-radius: 25px;
+    }
+    .bannerText {
+      padding-top: 180px;
+    }
+    .bannerVideo {
+      border-radius: 25px;
+      img {
+        border-radius: 25px;
+      }
+      video {
+        border-radius: 25px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .bannerSection {
+    height: calc(100vh - 80px);
+    top: 55px;
+    &::before {
+      border-radius: 20px;
+    }
+    .bannerText {
+      padding-top: 180px;
+    }
+    .bannerVideo {
+      border-radius: 20px;
+      img {
+        border-radius: 20px;
+      }
+      video {
+        border-radius: 20px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .bannerSection {
+    height: calc(100vh - 100px);
+    top: 55px;
+    &::before {
+      border-radius: 15px;
+    }
+    .bannerText {
+      padding-top: 70px;
+    }
+    .bannerVideo {
+      border-radius: 15px;
+      img {
+        border-radius: 15px;
+      }
+      video {
+        border-radius: 15px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .bannerSection {
+    height: calc(100vh - 100px);
+    top: 40px;
+    &::before {
+      border-radius: 15px;
+    }
+    .bannerText {
+      padding-top: 40px;
+    }
+    .bannerVideo {
+      border-radius: 15px;
+      img {
+        border-radius: 15px;
+      }
+      video {
+        border-radius: 15px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .bannerSection {
+    height: auto;
+    top: 80px;
+    padding: 100px 0px 30px;
+    &::before {
+      border-radius: 15px;
+    }
+    .bannerText {
+      padding-top: 120px;
+    }
+    .bannerVideo {
+      border-radius: 15px;
+      img {
+        border-radius: 15px;
+      }
+      video {
+        border-radius: 15px;
+      }
+    }
+  }
+}

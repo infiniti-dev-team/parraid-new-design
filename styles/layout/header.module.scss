@@ -1,0 +1,770 @@
+.headerSection {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+
+
+
+  .topHeader {
+    height: 70px;
+    transition: opacity 0.3s ease-in-out;
+    margin-bottom: 0px;
+
+    &.home {
+      margin-bottom: 30px;
+    }
+
+    .leftTxt {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      div {
+        border-right: 1px solid #ffffff;
+        margin-right: 10px;
+        padding-right: 10px;
+        margin-bottom: 0px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: -0.126234px;
+        color: #ffffff;
+
+        &:last-child {
+          border-right: 0px;
+          padding-right: 0px;
+          margin-right: 0px;
+        }
+
+        a {
+          margin-bottom: 0px;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 16px;
+          letter-spacing: -0.126234px;
+          color: #ffffff;
+
+          &:hover {
+            color: #0061fe;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+
+    .rightTxt {
+      p {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        a {
+          svg {
+            margin-left: 10px;
+            width: auto;
+            height: 18px;
+          }
+
+          &:hover {
+            svg {
+              path {
+                fill: #0061fe;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      margin-bottom: 0px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 12px;
+      letter-spacing: -0.126234px;
+      color: #ffffff;
+
+      a {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 12px;
+        letter-spacing: -0.126234px;
+        color: #ffffff;
+        display: inline-block;
+        padding-left: 0px;
+
+        &:hover {
+          color: #0061fe;
+          font-weight: 500;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .headerContainer {
+    background: #fff;
+    height: 80px;
+    border-radius: 100px;
+    padding: 0px 20px 0px 30px;
+    transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+
+    .mainLogo {
+      svg {
+        width: auto;
+        height: 50px;
+      }
+    }
+  }
+
+  .headerNavigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+      a {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: -0.126234px;
+        color: #000;
+        margin: 0px 30px;
+
+        &:hover {
+          color: #0061fe;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:last-child {
+        svg {
+          width: auto;
+          height: 25px;
+        }
+
+        &:hover {
+          svg {
+            path {
+              stroke: #0061fe;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    background: #fff;
+
+    .topHeader {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 0px;
+    }
+
+    .headerContainer {
+      background: transparent;
+      backdrop-filter: unset;
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          &:hover {
+            color: #0061fe;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .headerSection {
+    .topHeader {
+      height: 60px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 30px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 10px;
+
+        div {
+          margin-right: 10px;
+          padding-right: 10px;
+          font-size: 15px;
+          line-height: 15px;
+
+          a {
+            font-size: 15px;
+            line-height: 15px;
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 12px;
+
+        a {
+          font-size: 14px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 70px;
+      padding: 0px 20px 0px 30px;
+
+      .mainLogo {
+        svg {
+          height: 45px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          font-size: 17px;
+          line-height: 17px;
+          margin: 0px 25px;
+        }
+
+        &:last-child {
+          svg {
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .headerSection {
+    .topHeader {
+      height: 60px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 25px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 10px;
+
+        div {
+          margin-right: 10px;
+          padding-right: 10px;
+          font-size: 15px;
+          line-height: 15px;
+
+          a {
+            font-size: 15px;
+            line-height: 15px;
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 12px;
+
+        a {
+          font-size: 14px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 70px;
+      padding: 0px 20px 0px 30px;
+
+      .mainLogo {
+        svg {
+          height: 45px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          font-size: 17px;
+          line-height: 17px;
+          margin: 0px 25px;
+        }
+
+        // &:last-child {
+        //   svg {
+        //     height: 25px;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .headerSection {
+    .topHeader {
+      height: 50px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 20px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 10px;
+
+        div {
+          margin-right: 10px;
+          padding-right: 10px;
+          font-size: 14px;
+          line-height: 14px;
+
+          a {
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 12px;
+
+        a {
+          font-size: 13px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 70px;
+      padding: 0px 20px 0px 20px;
+
+      .mainLogo {
+        svg {
+          height: 45px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          font-size: 16px;
+          line-height: 16px;
+          margin: 0px 20px;
+        }
+
+        &:last-child {
+          svg {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .headerSection {
+    .topHeader {
+      height: 50px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 20px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 10px;
+
+        div {
+          margin-right: 5px;
+          padding-right: 5px;
+          font-size: 13px;
+          line-height: 13px;
+
+          a {
+            font-size: 13px;
+            line-height: 13px;
+          }
+        }
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 12px;
+
+        a {
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 60px;
+      padding: 0px 20px 0px 20px;
+
+      .mainLogo {
+        svg {
+          height: 40px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          font-size: 16px;
+          line-height: 16px;
+          margin: 0px 20px;
+        }
+
+        // &:last-child {
+        //   svg {
+        //     height: 22px;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .headerSection {
+    .topHeader {
+      height: 50px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 20px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 10px;
+
+        div {
+          flex: 0 0 auto;
+          margin-right: 10px;
+          padding-right: 10px;
+          font-size: 14px;
+          line-height: 14px;
+
+          a {
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 14px;
+
+        a {
+          font-size: 14px;
+          line-height: 14px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 60px;
+      padding: 0px 10px 0px 10px;
+
+      .mainLogo {
+        svg {
+          height: 35px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      li {
+        a {
+          font-size: 14px;
+          line-height: 14px;
+          margin: 0px 10px;
+        }
+
+        // &:last-child {
+        //   svg {
+        //     height: 18px;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .headerSection {
+    .topHeader {
+      height: 40px;
+      margin-bottom: 0px;
+
+      &.home {
+        margin-bottom: 10px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 8px;
+
+        div {
+          flex: 0 0 auto;
+          margin-right: 8px;
+          padding-right: 8px;
+          font-size: 13px;
+          line-height: 13px;
+
+          a {
+            font-size: 13px;
+            line-height: 13px;
+          }
+        }
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 13px;
+
+        a {
+          font-size: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+
+    .headerContainer {
+      height: 60px;
+      padding: 0px 20px 0px 20px;
+
+      .mainLogo {
+        svg {
+          height: 35px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      position: fixed;
+      width: 330px;
+      height: calc(100vh - 111px);
+      background: #fff;
+      top: 111px;
+      right: -300px;
+      transition: width 0.5s, opacity 0.5s;
+      z-index: 9;
+      opacity: 0;
+      overflow: auto;
+      animation: slideFromTop 0.5s forwards;
+      border: 0px;
+      border-radius: 0px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 20px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      &.active {
+        right: 0px;
+        opacity: 1;
+        animation: slideFromTop 0.5s forwards;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        li {
+          text-align: left;
+
+          a {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0px;
+          }
+
+          // &:last-child {
+          //   a {
+          //     height: 40px;
+          //     width: 140px;
+          //     padding: 0px 10px;
+          //     font-size: 13px;
+          //     font-weight: 400;
+          //   }
+          // }
+        }
+      }
+    }
+
+    &.fixed {
+      .headerNavigation {
+        height: calc(100vh - 61px);
+        top: 61px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .headerSection {
+    .topHeader {
+      height: 40px;
+      margin-bottom: 0px;
+      display: none;
+
+      &.home {
+        margin-bottom: 10px;
+      }
+
+      .leftTxt {
+        display: flex;
+        gap: 8px;
+
+        div {
+          flex: 0 0 auto;
+          margin-right: 5px;
+          padding-right: 5px;
+          font-size: 0px;
+          line-height: 0px;
+
+          a {
+            font-size: 13px;
+            line-height: 13px;
+          }
+        }
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 13px;
+
+        a {
+          font-size: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+
+    .headerContainer {
+      margin-top: 10px;
+      height: 60px;
+      padding: 0px 20px 0px 20px;
+
+      .mainLogo {
+        svg {
+          height: 35px;
+        }
+
+        img {
+          width: auto;
+          height: 40px;
+        }
+      }
+    }
+
+    .headerNavigation {
+      position: fixed;
+      width: 330px;
+      height: calc(100vh - 71px);
+      background: #fff;
+      top: 71px;
+      right: -300px;
+      transition: width 0.5s, opacity 0.5s;
+      z-index: 9;
+      opacity: 0;
+      overflow: auto;
+      animation: slideFromTop 0.5s forwards;
+      border: 0px;
+      border-radius: 0px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 20px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      &.active {
+        right: 0px;
+        opacity: 1;
+        animation: slideFromTop 0.5s forwards;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        li {
+          text-align: left;
+
+          a {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 0px;
+          }
+
+          // &:last-child {
+          //   a {
+          //     height: 40px;
+          //     width: 140px;
+          //     padding: 0px 10px;
+          //     font-size: 13px;
+          //     font-weight: 400;
+          //   }
+          // }
+        }
+      }
+    }
+  }
+}

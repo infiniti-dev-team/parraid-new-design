@@ -1,0 +1,432 @@
+.teamSection {
+  .teamBg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    border-radius: 40px;
+    padding: 70px;
+
+    h2 {
+      color: #fff;
+    }
+
+    p {
+      color: #fff;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: -0.153379px;
+    }
+  }
+
+  .teamWapper {
+    margin-top: 30px;
+
+    &.carreerTeamWapper {
+      .teamItem {
+        height: 220px;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .teamItem {
+      background: #f6f6f6;
+      border-radius: 30px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 425px;
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+      transform: scale(1);
+
+
+      &:hover {
+        background: #0061fe;
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 35px;
+        line-height: 41px;
+        letter-spacing: -1.41622px;
+        text-transform: capitalize;
+        color: #000000;
+        position: relative;
+        margin-bottom: 30px;
+        transition: all 0.4s ease;
+
+        &::after {
+          content: "";
+          background: #0061fe;
+          width: 100px;
+          height: 4px;
+          display: block;
+          margin-top: 20px;
+          transition: background 0.4s ease;
+        }
+      }
+
+      &:hover .title {
+        color: #ffffff;
+        margin-bottom: 50px;
+        transform: translateY(5px);
+      }
+
+      &:hover .title::after {
+        background: #ffffff;
+      }
+
+      .txt {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.127809px;
+        color: #64748b;
+        transition: color 0.4s ease;
+      }
+
+      &:hover .txt {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &.customerBoxesSec {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .teamSection {
+    .teamBg {
+      height: 500px;
+      border-radius: 30px;
+      padding: 60px;
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 25px;
+        padding: 25px;
+        height: 400px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 30px;
+          line-height: 36px;
+          margin-bottom: 30px;
+
+          &::after {
+            width: 100px;
+            height: 4px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .teamSection {
+    margin-top: 50px;
+
+    .teamBg {
+      height: 450px;
+      border-radius: 25px;
+      padding: 60px;
+
+      p {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 25px;
+        padding: 25px;
+        height: 350px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 26px;
+          line-height: 34px;
+          margin-bottom: 30px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .teamSection {
+    margin-top: 50px;
+
+    .teamBg {
+      height: 450px;
+      border-radius: 25px;
+      padding: 50px;
+
+      p {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 25px;
+        padding: 25px;
+        height: 350px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 24px;
+          line-height: 32px;
+          margin-bottom: 20px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .teamSection {
+    .teamBg {
+      height: 400px;
+      border-radius: 20px;
+      padding: 25px;
+
+      p {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 20px;
+        padding: 20px 15px;
+        height: 350px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 20px;
+          line-height: 26px;
+          margin-bottom: 10px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 40px;
+        }
+
+        .txt {
+          font-size: 15px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .teamSection {
+    .teamBg {
+      height: 350px;
+      border-radius: 20px;
+      padding: 25px;
+
+      p {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 20px;
+        padding: 20px;
+        height: 320px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 22px;
+          line-height: 30px;
+          margin-bottom: 10px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .teamSection {
+    .teamBg {
+      height: 350px;
+      border-radius: 20px;
+      padding: 25px;
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 20px;
+        padding: 20px;
+        height: 250px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 22px;
+          line-height: 30px;
+          margin-bottom: 10px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .teamSection {
+    .teamBg {
+      height: 350px;
+      border-radius: 20px;
+      padding: 25px;
+
+      p {
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+
+    .teamWapper {
+      margin-top: 30px;
+
+      .teamItem {
+        border-radius: 20px;
+        padding: 20px;
+        height: 300px;
+        margin-bottom: 20px;
+
+        .title {
+          font-size: 22px;
+          line-height: 30px;
+          margin-bottom: 10px;
+
+          &::after {
+            width: 100px;
+            height: 3px;
+          }
+        }
+
+        &:hover .title {
+          margin-bottom: 50px;
+        }
+
+        .txt {
+          font-size: 17px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.blueBanner {
+  margin-top: -100px;
+
+  .blueBox {
+    height: 200px;
+    background: #0061fe;
+    border-radius: 25px;
+    padding: 0px 100px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .blueBanner {
+    margin-top: -100px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 25px;
+      padding: 0px 90px
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .blueBanner {
+    margin-top: -100px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 20px;
+      padding: 0px 80px
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .blueBanner {
+    margin-top: -100px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 20px;
+      padding: 0px 70px
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1099px) {
+  .blueBanner {
+    margin-top: -100px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 20px;
+      padding: 0px 60px
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width:899px) {
+  .blueBanner {
+    margin-top: -80px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 20px;
+      padding: 0px 50px
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width:767px) {
+  .blueBanner {
+    margin-top: -80px;
+
+    .blueBox {
+      height: 200px;
+      border-radius: 20px;
+      padding: 20px 30px
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .blueBanner {
+    margin-top: -50px;
+
+    .blueBox {
+      height: auto;
+      border-radius: 20px;
+      padding: 20px 20px
+    }
+  }
+}

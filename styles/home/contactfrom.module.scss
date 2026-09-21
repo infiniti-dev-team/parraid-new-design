@@ -1,0 +1,344 @@
+.contactFormSection {
+  scroll-margin-top: 100px;
+
+  .contactBg {
+    padding: 50px;
+    overflow: hidden;
+    height: 680px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.77));
+
+      border-radius: 40px;
+      z-index: 1;
+    }
+
+    .contactTxt {
+      position: relative;
+      z-index: 1;
+
+      .footerWapper {
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 50px;
+        margin-top: 50px;
+
+        li {
+          .footerInfo {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.45px;
+            color: #ffffff;
+
+            svg {
+              width: auto;
+              height: 20px;
+              margin-right: 5px;
+            }
+
+            a {
+              margin-top: 10px;
+              display: block;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 22px;
+              letter-spacing: -0.45px;
+              color: #ffffff;
+              transition: all 0.3s ease;
+
+              &:hover {
+                color: #0061fe;
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .contactFrom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bannerVideo {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        border-radius: 40px;
+        width: 100%;
+        height: 100%;
+      }
+
+      video {
+        object-fit: cover;
+        border-radius: 40px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 40px;
+      border-radius: 30px;
+
+      .contactTxt {
+        .footerWapper {
+          padding-top: 40px;
+          margin-top: 40px;
+
+          li {
+            .footerInfo {
+              font-size: 16px;
+              line-height: 20px;
+
+              svg {
+                height: 20px;
+              }
+
+              a {
+                margin-top: 10px;
+                font-size: 17px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 40px;
+      border-radius: 30px;
+
+      .contactTxt {
+        .footerWapper {
+          padding-top: 40px;
+          margin-top: 40px;
+
+          li {
+            .footerInfo {
+              font-size: 16px;
+              line-height: 20px;
+
+              svg {
+                height: 15px;
+              }
+
+              a {
+                margin-top: 10px;
+                font-size: 17px;
+                line-height: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 40px;
+      border-radius: 30px;
+
+      .contactTxt {
+        .footerWapper {
+          padding-top: 40px;
+          margin-top: 40px;
+
+          li {
+            .footerInfo {
+              font-size: 14px;
+              line-height: 20px;
+
+              svg {
+                height: 15px;
+              }
+
+              a {
+                margin-top: 10px;
+                font-size: 14px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 30px;
+      border-radius: 20px;
+
+      .contactTxt {
+        .footerWapper {
+          padding-top: 30px;
+          margin-top: 30px;
+          flex-wrap: wrap;
+
+          li {
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+
+            .footerInfo {
+              font-size: 16px;
+              line-height: 20px;
+
+              svg {
+                height: 15px;
+              }
+
+              a {
+                margin-top: 10px;
+                font-size: 16px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .contactFormSection {
+    height: auto;
+
+    .contactBg {
+      padding: 20px;
+      border-radius: 20px;
+      height: 100%;
+
+      .footerWapper {
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+
+        li {
+          .footerInfo {
+            font-size: 16px;
+            line-height: 20px;
+
+            svg {
+              height: 15px;
+            }
+
+            a {
+              margin-top: 10px;
+              font-size: 16px;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 20px;
+      border-radius: 20px;
+      height: 100%;
+
+      .footerWapper {
+        padding-top: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        li {
+          .footerInfo {
+            font-size: 16px;
+            line-height: 20px;
+
+            svg {
+              height: 15px;
+            }
+
+            a {
+              margin-top: 10px;
+              font-size: 16px;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .contactFormSection {
+    .contactBg {
+      padding: 20px;
+      border-radius: 20px;
+      height: auto;
+
+      .contactTxt {
+        .footerWapper {
+          padding-top: 20px;
+          margin-top: 20px;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+
+          li {
+            margin-bottom: 20px;
+
+            .footerInfo {
+              font-size: 16px;
+              line-height: 20px;
+
+              svg {
+                height: 15px;
+              }
+
+              a {
+                margin-top: 10px;
+                font-size: 15px;
+                line-height: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

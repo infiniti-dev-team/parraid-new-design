@@ -1,0 +1,384 @@
+.industriesSection {
+  background: #000;
+
+  .industriesWapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+
+    .industriesItem {
+      flex: 0 0 calc(100% / 4 - 10px);
+      position: relative;
+      height: 510px;
+      overflow: hidden;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+      }
+
+      img {
+        object-fit: cover;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease, opacity 0.4s ease;
+      }
+
+      .title {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 30px;
+        z-index: 2;
+        transition: all 0.4s ease-in-out;
+
+        h3 {
+          font-size: 30px;
+          line-height: 30px;
+          color: #ffffff;
+        }
+      }
+
+      .txt {
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease-in-out;
+
+        p {
+          margin-bottom: 20px;
+          color: #fff;
+          font-size: 17px;
+          line-height: 23px;
+          font-weight: 300;
+        }
+
+        a {
+          position: absolute;
+          left: 20px;
+          right: 20px;
+          bottom: 30px;
+          z-index: 2;
+        }
+      }
+
+      // Hover effect
+      &:hover {
+        transform: scale(1.03);
+        background: #0061fe;
+
+        &::before {
+          opacity: 0;
+        }
+
+        img {
+          opacity: 0;
+          transform: scale(1.1);
+        }
+
+        .title {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        .txt {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 40px;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 4 - 10px);
+        height: 460px;
+
+        .title {
+          bottom: 25px;
+
+          h3 {
+            font-size: 28px;
+            line-height: 28px;
+          }
+        }
+
+        .txt {
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+
+          p {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          a {
+            bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 40px;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 4 - 10px);
+        height: 460px;
+
+        .title {
+          bottom: 25px;
+
+          h3 {
+            font-size: 28px;
+            line-height: 28px;
+          }
+        }
+
+        .txt {
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+
+          p {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          a {
+            bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 30px;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 4 - 10px);
+        height: 400px;
+
+        .title {
+          bottom: 25px;
+
+          h3 {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .txt {
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          a {
+            bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 30px;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 4 - 10px);
+        height: 400px;
+
+        .title {
+          bottom: 20px;
+          left: 15px;
+          right: 15px;
+
+          h3 {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .txt {
+          padding: 15px;
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          a {
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 30px;
+      flex-wrap: wrap;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 2 - 10px);
+        height: 400px;
+        margin-bottom: 20px;
+
+        .title {
+          bottom: 20px;
+          left: 15px;
+          right: 15px;
+
+          h3 {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .txt {
+          padding: 15px;
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          a {
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 30px;
+      flex-wrap: wrap;
+
+      .industriesItem {
+        flex: 0 0 calc(100% / 2 - 10px);
+        height: 400px;
+        margin-bottom: 20px;
+
+        .title {
+          bottom: 20px;
+          left: 15px;
+          right: 15px;
+
+          h3 {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .txt {
+          padding: 15px;
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          a {
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .industriesSection {
+    .industriesWapper {
+      margin-top: 30px;
+      flex-wrap: wrap;
+
+      .industriesItem {
+        flex: 0 0 calc(100% - 0px);
+        height: 400px;
+        margin-bottom: 20px;
+
+        .title {
+          bottom: 20px;
+          left: 15px;
+          right: 15px;
+
+          h3 {
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .txt {
+          padding: 15px;
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          a {
+            bottom: 20px;
+            left: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
