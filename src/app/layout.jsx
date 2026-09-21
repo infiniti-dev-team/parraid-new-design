@@ -45,8 +45,8 @@ export const metadata = {
   //===== Canonical =====
   alternates: { canonical: "/" },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 
 };
