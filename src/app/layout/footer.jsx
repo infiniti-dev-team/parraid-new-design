@@ -1,22 +1,17 @@
-import ContactFrom from '@/src/app/components/contactfrom'
-import styles from "@/styles/layout/footer.module.scss";
-import { Col, Container, Row } from "react-bootstrap";
-import FooterLinks from '@/src/app/layout/footerlinks';
-
+"use client";
+import { usePathname } from "next/navigation";
+import DefaultFooter from "@/src/app/layout/defaultfooter";
+import HomeFooter from "@/src/app/home/footer";
 
 const Footer = () => {
-    return (
-        <section className={styles.footerSection}>
-            <Container className={`${styles.footerWapper}`}>
-                <Row>
-                    <Col md={12}>
-                        <ContactFrom />
-                        <FooterLinks />
-                    </Col>
-                </Row>
-            </Container>
-        </section>
-    )
-}
+    const pathname = usePathname();
+    const isHome = pathname === "/" || pathname === "";
 
-export default Footer
+    if (isHome) {
+        return <HomeFooter />;
+    }
+
+    return <DefaultFooter />;
+};
+
+export default Footer;

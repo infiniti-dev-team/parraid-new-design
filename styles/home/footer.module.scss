@@ -1,0 +1,181 @@
+.footerSection {
+  margin-top: 2rem;
+
+  // Override globals.scss 'body .container' for the home page footer
+  :global(.container) {
+    max-width: 1911px !important;
+  }
+
+  .footerWapper {
+    background: #fff;
+    padding: 25px;
+    border-radius: 40px 40px 0px 0px;
+    max-width: 1911px !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+// Global specificity to ensure globals.scss 'body .container' is overridden for home footer
+:global(body) {
+  .footerSection {
+    margin-top: 2rem;
+
+    :global(.container) {
+      max-width: 1911px !important;
+    }
+
+    .footerWapper {
+      max-width: 1911px !important;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 1911px !important;
+    }
+
+    .footerWapper {
+      padding: 25px;
+      border-radius: 30px 30px 0px 0px;
+      max-width: 1911px !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 1911px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 1911px !important;
+    }
+
+    .footerWapper {
+      padding: 25px;
+      border-radius: 30px 30px 0px 0px;
+      max-width: 1911px !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 1911px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 1911px !important;
+    }
+
+    .footerWapper {
+      padding: 20px 20px;
+      border-radius: 25px 25px 0px 0px;
+      max-width: 1911px !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 1911px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1099px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 95% !important;
+    }
+
+    .footerWapper {
+      padding: 20px 0px;
+      border-radius: 25px 25px 0px 0px;
+      max-width: 95% !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 95% !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 95% !important;
+    }
+
+    .footerWapper {
+      padding: 20px 0px;
+      border-radius: 25px 25px 0px 0px;
+      max-width: 95% !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 95% !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 95% !important;
+    }
+
+    .footerWapper {
+      padding: 20px 0px;
+      border-radius: 25px 25px 0px 0px;
+      max-width: 95% !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 95% !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  .footerSection {
+    :global(.container) {
+      max-width: 95% !important;
+    }
+
+    .footerWapper {
+      padding: 20px 0px;
+      border-radius: 25px 25px 0px 0px;
+      max-width: 95% !important;
+    }
+  }
+
+  :global(body) .footerSection {
+    :global(.container),
+    .footerWapper {
+      max-width: 95% !important;
+    }
+  }
+}
