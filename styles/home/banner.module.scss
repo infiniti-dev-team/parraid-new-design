@@ -1,14 +1,16 @@
 .bannerSection {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 972px;
+  height: 972px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
   margin: 0;
-  padding: 0;
+  padding: 112px 0 52px; // 112px header offset, 52px bottom spacing to match Figma
 
-  // Gradient overlay stretching edge-to-edge
+  // Gradient overlay stretching edge-to-edge for optimal text contrast
   &::before {
     content: "";
     position: absolute;
@@ -18,17 +20,17 @@
     height: 100%;
     background: linear-gradient(
       180deg,
-      rgba(0, 30, 95, 0.3) 0%,
-      rgba(0, 0, 0, 0.15) 35%,
-      rgba(0, 0, 0, 0.72) 75%,
-      rgba(0, 0, 0, 0.92) 100%
+      rgba(0, 52, 164, 0.12) 0%,
+      rgba(0, 0, 0, 0.18) 35%,
+      rgba(0, 0, 0, 0.62) 75%,
+      rgba(0, 0, 0, 0.88) 100%
     );
     border-radius: 0;
     z-index: 1;
     pointer-events: none;
   }
 
-  // Edge-to-edge background video & poster (no rounded corners)
+  // Edge-to-edge background video & poster
   .bannerVideo {
     position: absolute;
     top: 0;
@@ -49,59 +51,82 @@
     }
   }
 
-  // Container holding the hero content at the bottom
+  // Container holding the hero content aligned with header (max 1920px, 78px padding on 1920px)
   .bannerContainer {
     position: relative;
     z-index: 2;
-    max-width: 1440px;
-    padding-top: 120px;
-    padding-bottom: 56px;
+    max-width: 1920px;
+    width: 100%;
+    padding-left: clamp(24px, 4.06vw, 78px);
+    padding-right: clamp(24px, 4.06vw, 78px);
+    margin: 0 auto;
+  }
+
+  .bannerContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Heading matching node 3:265 (Montserrat Medium 77.3px, uppercase, 64.7px line-height)
+  .heroHeading {
+    font-family: var(--font-montserrat), sans-serif;
+    font-weight: 500; // Medium
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: clamp(34px, 4.02vw, 77.3px);
+    line-height: 0.92;
+    letter-spacing: normal;
+    color: #ffffff;
+    margin-bottom: 15px; // 15px vertical gap to paragraph matching Figma
+    max-width: 1278px;
+  }
+
+  // Row containing description on left and CTA button on right
+  .heroBottomRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: clamp(24px, 2.5vw, 48px);
     width: 100%;
   }
 
-  .bannerText {
-    .heroHeading {
-      font-family: var(--font-montserrat), sans-serif;
-      font-weight: 400; // Regular, as specifically requested
-      font-style: normal;
-      text-transform: uppercase;
-      font-size: clamp(32px, 4.4vw, 56px);
-      line-height: 1.15;
-      letter-spacing: 1.8px;
-      color: #ffffff;
-      margin-bottom: 18px;
-    }
-
-    .heroDescription {
-      font-family: var(--font-finder), "Finder", var(--font-poppins), sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 15.5px;
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.92);
-      max-width: 980px;
-      margin-bottom: 0;
-      text-transform: none;
-    }
+  // Description matching node 2:650 (Montserrat Regular 20px, 27px line-height, max-width 1156px)
+  .heroDescription {
+    font-family: var(--font-montserrat), sans-serif;
+    font-weight: 400; // Regular
+    font-style: normal;
+    font-size: clamp(15px, 1.04vw, 20px);
+    line-height: 1.35; // 27px line-height on 20px text
+    color: #ffffff;
+    max-width: 1156px;
+    margin-bottom: 0;
+    text-transform: none;
+    letter-spacing: normal;
   }
 
+  // Button wrapper & Button matching node 2:651 & 2:653 (Poppins Medium 23px, #0034a4, 247x60px)
   .heroBtnWrapper {
+    flex-shrink: 0;
     display: flex;
+    align-items: flex-end;
     justify-content: flex-end;
-    align-items: center;
 
     .heroConnectBtn {
-      display: inline-block;
-      background-color: #0034A4;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0034a4;
       color: #ffffff;
-      font-family: var(--font-montserrat), sans-serif;
-      font-weight: 600;
-      font-size: 14.5px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      font-family: var(--font-poppins), sans-serif;
+      font-weight: 500; // Medium
+      font-size: clamp(16px, 1.2vw, 23px);
+      line-height: 35.7px;
+      text-transform: none; // Title Case "Let’s Connect"
       text-decoration: none;
-      padding: 14px 38px;
-      border-radius: 9999px;
+      width: clamp(180px, 12.86vw, 247px);
+      height: 60px;
+      border-radius: 100px;
       box-shadow: 0 4px 18px rgba(0, 52, 164, 0.4);
       transition: all 0.25s ease-in-out;
       white-space: nowrap;
@@ -117,64 +142,82 @@
 }
 
 // Responsive adjustments
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1200px) {
   .bannerSection {
-    min-height: 90vh;
+    height: auto;
+    min-height: 850px;
+    padding: 130px 0 44px;
 
-    .bannerContainer {
-      padding-top: 90px;
-      padding-bottom: 40px;
+    .heroHeading {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1;
+      margin-bottom: 14px;
     }
 
-    .bannerText {
-      .heroHeading {
-        font-size: 34px;
-        letter-spacing: 1.2px;
-      }
-
-      .heroDescription {
-        font-size: 14.5px;
-        line-height: 1.6;
-      }
+    .heroBottomRow {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
     }
 
     .heroBtnWrapper {
       justify-content: flex-start;
-      margin-top: 20px;
 
       .heroConnectBtn {
-        padding: 12px 30px;
-        font-size: 13.5px;
+        width: 220px;
+        height: 54px;
+        font-size: 18px;
       }
     }
   }
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 768px) {
   .bannerSection {
-    min-height: 85vh;
+    min-height: 680px;
+    padding: 100px 0 32px;
 
-    .bannerContainer {
-      padding-top: 80px;
-      padding-bottom: 30px;
+    .heroHeading {
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 12px;
     }
 
-    .bannerText {
-      .heroHeading {
-        font-size: 26px;
-        letter-spacing: 0.8px;
-      }
-
-      .heroDescription {
-        font-size: 13.5px;
-        line-height: 1.55;
-      }
+    .heroDescription {
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .heroBtnWrapper {
       .heroConnectBtn {
-        padding: 10px 24px;
-        font-size: 13px;
+        width: 180px;
+        height: 48px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .bannerSection {
+    min-height: 620px;
+    padding: 90px 0 24px;
+
+    .heroHeading {
+      font-size: 24px;
+      line-height: 1.15;
+    }
+
+    .heroDescription {
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .heroBtnWrapper {
+      .heroConnectBtn {
+        width: 160px;
+        height: 44px;
+        font-size: 15px;
       }
     }
   }

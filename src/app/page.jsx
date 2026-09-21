@@ -13,14 +13,14 @@ const Page = () => {
   return (
     <>
       <Banner />
-      <Build />
-      <ProductTab />
+      {/* <Build /> */}
+      {/* <ProductTab /> */}
       {/* <Clients /> */}
-      <Industries />
-      <Events home={true} />
-      <Vision />
-      <Blogs />
-      <Faqs />
+      {/* <Industries /> */}
+      {/* <Events home={true} /> */}
+      {/* <Vision /> */}
+      {/* <Blogs /> */}
+      {/* <Faqs /> */}
     </>
   )
 }

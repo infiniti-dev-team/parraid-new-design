@@ -158,7 +158,7 @@ const leftNavLinks = [
 const rightNavLinks = [
   { name: "CALENDAR", href: "/events", hasDropdown: false },
   { name: "NEWS", href: "/press-release", hasDropdown: false },
-  { name: "DESIGNLINX®", href: "/about-us#designlinx", hasDropdown: false },
+  { name: "DESIGNLINX", suffix: "TM", href: "/about-us#designlinx", hasDropdown: false },
   { name: "CONTACT US", href: "/contact-us", hasDropdown: false },
 ];
 
@@ -330,8 +330,8 @@ const Header = () => {
               <Image
                 src={LogoWhite.src}
                 alt="Parraid Logo"
-                width={195}
-                height={54}
+                width={210}
+                height={65}
                 priority
                 className={styles.logoImg}
               />
@@ -355,6 +355,9 @@ const Header = () => {
                       className={`${styles.navLink} ${getTabClass(item.name)}`}
                     >
                       {item.name}
+                      {item.suffix && (
+                        <sup className={styles.trademark}>{item.suffix}</sup>
+                      )}
                     </Link>
                   </li>
                 );
@@ -558,6 +561,9 @@ const Header = () => {
                       className={styles.mobileNavLink}
                     >
                       {item.name}
+                      {item.suffix && (
+                        <sup className={styles.trademark}>{item.suffix}</sup>
+                      )}
                     </Link>
                   </li>
                 )
