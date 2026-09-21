@@ -288,11 +288,34 @@ const Header = () => {
                       {item.name}
                     </Link>
 
-                    {/* Active Underline and Peak Arrow Indicator */}
+                    {/* Active Underline, Peak Arrow, and Sloped Notch Roof */}
                     {isActive && item.hasDropdown && (
                       <div className={styles.activeIndicator}>
                         <span className={styles.activeLine}></span>
                         <span className={styles.activeArrow}>▲</span>
+                        <svg
+                          className={styles.activeRoof}
+                          width="34"
+                          height="16"
+                          viewBox="0 0 34 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M 0 16 L 17 1 L 34 16 Z" fill="#0034A4" />
+                          <path
+                            d="M 0 16 L 17 1 L 34 16"
+                            stroke="rgba(255, 255, 255, 0.2)"
+                            strokeWidth="1"
+                          />
+                          <line
+                            x1="0"
+                            y1="16"
+                            x2="34"
+                            y2="16"
+                            stroke="#0034A4"
+                            strokeWidth="2"
+                          />
+                        </svg>
                       </div>
                     )}
                   </li>
