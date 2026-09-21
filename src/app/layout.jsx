@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@/src/app/globals.scss";
 import Footer from "@/src/app/layout/footer";
@@ -22,6 +22,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-montserrat",
+});
+
 export const metadata = {
   metadataBase: new URL("https://www.parraid.com"),
   title: "Parraid | Expert Telemetry Data Systems Design, Engineering, Sales",
@@ -38,11 +44,6 @@ export const metadata = {
   },
   //===== Canonical =====
   alternates: { canonical: "/" },
-<<<<<<< HEAD
-  //===== No-Index =====
-=======
-  //===== Indexable =====
->>>>>>> 5f6247931f2c6a31d0247a2effb510f8e43cbd3f
   robots: {
     index: true,
     follow: true,
@@ -56,7 +57,7 @@ export default function RootLayout({ children }) {
       <head>
         <Tags />
       </head>
-      <body className={`${poppins.variable} ${myFont.variable}`}>
+      <body className={`${poppins.variable} ${myFont.variable} ${montserrat.variable}`}>
         <Header />
         <ScrollToTop />
         {children}

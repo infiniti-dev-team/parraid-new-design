@@ -4,7 +4,7 @@ import styles from "@/styles/home/banner.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import BannerPoster from "media/home/HomeBanner.webp";
 import Image from "next/image";
-import SingleButton from "@/src/app/components/singlebutton";
+import Link from "next/link";
 
 const Banner = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -12,37 +12,23 @@ const Banner = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowVideo(true);
-    }, 1500);
+    }, 1200);
     return () => clearTimeout(timeout);
   }, []);
+
   return (
     <section className={styles.bannerSection}>
-      <Container className="h-100">
-        <Row className="h-100">
-          <Col md={12} lg={10} xl={8} className="my-auto">
-            <div className={styles.bannerText}>
-              <h1>
-                ADVANCING TELEMETRY & COMMUNICATIONS FOR CRITICAL MISSIONS
-              </h1>
-              <p>
-                Delivering dependable, high-performance data and communication solutions that connect air, land, sea, and space. Parraid empowers
-                aerospace, defense, and government teams to operate with
-                precision, speed, and confidence.
-              </p>
-              <SingleButton link="#Contact" txt="Let’s Talk Solutions" />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      {/* Full Bleed Background Video / Poster */}
       {!showVideo ? (
         <div className={styles.bannerVideo}>
           <Image
             src={BannerPoster.src}
-            alt="Banner background"
+            alt="Parraid Critical Missions Banner background"
             decoding="async"
-            loading="lazy"
+            priority
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="100vw"
+            className={styles.bannerMedia}
           />
         </div>
       ) : (
@@ -51,15 +37,44 @@ const Banner = () => {
             autoPlay
             muted
             loop
-            preload="none"
-            aria-label="Background video"
+            preload="metadata"
+            aria-label="Background telemetry video"
             playsInline
             poster={BannerPoster.src}
+            className={styles.bannerMedia}
           >
             <source src="/videos/homeVideo.mp4" type="video/mp4" />
           </video>
         </div>
       )}
+
+      {/* Hero Bottom Content */}
+      <Container className={styles.bannerContainer}>
+        <Row className="align-items-end">
+          <Col lg={9} xl={9}>
+            <div className={styles.bannerText}>
+              <h1 className={styles.heroHeading}>ENGINEERING WITHOUT LIMITS</h1>
+              <p className={styles.heroDescription}>
+                Parraid® is a U.S. defense engineering company specializing in tactical
+                communications and telemetry data systems for critical environments. We
+                design, manufacture, and support telemetry and radio interoperability
+                solutions that enable reliable communication across defense test ranges,
+                operational deployments, and decentralized networks. Trusted by prime
+                contractors and allied partners, our products are engineered to deliver
+                solutions that improve situational awareness, interoperability, and
+                mission success.
+              </p>
+            </div>
+          </Col>
+          <Col lg={3} xl={3} className="text-lg-end text-start mt-3 mt-lg-0">
+            <div className={styles.heroBtnWrapper}>
+              <Link href="/contact-us" className={styles.heroConnectBtn}>
+                LET&apos;S CONNECT
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
 };
