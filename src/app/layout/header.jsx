@@ -20,22 +20,22 @@ const telemetryData = {
           name: "IMUX RE/CON",
           href: "/product/imux-re-con-newtwork-recorder",
           image: "/products/dropdown/imux-recon.webp",
-          imgWidth: 95,
-          imgHeight: 20,
+          imgWidth: 120,
+          imgHeight: 28,
         },
         {
           name: "IMUX G2e",
           href: "/product/imux-g2e-and-g2eh-recorders",
           image: "/products/dropdown/imux-g2e.webp",
-          imgWidth: 95,
-          imgHeight: 20,
+          imgWidth: 120,
+          imgHeight: 28,
         },
         {
           name: "IMUX G2eHybrid",
           href: "/product/imux-g2e-and-g2eh-recorders",
           image: "/products/dropdown/imux-g2e-hybrid.webp",
-          imgWidth: 70,
-          imgHeight: 26,
+          imgWidth: 80,
+          imgHeight: 32,
         },
       ],
     },
@@ -46,17 +46,23 @@ const telemetryData = {
         {
           name: "Edge2™ Receiver",
           href: "/product/edge2-telemetry-receiver",
-          image: null,
+          image: "/products/cat3/pro3/Edge2-Main.webp",
+          imgWidth: 100,
+          imgHeight: 28,
         },
         {
           name: "Rx2 Multi-Channel",
           href: "/product/rx2-receiver",
-          image: null,
+          image: "/products/cat3/pro9/Rx2-Main.webp",
+          imgWidth: 85,
+          imgHeight: 32,
         },
         {
           name: "BSR-100 Receiver",
-          href: "/product/bsr-100-synthesized-receiver",
-          image: null,
+          href: "/product/best-source-reproducer-bsr-100",
+          image: "/products/cat3/pro2/BSR-100-Main.webp",
+          imgWidth: 85,
+          imgHeight: 30,
         },
       ],
     },
@@ -67,17 +73,23 @@ const telemetryData = {
         {
           name: "OMEGA NExT™",
           href: "/product/omega-next-real-time-data-processing-software",
-          image: null,
+          image: "/products/cat3/pro8/OMEGA-NExT-Main.webp",
+          imgWidth: 60,
+          imgHeight: 32,
         },
         {
           name: "Best Data Engine (BDE™)",
           href: "/product/best-data-engine-bde",
-          image: null,
+          image: "/products/cat3/pro1/BDE-Best-Data-Engine-Main.webp",
+          imgWidth: 45,
+          imgHeight: 32,
         },
         {
           name: "OMEGA Data Environment (ODE™)",
           href: "/product/omega-data-environment-ode",
-          image: null,
+          image: "/products/cat3/pro7/ODE-Omega-Data-Environment-Main.webp",
+          imgWidth: 60,
+          imgHeight: 32,
         },
       ],
     },
@@ -95,17 +107,23 @@ const communicationsData = {
         {
           name: "NRG® DS-04V3",
           href: "/product/network-radio-gateway-ds-04v3",
-          image: null,
+          image: "/products/cat1/pro1/NRG-DS-04v3-Main.webp",
+          imgWidth: 110,
+          imgHeight: 28,
         },
         {
           name: "NRG® Rack Mount",
           href: "/product/network-radio-gateway-nrg-deployable-systems",
-          image: null,
+          image: "/products/cat1/pro2/NRG-RM-Rack-Mount-Main.webp",
+          imgWidth: 110,
+          imgHeight: 28,
         },
         {
           name: "PacStar® 466 (NRG®)",
           href: "/product/our-featured-network-radio-gateway",
-          image: null,
+          image: "/products/cat1/pro4/NRG-PacStar-466-Main.webp",
+          imgWidth: 60,
+          imgHeight: 32,
         },
       ],
     },
@@ -115,18 +133,24 @@ const communicationsData = {
       products: [
         {
           name: "Rugged USB Hub (RUH)",
-          href: "/product/rugged-usb-hub-ruh",
-          image: null,
+          href: "/product/rugged-usb-hub-2-0",
+          image: "/products/cat2/pro1/Ruged-USB-Hub-RUH-Main.webp",
+          imgWidth: 55,
+          imgHeight: 32,
         },
         {
           name: "Rugged USB Repeater (RUR)",
-          href: "/product/rugged-usb-repeater-rur",
-          image: null,
+          href: "/product/rugged-usb-repeater",
+          image: "/products/cat2/pro3/Rugged-USB-Repeater-RUR-Main.webp",
+          imgWidth: 70,
+          imgHeight: 30,
         },
         {
           name: "Radio Adapter Cables (RDA)",
-          href: "/product/radio-adapter-cables-rda",
-          image: null,
+          href: "/product/radio-data-adapter-rda-cables",
+          image: "/products/cat1/pro5/Radio-Adapter-Cable-RDA-Main.webp",
+          imgWidth: 50,
+          imgHeight: 32,
         },
       ],
     },
@@ -137,12 +161,16 @@ const communicationsData = {
         {
           name: "Outsource the Workload (OWL™)",
           href: "/product/outsource-the-workload-owl",
-          image: null,
+          image: "/products/cat1/pro3/OWL-Outsource-the-Workload-Main.webp",
+          imgWidth: 55,
+          imgHeight: 32,
         },
         {
           name: "Series 5000e Data Processors",
           href: "/product/series-5000-data-processors",
-          image: null,
+          image: "/products/cat3/pro10/S-5000e-Main.webp",
+          imgWidth: 85,
+          imgHeight: 30,
         },
       ],
     },
@@ -170,14 +198,35 @@ const Header = () => {
   const [activeTelemetryCategory, setActiveTelemetryCategory] = useState("recorders");
   const [activeCommCategory, setActiveCommCategory] = useState("gateways");
   const [mobileExpandedDropdown, setMobileExpandedDropdown] = useState(null);
+  const [dropdownLeft, setDropdownLeft] = useState(null);
 
   const hoverTimeoutRef = useRef(null);
+  const navItemRefs = useRef({});
+  const navbarRowRef = useRef(null);
+
+  const updateDropdownPos = (tabName) => {
+    const el = navItemRefs.current[tabName];
+    if (el) {
+      // In the dropdown, left padding is 32px and left col width is 220px.
+      // The visual anchor for the notch roof above the left category title is around 110px.
+      // NavItem's active arrow/roof is at el.offsetLeft + el.offsetWidth / 2.
+      const notchAnchorInDropdown = 110;
+      const targetLeft = el.offsetLeft + el.offsetWidth / 2 - notchAnchorInDropdown;
+      const maxLeft = navbarRowRef.current
+        ? navbarRowRef.current.offsetWidth - 750
+        : 400;
+      setDropdownLeft(Math.max(0, Math.min(targetLeft, maxLeft > 0 ? maxLeft : targetLeft)));
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 992) {
         setIsMobileMenuOpen(false);
         document.body.classList.remove("active");
+        if (hoveredTab) {
+          updateDropdownPos(hoveredTab);
+        }
       }
     };
 
@@ -197,13 +246,14 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
       if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
     };
-  }, []);
+  }, [hoveredTab]);
 
   const handleMouseEnterTab = (tabName) => {
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
       hoverTimeoutRef.current = null;
     }
+    updateDropdownPos(tabName);
     setHoveredTab(tabName);
   };
 
@@ -268,7 +318,7 @@ const Header = () => {
   return (
     <header className={`${styles.headerSection} ${isScrolled ? styles.isScrolled : ""}`}>
       <Container className={styles.navbarWrapper}>
-        <div className={styles.navbarRow}>
+        <div className={styles.navbarRow} ref={navbarRowRef}>
           {/* Left Nav Menu */}
           <nav className={styles.leftNav} aria-label="Main Left Navigation">
             <ul className={styles.navList}>
@@ -277,6 +327,9 @@ const Header = () => {
                 return (
                   <li
                     key={item.name}
+                    ref={(el) => {
+                      if (el) navItemRefs.current[item.name] = el;
+                    }}
                     className={`${styles.navItem} ${isActive ? styles.navItemActive : ""}`}
                     onMouseEnter={() => handleMouseEnterTab(item.name)}
                     onMouseLeave={handleMouseLeaveTab}
@@ -304,7 +357,7 @@ const Header = () => {
                           <path d="M 0 16 L 17 1 L 34 16 Z" fill="#0034A4" />
                           <path
                             d="M 0 16 L 17 1 L 34 16"
-                            stroke="rgba(255, 255, 255, 0.2)"
+                            stroke="rgba(255, 255, 255, 0.25)"
                             strokeWidth="1"
                           />
                           <line
@@ -374,104 +427,104 @@ const Header = () => {
           >
             {isMobileMenuOpen ? <ClosedIcon /> : <NavIcon />}
           </button>
-        </div>
 
-        {/* Desktop Mega Dropdown Menu - Clean, balanced, matching mockup */}
-        {currentDropdownData && (
-          <div
-            className={`${styles.megaDropdown} ${
-              hoveredTab === "COMMUNICATIONS" ? styles.megaDropdownComm : ""
-            }`}
-            onMouseEnter={handleMouseEnterDropdown}
-            onMouseLeave={handleMouseLeaveDropdown}
-          >
-            <div className={styles.dropdownInner}>
-              {/* Header Row: Active title & secondary clickable title */}
-              <div className={styles.dropdownHeaderRow}>
-                <h4 className={styles.colTitle}>{currentDropdownData.title}</h4>
-                <span
-                  className={styles.secondaryTitle}
-                  onClick={() => {
-                    if (hoveredTab === "TELEMETRY") {
-                      setHoveredTab("COMMUNICATIONS");
-                    } else {
-                      setHoveredTab("TELEMETRY");
-                    }
-                  }}
-                >
-                  {currentDropdownData.secondaryTitle}
-                </span>
-              </div>
-
-              {/* Main Content Row: Left Categories, In-flow Center Divider, Right Products */}
-              <div className={styles.dropdownContentRow}>
-                {/* Left Column: Categories */}
-                <div className={styles.dropdownColLeft}>
-                  <div className={styles.categoryList}>
-                    {currentDropdownData.categories.map((cat) => {
-                      const isCatActive = currentActiveCategory === cat.id;
-                      return (
-                        <div
-                          key={cat.id}
-                          className={`${styles.categoryItem} ${
-                            isCatActive ? styles.catActive : ""
-                          }`}
-                          onMouseEnter={() => {
-                            if (hoveredTab === "TELEMETRY") {
-                              setActiveTelemetryCategory(cat.id);
-                            } else {
-                              setActiveCommCategory(cat.id);
-                            }
-                          }}
-                        >
-                          <span className={styles.categoryLabel}>{cat.label}</span>
-                          {isCatActive && <span className={styles.activeBranchLine} />}
-                        </div>
-                      );
-                    })}
-                  </div>
+          {/* Desktop Mega Dropdown Menu - Clean, balanced, matching mockup */}
+          {currentDropdownData && (
+            <div
+              className={`${styles.megaDropdown} ${
+                hoveredTab === "COMMUNICATIONS" ? styles.megaDropdownComm : ""
+              }`}
+              style={dropdownLeft !== null ? { left: `${dropdownLeft}px` } : undefined}
+              onMouseEnter={handleMouseEnterDropdown}
+              onMouseLeave={handleMouseLeaveDropdown}
+            >
+              <div className={styles.dropdownInner}>
+                {/* Header Row: Active title & secondary clickable title */}
+                <div className={styles.dropdownHeaderRow}>
+                  <h4 className={styles.colTitle}>{currentDropdownData.title}</h4>
+                  <span
+                    className={styles.secondaryTitle}
+                    onClick={() => {
+                      const targetTab =
+                        hoveredTab === "TELEMETRY" ? "COMMUNICATIONS" : "TELEMETRY";
+                      updateDropdownPos(targetTab);
+                      setHoveredTab(targetTab);
+                    }}
+                  >
+                    {currentDropdownData.secondaryTitle}
+                  </span>
                 </div>
 
-                {/* Center Vertical Divider Line: in-flow between columns so it NEVER overlaps text */}
-                <div className={styles.dropdownDivider} />
-
-                {/* Right Column: Products */}
-                <div className={styles.dropdownColRight}>
-                  <div className={styles.productsSubTitleWrapper}>
-                    <span className={styles.productsBranchLine} />
-                    <span className={styles.productsSubTitle}>PRODUCTS</span>
+                {/* Main Content Row: Left Categories, In-flow Center Divider, Right Products */}
+                <div className={styles.dropdownContentRow}>
+                  {/* Left Column: Categories */}
+                  <div className={styles.dropdownColLeft}>
+                    <div className={styles.categoryList}>
+                      {currentDropdownData.categories.map((cat) => {
+                        const isCatActive = currentActiveCategory === cat.id;
+                        return (
+                          <div
+                            key={cat.id}
+                            className={`${styles.categoryItem} ${
+                              isCatActive ? styles.catActive : ""
+                            }`}
+                            onMouseEnter={() => {
+                              if (hoveredTab === "TELEMETRY") {
+                                setActiveTelemetryCategory(cat.id);
+                              } else {
+                                setActiveCommCategory(cat.id);
+                              }
+                            }}
+                          >
+                            <span className={styles.categoryLabel}>{cat.label}</span>
+                            {isCatActive && <span className={styles.activeBranchLine} />}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
 
-                  <div className={styles.productsList}>
-                    {currentCategoryObj?.products.map((prod, index) => (
-                      <Link
-                        key={index}
-                        href={prod.href}
-                        className={styles.productRow}
-                        onClick={() => setHoveredTab(null)}
-                      >
-                        <span className={styles.productName}>{prod.name}</span>
-                        {prod.image ? (
-                          <div className={styles.productImageWrapper}>
-                            <Image
-                              src={prod.image}
-                              alt={prod.name}
-                              width={prod.imgWidth || 95}
-                              height={prod.imgHeight || 20}
-                              className={styles.productThumb}
-                            />
-                          </div>
-                        ) : (
-                          <span className={styles.productArrow}>→</span>
-                        )}
-                      </Link>
-                    ))}
+                  {/* Center Vertical Divider Line: in-flow between columns so it NEVER overlaps text */}
+                  <div className={styles.dropdownDivider} />
+
+                  {/* Right Column: Products */}
+                  <div className={styles.dropdownColRight}>
+                    <div className={styles.productsSubTitleWrapper}>
+                      <span className={styles.productsBranchLine} />
+                      <span className={styles.productsSubTitle}>PRODUCTS</span>
+                    </div>
+
+                    <div className={styles.productsList}>
+                      {currentCategoryObj?.products.map((prod, index) => (
+                        <Link
+                          key={index}
+                          href={prod.href}
+                          className={styles.productRow}
+                          onClick={() => setHoveredTab(null)}
+                        >
+                          <span className={styles.productName}>{prod.name}</span>
+                          {prod.image ? (
+                            <div className={styles.productImageWrapper}>
+                              <Image
+                                src={prod.image}
+                                alt={prod.name}
+                                width={prod.imgWidth || 120}
+                                height={prod.imgHeight || 28}
+                                className={styles.productThumb}
+                              />
+                            </div>
+                          ) : (
+                            <span className={styles.productArrow}>→</span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Mobile Navigation Drawer */}
         <div
