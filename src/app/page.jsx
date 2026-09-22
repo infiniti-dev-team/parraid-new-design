@@ -1,4 +1,8 @@
 import Banner from "@/src/app/home/banner"
+import LegacyTrust from "@/src/app/home/legacy-trust"
+import IndustriesServed from "@/src/app/home/industries-served"
+import MultiDomain from "@/src/app/home/multi-domain"
+import FindOutPossible from "@/src/app/home/find-out-possible"
 import Build from "@/src/app/home/build"
 import ProductTab from "@/src/app/home/producttab"
 import Clients from "@/src/app/home/clients"
@@ -13,6 +17,10 @@ const Page = () => {
   return (
     <>
       <Banner />
+      <LegacyTrust />
+      <IndustriesServed />
+      <MultiDomain />
+      <FindOutPossible />
       {/* <Build /> */}
       {/* <ProductTab /> */}
       {/* <Clients /> */}

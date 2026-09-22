@@ -1,0 +1,124 @@
+.newFooter {
+  position: relative;
+  width: 100%;
+  background-color: #0034a4;
+  padding: 80px 0 50px;
+  overflow: hidden;
+
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4.17vw, 80px);
+  }
+
+  // Top Row: Logo on Left, Tagline on Right
+  .topRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 55px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .logoWrapper {
+      display: inline-block;
+
+      img {
+        width: auto;
+        height: clamp(38px, 2.8vw, 54px);
+        object-fit: contain;
+      }
+    }
+
+    .tagline {
+      font-family: var(--font-poppins), sans-serif;
+      font-weight: 300;
+      font-size: clamp(16px, 1.2vw, 22.6px);
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+
+  // Middle Row: Links on Left, Address/Contact on Right
+  .middleRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    .navLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      a {
+        font-family: var(--font-poppins), sans-serif;
+        font-weight: 300;
+        font-size: clamp(15px, 0.95vw, 18px);
+        line-height: 36px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-decoration: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          opacity: 0.8;
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    .contactInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      text-align: right;
+
+      @media (max-width: 767px) {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      p,
+      a {
+        font-family: var(--font-poppins), sans-serif;
+        font-weight: 300;
+        font-size: clamp(15px, 0.95vw, 18px);
+        line-height: 36px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin: 0;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  // Bottom Row: Copyright
+  .bottomRow {
+    padding-top: 10px;
+
+    .copyright {
+      font-family: var(--font-poppins), sans-serif;
+      font-weight: 300;
+      font-size: clamp(14px, 1.18vw, 22.6px);
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+}
