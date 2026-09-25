@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import styles from "@/styles/home/banner.module.scss";
 import BannerPoster from "media/home/HomeBanner.webp";
 import Image from "next/image";
-import Link from "next/link";
 
 const Banner = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -15,8 +14,7 @@ const Banner = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const handleScrollToContact = (e) => {
-    e.preventDefault();
+  const handleScrollToContact = () => {
     const contactSection =
       document.getElementById("Contact") ||
       document.getElementById("contact") ||
@@ -29,7 +27,6 @@ const Banner = () => {
         top: elementPosition - headerOffset,
         behavior: "smooth",
       });
-      window.history.pushState(null, "", "#Contact");
     }
   };
 
@@ -81,13 +78,13 @@ const Banner = () => {
               mission success.
             </p>
             <div className={styles.heroBtnWrapper}>
-              <Link
-                href="#Contact"
+              <button
+                type="button"
                 onClick={handleScrollToContact}
                 className={styles.heroConnectBtn}
               >
                 Let’s Connect
-              </Link>
+              </button>
             </div>
           </div>
         </div>

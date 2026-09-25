@@ -21,6 +21,14 @@ export default function FindOutPossible() {
       }
     };
     getIPData();
+
+    if (typeof window !== "undefined" && (window.location.hash === "#Contact" || window.location.hash === "#contact")) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
   }, []);
 
   const handleSubmit = async (e) => {

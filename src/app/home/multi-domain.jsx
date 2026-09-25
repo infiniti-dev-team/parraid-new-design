@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "@/styles/home/multi-domain.module.scss";
 
 export default function MultiDomain() {
-  const handleScrollToContact = (e) => {
-    e.preventDefault();
+  const handleScrollToContact = () => {
     const contactSection =
       document.getElementById("Contact") ||
       document.getElementById("contact") ||
@@ -18,7 +16,6 @@ export default function MultiDomain() {
         top: elementPosition - headerOffset,
         behavior: "smooth",
       });
-      window.history.pushState(null, "", "#Contact");
     }
   };
 
@@ -45,13 +42,13 @@ export default function MultiDomain() {
           <p className={styles.description}>
             Solutions engineered to excel in a spectrum of demanding environments.
           </p>
-          <Link
-            href="#Contact"
+          <button
+            type="button"
             onClick={handleScrollToContact}
             className={styles.ctaBtn}
           >
             Learn More
-          </Link>
+          </button>
         </div>
       </div>
     </section>

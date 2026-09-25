@@ -130,6 +130,8 @@
       transition: all 0.25s ease-in-out;
       white-space: nowrap;
       cursor: pointer;
+      border: none;
+      outline: none;
 
       &:hover {
         background-color: #0045d6;
