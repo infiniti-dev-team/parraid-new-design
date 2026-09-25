@@ -15,6 +15,24 @@ const Banner = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    const contactSection =
+      document.getElementById("Contact") ||
+      document.getElementById("contact") ||
+      document.getElementById("contact-form");
+    if (contactSection) {
+      const headerOffset = 112;
+      const elementPosition =
+        contactSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - headerOffset,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", "#Contact");
+    }
+  };
+
   return (
     <section className={styles.bannerSection}>
       {/* Full Bleed Background Video / Poster */}
@@ -63,7 +81,11 @@ const Banner = () => {
               mission success.
             </p>
             <div className={styles.heroBtnWrapper}>
-              <Link href="/contact-us" className={styles.heroConnectBtn}>
+              <Link
+                href="#Contact"
+                onClick={handleScrollToContact}
+                className={styles.heroConnectBtn}
+              >
                 Let’s Connect
               </Link>
             </div>

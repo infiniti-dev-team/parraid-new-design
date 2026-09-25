@@ -4,6 +4,24 @@ import Link from "next/link";
 import styles from "@/styles/home/multi-domain.module.scss";
 
 export default function MultiDomain() {
+  const handleScrollToContact = (e) => {
+    e.preventDefault();
+    const contactSection =
+      document.getElementById("Contact") ||
+      document.getElementById("contact") ||
+      document.getElementById("contact-form");
+    if (contactSection) {
+      const headerOffset = 112;
+      const elementPosition =
+        contactSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - headerOffset,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", "#Contact");
+    }
+  };
+
   return (
     <section className={styles.multiDomainSection}>
       {/* High-res UAV Drone Background */}
@@ -27,7 +45,11 @@ export default function MultiDomain() {
           <p className={styles.description}>
             Solutions engineered to excel in a spectrum of demanding environments.
           </p>
-          <Link href="/about-us" className={styles.ctaBtn}>
+          <Link
+            href="#Contact"
+            onClick={handleScrollToContact}
+            className={styles.ctaBtn}
+          >
             Learn More
           </Link>
         </div>

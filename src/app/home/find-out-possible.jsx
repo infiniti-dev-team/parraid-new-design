@@ -78,12 +78,13 @@ export default function FindOutPossible() {
   };
 
   return (
-    <section className={styles.findOutSection}>
+    <section id="Contact" className={styles.findOutSection}>
+      <div id="contact" style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none" }} />
       <div className={styles.container}>
         <div className={styles.gridWrapper}>
           {/* Left: Input Form matching Figma blue pill inputs */}
           <div className={styles.formCol}>
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form id="contact-form" className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formRow}>
                 <input
                   type="text"
