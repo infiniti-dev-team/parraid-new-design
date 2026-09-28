@@ -2,55 +2,56 @@
 
 import { useState } from "react";
 import styles from "@/styles/home/what-were-made-of.module.scss";
+import TelemetryGraphic from "./telemetry-graphic";
 
 const solutions = [
   {
     id: "tactical",
-    title: "TACTICAL COMMUNICATIONS+",
+    title: "TACTICAL COMMUNICATIONS +",
     description:
-      "Secure, resilient communications solutions that connect people, platforms, and networks in demanding environments.",
+      "Secure, resilient communications solutions that connect people, platforms, and networks in demanding environments",
     posClass: styles.posTactical,
   },
   {
     id: "telemetry",
-    title: "TELEMETRY & DATA+",
+    title: "TELEMETRY & DATA +",
     description:
-      "Capture, process, record, and distribute mission-critical data wherever the mission takes you.",
+      "Capture, process, record, and distribute mission-critical data wherever the mission takes you",
     posClass: styles.posTelemetry,
   },
   {
     id: "platform",
-    title: "PLATFORM INTEGRATION+",
+    title: "PLATFORM INTEGRATION +",
     description:
-      "Bring communications, computing, telemetry, and networking technologies together into cohesive mission solutions.",
+      "Bring communications, computing, telemetry, and networking technologies together into cohesive mission solutions",
     posClass: styles.posPlatform,
   },
   {
     id: "embedded",
-    title: "EMBEDDED SYSTEMS+",
+    title: "EMBEDDED SYSTEMS +",
     description:
-      "Hardware and software engineered to integrate directly into complex mission systems.",
+      "Hardware and software engineered to integrate directly into complex mission systems",
     posClass: styles.posEmbedded,
   },
   {
     id: "networking",
-    title: "NETWORKING & CONNECTIVITY+",
+    title: "NETWORKING & CONNECTIVITY +",
     description:
-      "Connect disparate systems and networks across the edge, from command posts to deployed platforms.",
+      "Connect disparate systems and networks across the edge, from command posts to deployed platforms",
     posClass: styles.posNetworking,
   },
   {
     id: "edge",
-    title: "EDGE TECHNOLOGY+",
+    title: "EDGE TECHNOLOGY +",
     description:
-      "Move critical data closer to where decisions happen in challenging environments.",
+      "Move critical data closer to where decisions happen in challenging environments",
     posClass: styles.posEdge,
   },
   {
     id: "signal",
-    title: "SIGNAL PROCESSING+",
+    title: "SIGNAL PROCESSING +",
     description:
-      "Turn raw signals and data into actionable information with purpose-built processing capabilities.",
+      "Turn raw signals and data into actionable information with purpose-built processing capabilities",
     posClass: styles.posSignal,
   },
 ];
@@ -94,6 +95,9 @@ export default function WhatWereMadeOf() {
             />
           </svg>
         </div>
+
+        {/* Moving Telemetry Graphic (Smoothly takes the place of the P logo whenever it disappears) */}
+        <TelemetryGraphic isVisible={!!hoveredId} />
 
         {/* Center Description Replacement (Appears smoothly when a title is hovered) */}
         <div
@@ -188,6 +192,9 @@ export default function WhatWereMadeOf() {
                 />
               </svg>
             </div>
+
+            {/* Mobile Moving Telemetry Graphic */}
+            <TelemetryGraphic isVisible={!!hoveredId} />
 
             <div
               className={`${styles.mobileDesc} ${
