@@ -127,54 +127,83 @@
   }
 }
 
-// Center Description Replacement on Hover
-.centerDescContainer {
+// Video Circle with Description (Active on hover with continuous looping video)
+.videoCircleContainer {
   position: absolute;
-  top: 57%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: clamp(380px, 44vw, 780px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-  text-align: center;
-  z-index: 4;
+  transform: translateX(-50%);
+  top: 43.125%; // exactly 530px / 1229px (matches emblem footprint)
+  width: 50.26%; // exactly 965px / 1920px
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
   pointer-events: none;
+  z-index: 3;
   transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1),
               transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
               visibility 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: opacity, transform;
 
-  &.descVisible {
+  &.circleVisible {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateX(-50%) scale(1);
   }
 
-  &.descHidden {
+  &.circleHidden {
     opacity: 0;
     visibility: hidden;
-    transform: translate(-50%, -50%) scale(0.96);
-  }
-
-  .centerDescText {
-    font-family: var(--font-montserrat), sans-serif !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    font-size: clamp(20px, 2.1vw, 36px);
-    line-height: 1.38;
-    color: #ffffff;
-    margin: 0 auto;
-    text-align: center;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 52, 164, 0.5);
-    animation: fadeInDesc 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateX(-50%) scale(0.96);
   }
 
   @media (max-width: 991px) {
     display: none;
   }
+}
+
+.circleVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 52, 164, 0.50) 0%, rgba(0, 52, 164, 0.50) 100%);
+  background-color: #0034a480;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.circleTextContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(20px, 12%, 90px);
+  text-align: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.circleText {
+  font-family: var(--font-montserrat), sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: clamp(18px, 1.85vw, 32px);
+  line-height: 1.45;
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 82%;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
+  animation: fadeInDesc 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInDesc {
@@ -398,6 +427,7 @@
     padding: 30px 24px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
+    overflow: hidden;
 
     @media (max-width: 575px) {
       min-height: 240px;
@@ -405,7 +435,44 @@
       border-radius: 16px;
     }
 
+    .mobileVideoWrapper {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .mobileVideo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .mobileVideoOverlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(0, 52, 164, 0.50) 0%, rgba(0, 52, 164, 0.50) 100%);
+        background-color: #0034a480;
+      }
+    }
+
     .mobileEmblem {
+      position: relative;
+      z-index: 2;
       width: clamp(170px, 42vw, 220px);
       height: clamp(170px, 42vw, 220px);
       display: flex;

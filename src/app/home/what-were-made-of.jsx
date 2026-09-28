@@ -1,63 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "@/styles/home/what-were-made-of.module.scss";
-import TelemetryGraphic from "./telemetry-graphic";
 
 const solutions = [
   {
     id: "tactical",
     title: "TACTICAL COMMUNICATIONS +",
     description:
-      "Secure, resilient communications solutions that connect people, platforms, and networks in demanding environments",
+      "Secure, Resilient Communications Solutions That Connect People, Platforms, And Networks In Demanding Environments.",
     posClass: styles.posTactical,
   },
   {
     id: "telemetry",
     title: "TELEMETRY & DATA +",
     description:
-      "Capture, process, record, and distribute mission-critical data wherever the mission takes you",
+      "Capture, Process, Record, And Distribute Mission-Critical Data Wherever The Mission Takes You.",
     posClass: styles.posTelemetry,
   },
   {
     id: "platform",
     title: "PLATFORM INTEGRATION +",
     description:
-      "Bring communications, computing, telemetry, and networking technologies together into cohesive mission solutions",
+      "Bring Communications, Computing, Telemetry, And Networking Technologies Together Into Cohesive Mission Solutions.",
     posClass: styles.posPlatform,
   },
   {
     id: "embedded",
     title: "EMBEDDED SYSTEMS +",
     description:
-      "Hardware and software engineered to integrate directly into complex mission systems",
+      "Hardware And Software Engineered To Integrate Directly Into Complex Mission Systems.",
     posClass: styles.posEmbedded,
   },
   {
     id: "networking",
     title: "NETWORKING & CONNECTIVITY +",
     description:
-      "Connect disparate systems and networks across the edge, from command posts to deployed platforms",
+      "Connect Disparate Systems And Networks Across The Edge From Command Posts To Deployed Platforms.",
     posClass: styles.posNetworking,
   },
   {
     id: "edge",
     title: "EDGE TECHNOLOGY +",
     description:
-      "Move critical data closer to where decisions happen in challenging environments",
+      "Move Critical Data Closer To Where Decisions Happen In Challenging Environments.",
     posClass: styles.posEdge,
   },
   {
     id: "signal",
     title: "SIGNAL PROCESSING +",
     description:
-      "Turn raw signals and data into actionable information with purpose-built processing capabilities",
+      "Turn Raw Signals And Data Into Actionable Information With Purpose-Built Processing Capabilities.",
     posClass: styles.posSignal,
   },
 ];
 
 export default function WhatWereMadeOf() {
   const [hoveredId, setHoveredId] = useState(null);
+  const videoRef = useRef(null);
+  const mobileVideoRef = useRef(null);
+
+  useEffect(() => {
+    const playVideo = (v) => {
+      if (v) {
+        v.defaultMuted = true;
+        v.muted = true;
+        const promise = v.play();
+        if (promise !== undefined) {
+          promise.catch(() => {});
+        }
+      }
+    };
+    playVideo(videoRef.current);
+    playVideo(mobileVideoRef.current);
+  }, []);
+
+  const handleMouseEnter = (id) => {
+    setHoveredId(id);
+    if (videoRef.current && videoRef.current.paused) {
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredId(null);
+  };
+
+  const handleMobileClick = (id) => {
+    const next = hoveredId === id ? null : id;
+    setHoveredId(next);
+    if (next && mobileVideoRef.current && mobileVideoRef.current.paused) {
+      mobileVideoRef.current.play().catch(() => {});
+    }
+  };
 
   const activeSolution = solutions.find((item) => item.id === hoveredId);
 
@@ -96,24 +131,35 @@ export default function WhatWereMadeOf() {
           </svg>
         </div>
 
-        {/* Moving Telemetry Graphic (Smoothly takes the place of the P logo whenever it disappears) */}
-        <TelemetryGraphic isVisible={!!hoveredId} />
-
-        {/* Center Description Replacement (Appears smoothly when a title is hovered) */}
+        {/* Video Circle Container (Smoothly replaces the emblem on hover with continuous looping video & blue overlay) */}
         <div
-          className={`${styles.centerDescContainer} ${
-            hoveredId ? styles.descVisible : styles.descHidden
+          className={`${styles.videoCircleContainer} ${
+            hoveredId ? styles.circleVisible : styles.circleHidden
           }`}
-          aria-live="polite"
+          aria-hidden={hoveredId ? "false" : "true"}
         >
-          {activeSolution && (
-            <p key={activeSolution.id} className={styles.centerDescText}>
-              {activeSolution.description}
-            </p>
-          )}
+          <video
+            ref={videoRef}
+            className={styles.circleVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+          >
+            <source src="/home/backgroud-video.mp4" type="video/mp4" />
+          </video>
+          <div className={styles.videoOverlay} />
+          <div className={styles.circleTextContainer} aria-live="polite">
+            {activeSolution && (
+              <p key={activeSolution.id} className={styles.circleText}>
+                {activeSolution.description}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* Desktop 7 Floating Titles (Exact Figma Coordinates) */}
+        {/* Desktop 7 Floating Titles */}
         <div className={styles.desktopStage}>
           {solutions.map((item) => {
             const isHovered = hoveredId === item.id;
@@ -131,10 +177,10 @@ export default function WhatWereMadeOf() {
                 type="button"
                 key={item.id}
                 className={`${styles.solutionItem} ${item.posClass} ${stateClass}`}
-                onMouseEnter={() => setHoveredId(item.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                onFocus={() => setHoveredId(item.id)}
-                onBlur={() => setHoveredId(null)}
+                onMouseEnter={() => handleMouseEnter(item.id)}
+                onMouseLeave={handleMouseLeave}
+                onFocus={() => handleMouseEnter(item.id)}
+                onBlur={handleMouseLeave}
                 aria-label={item.title}
               >
                 {item.title}
@@ -163,9 +209,7 @@ export default function WhatWereMadeOf() {
                   type="button"
                   key={item.id}
                   className={`${styles.mobileItem} ${stateClass}`}
-                  onClick={() =>
-                    setHoveredId(hoveredId === item.id ? null : item.id)
-                  }
+                  onClick={() => handleMobileClick(item.id)}
                   aria-label={item.title}
                 >
                   {item.title}
@@ -174,8 +218,29 @@ export default function WhatWereMadeOf() {
             })}
           </div>
 
-          {/* Details & Emblem Area below buttons */}
+          {/* Details & Center Area below buttons */}
           <div className={styles.mobileCenterArea}>
+            {/* Background Video with Gradient Overlay on Selection */}
+            <div
+              className={`${styles.mobileVideoWrapper} ${
+                hoveredId ? styles.visible : styles.hidden
+              }`}
+              aria-hidden="true"
+            >
+              <video
+                ref={mobileVideoRef}
+                className={styles.mobileVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source src="/home/backgroud-video.mp4" type="video/mp4" />
+              </video>
+              <div className={styles.mobileVideoOverlay} />
+            </div>
+
             <div
               className={`${styles.mobileEmblem} ${
                 hoveredId ? styles.hidden : ""
@@ -192,9 +257,6 @@ export default function WhatWereMadeOf() {
                 />
               </svg>
             </div>
-
-            {/* Mobile Moving Telemetry Graphic */}
-            <TelemetryGraphic isVisible={!!hoveredId} />
 
             <div
               className={`${styles.mobileDesc} ${
