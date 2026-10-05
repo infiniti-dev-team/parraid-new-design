@@ -147,7 +147,7 @@ export default function WhatWereMadeOf() {
             playsInline
             preload="auto"
           >
-            <source src="/home/backgroud-video.mp4" type="video/mp4" />
+            <source src="/home/backgroud-video.mp4?v=2" type="video/mp4" />
           </video>
           <div className={styles.videoOverlay} />
           <div className={styles.circleTextContainer} aria-live="polite">
@@ -236,7 +236,7 @@ export default function WhatWereMadeOf() {
                 playsInline
                 preload="auto"
               >
-                <source src="/home/backgroud-video.mp4" type="video/mp4" />
+                <source src="/home/backgroud-video.mp4?v=2" type="video/mp4" />
               </video>
               <div className={styles.mobileVideoOverlay} />
             </div>
