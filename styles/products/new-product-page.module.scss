@@ -7,45 +7,102 @@
   overflow: hidden;
 }
 
-// Background with exact Figma blue blurred elliptical auras
+// Background with exact Figma blue blurred elliptical auras across all sections
 .auraOverlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
   pointer-events: none;
-  z-index: 1;
   overflow: hidden;
+  z-index: 1;
 
-  .ellipseRightWrapper {
+  // Exact Figma Ellipse 1 (right vertical atmospheric aura)
+  // Default for standard framing (15 products: top: 893.5px)
+  .ellipseRightContainer {
     position: absolute;
-    top: 1162px;
-    right: -240px;
-    width: clamp(600px, 50vw, 1100px);
-    height: auto;
+    left: calc(1525 / 1920 * 100%);
+    top: 893.5px;
+    width: calc(524 / 1920 * 100%);
+    height: 1224px;
     pointer-events: none;
-    opacity: 0.85;
-    transform: none;
 
-    .ellipseRight {
-      width: 100%;
-      height: auto;
-      display: block;
+    .ellipseRightInner {
+      position: absolute;
+      top: -53.43%;
+      bottom: -53.43%;
+      left: -124.81%;
+      right: -124.81%;
     }
   }
 
-  .ellipseLeftWrapper {
+  // Exact Figma Ellipse 2 (left-center radiant atmospheric aura)
+  // Default for standard framing (15 products: top: 826.5px)
+  .ellipseLeftContainer {
     position: absolute;
-    top: 1250px;
-    left: -180px;
-    width: clamp(500px, 45vw, 950px);
-    height: auto;
+    left: calc(373 / 1920 * 100%);
+    top: 826.5px;
+    width: calc(504 / 1920 * 100%);
+    height: 506px;
     pointer-events: none;
-    opacity: 0.75;
-    transform: translateY(-50%);
 
-    .ellipseLeft {
-      width: 100%;
-      height: auto;
-      display: block;
+    .ellipseLeftInner {
+      position: absolute;
+      top: -129.25%;
+      bottom: -129.25%;
+      left: -129.76%;
+      right: -129.76%;
+    }
+  }
+
+  .ellipseImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    pointer-events: none;
+  }
+
+  // Modifier for ODE & EDGE2 (from Figma: node-id 218:58 and 220:292)
+  &.tallHeroAura {
+    .ellipseRightContainer {
+      top: 1162px;
+    }
+    .ellipseLeftContainer {
+      top: 1095px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .ellipseRightContainer {
+      top: clamp(750px, 60vw, 1050px);
+      left: 55%;
+      width: 45%;
+      height: 950px;
+    }
+    .ellipseLeftContainer {
+      top: clamp(550px, 45vw, 850px);
+      left: 5%;
+      width: 50%;
+      height: 450px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ellipseRightContainer {
+      top: 800px;
+      left: 40%;
+      width: 65%;
+      height: 850px;
+    }
+    .ellipseLeftContainer {
+      top: 550px;
+      left: -5%;
+      width: 65%;
+      height: 380px;
     }
   }
 }
@@ -77,6 +134,7 @@
   align-items: center;
   padding-bottom: clamp(20px, 2.5vw, 45px);
   overflow: hidden;
+  background: transparent;
 }
 
 .imageStage {

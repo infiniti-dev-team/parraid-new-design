@@ -57,26 +57,31 @@ export default function NewProductPage({ product }) {
   return (
     <div className={styles.pageWrapper}>
       {/* Exact Figma SVG blurred ambient ellipse glows */}
-      <div className={styles.auraOverlay} aria-hidden="true">
-        <div className={styles.ellipseRightWrapper}>
-          <Image
-            src="/products/new-images/ellipse-bg-1.svg"
-            alt=""
-            width={1048}
-            height={1224}
-            className={styles.ellipseRight}
-            priority
-          />
+      <div
+        className={`${styles.auraOverlay} ${
+          product.slug === "ode" || product.slug === "edge2"
+            ? styles.tallHeroAura
+            : ""
+        }`}
+        aria-hidden="true"
+      >
+        <div className={styles.ellipseRightContainer}>
+          <div className={styles.ellipseRightInner}>
+            <img
+              src="/products/new-images/ellipse-bg-1.svg"
+              alt=""
+              className={styles.ellipseImg}
+            />
+          </div>
         </div>
-        <div className={styles.ellipseLeftWrapper}>
-          <Image
-            src="/products/new-images/ellipse-bg-2.svg"
-            alt=""
-            width={1008}
-            height={1012}
-            className={styles.ellipseLeft}
-            priority
-          />
+        <div className={styles.ellipseLeftContainer}>
+          <div className={styles.ellipseLeftInner}>
+            <img
+              src="/products/new-images/ellipse-bg-2.svg"
+              alt=""
+              className={styles.ellipseImg}
+            />
+          </div>
         </div>
       </div>
 
@@ -187,6 +192,7 @@ export default function NewProductPage({ product }) {
                         }
                         width={688}
                         height={380}
+                        priority
                         className={styles.secondImg}
                       />
                     </div>
