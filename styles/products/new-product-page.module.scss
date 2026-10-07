@@ -13,20 +13,20 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
-  max-width: 1920px;
+  width: 1920px;
   height: 100%;
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
+  filter: brightness(1.22) saturate(1.05);
 
   // Exact Figma Ellipse 1 (right vertical atmospheric aura)
-  // Default for standard framing (15 products: top: 893.5px)
+  // Default for standard framing (15 products: left: 1525px, top: 893.5px, width: 524px, height: 1224px)
   .ellipseRightContainer {
     position: absolute;
-    left: calc(1525 / 1920 * 100%);
+    left: 1525px;
     top: 893.5px;
-    width: calc(524 / 1920 * 100%);
+    width: 524px;
     height: 1224px;
     pointer-events: none;
 
@@ -40,12 +40,12 @@
   }
 
   // Exact Figma Ellipse 2 (left-center radiant atmospheric aura)
-  // Default for standard framing (15 products: top: 826.5px)
+  // Default for standard framing (15 products: left: 373px, top: 826.5px, width: 504px, height: 506px)
   .ellipseLeftContainer {
     position: absolute;
-    left: calc(373 / 1920 * 100%);
+    left: 373px;
     top: 826.5px;
-    width: calc(504 / 1920 * 100%);
+    width: 504px;
     height: 506px;
     pointer-events: none;
 
@@ -77,32 +77,36 @@
   }
 
   @media (max-width: 1024px) {
+    width: 100%;
+    left: 0;
+    transform: none;
+
     .ellipseRightContainer {
-      top: clamp(750px, 60vw, 1050px);
-      left: 55%;
-      width: 45%;
-      height: 950px;
+      left: 60%;
+      top: clamp(650px, 55vw, 900px);
+      width: 450px;
+      height: 900px;
     }
     .ellipseLeftContainer {
-      top: clamp(550px, 45vw, 850px);
-      left: 5%;
-      width: 50%;
-      height: 450px;
+      left: -100px;
+      top: clamp(450px, 40vw, 750px);
+      width: 400px;
+      height: 400px;
     }
   }
 
   @media (max-width: 768px) {
     .ellipseRightContainer {
-      top: 800px;
-      left: 40%;
-      width: 65%;
-      height: 850px;
+      left: 50%;
+      top: 600px;
+      width: 320px;
+      height: 600px;
     }
     .ellipseLeftContainer {
-      top: 550px;
-      left: -5%;
-      width: 65%;
-      height: 380px;
+      left: -120px;
+      top: 450px;
+      width: 300px;
+      height: 300px;
     }
   }
 }

@@ -97,6 +97,10 @@ export default function NewProductPage({ product }) {
                   width={product.imageWidth || 960}
                   height={product.imageHeight || 680}
                   priority
+                  style={{
+                    maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
+                    maxHeight: product.imageHeight ? `${product.imageHeight}px` : undefined,
+                  }}
                   className={styles.mainImg}
                 />
               </div>
