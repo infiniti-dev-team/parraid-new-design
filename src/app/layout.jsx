@@ -16,6 +16,15 @@ const myFont = localFont({
   variable: "--font-myfont",
 })
 
+const finderFont = localFont({
+  src: [
+    { path: "./assets/fonts/Finder-Light.woff2", weight: "300", style: "normal" },
+    { path: "./assets/fonts/Finder-Light.woff", weight: "300", style: "normal" },
+    { path: "./assets/fonts/Finder-Light.ttf", weight: "300", style: "normal" },
+  ],
+  variable: "--font-finder-local",
+})
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -53,11 +62,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${myFont.variable} ${montserrat.variable} ${finderFont.variable}`}>
       <head>
         <Tags />
       </head>
-      <body className={`${poppins.variable} ${myFont.variable} ${montserrat.variable}`}>
+      <body className={`${poppins.variable} ${myFont.variable} ${montserrat.variable} ${finderFont.variable}`}>
         <Header />
         <ScrollToTop />
         {children}

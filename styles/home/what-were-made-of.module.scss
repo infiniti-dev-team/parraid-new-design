@@ -115,10 +115,12 @@
     transform: translateX(-50%) scale(0.96);
   }
 
-  .emblemSvg {
+  .emblemSvg,
+  .emblemImage {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: contain;
     shape-rendering: geometricPrecision;
   }
 

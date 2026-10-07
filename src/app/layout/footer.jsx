@@ -7,8 +7,9 @@ import NewFooter from "@/src/app/home/new-footer";
 const Footer = () => {
     const pathname = usePathname();
     const isHome = pathname === "/" || pathname === "";
+    const isProduct = pathname?.startsWith("/product");
 
-    if (isHome) {
+    if (isHome || isProduct) {
         return <NewFooter />;
     }
 

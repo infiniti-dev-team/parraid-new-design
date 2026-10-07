@@ -1,0 +1,286 @@
+.diagramWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1242px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.diagramStage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: clamp(560px, 50vw, 837px);
+  margin: 0 auto;
+}
+
+.soldierContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  aspect-ratio: 328 / 837;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .soldierImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.pinNode {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &.active {
+    z-index: 25;
+
+    .pinCircle {
+      background: transparent;
+    }
+
+    .plusIcon {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+
+    .pLogoWrapper {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .callout {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(-50%) scale(1);
+    }
+
+    .connectorLine {
+      opacity: 1;
+      width: clamp(28px, 2.6vw, 42px);
+    }
+  }
+
+  &:focus-visible {
+    .pinCircle {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.pinCircle {
+  position: relative;
+  width: clamp(44px, 4.6vw, 66px);
+  height: clamp(44px, 4.6vw, 66px);
+  border-radius: 50%;
+  background: #0034a4;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s linear;
+
+  .plusIcon {
+    width: 35%;
+    height: 35%;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.3s linear, transform 0.3s linear;
+  }
+
+  .pLogoWrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity 0.3s linear, transform 0.3s linear;
+
+    .pLogoImg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+    }
+  }
+}
+
+.callout {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.96);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 15;
+  transition: opacity 0.3s linear, transform 0.3s linear;
+}
+
+.calloutRight {
+  left: 100%;
+  margin-left: 10px;
+  flex-direction: row;
+
+  .connectorLine {
+    margin-right: 14px;
+  }
+}
+
+.calloutLeft {
+  right: 100%;
+  margin-right: 10px;
+  flex-direction: row-reverse;
+
+  .connectorLine {
+    margin-left: 14px;
+  }
+}
+
+.connectorLine {
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  opacity: 0;
+  flex-shrink: 0;
+  transition: width 0.3s linear, opacity 0.3s linear;
+}
+
+.labelText {
+  font-family: var(--font-poppins), sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(15px, 1.04vw, 20px);
+  line-height: 33px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.85);
+  transition: transform 0.3s ease-out;
+}
+
+// Special GUI Phone container matching Figma screenshot exactly
+.guiPhoneContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.phoneFrame {
+  position: relative;
+  width: clamp(74px, 6.4vw, 88px);
+  aspect-ratio: 343 / 696;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 52, 164, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease-out;
+
+  .phoneImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .phoneOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+
+  .guiCenterText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-poppins), sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(18px, 1.6vw, 24px);
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 0, 0, 0.85);
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagramStage {
+    max-width: 100%;
+    height: clamp(440px, 85vw, 560px);
+  }
+
+  .calloutRight,
+  .calloutLeft {
+    .labelText {
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  .phoneFrame {
+    width: 58px;
+
+    .guiCenterText {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .diagramStage {
+    height: 400px;
+  }
+
+  .pinCircle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .calloutRight,
+  .calloutLeft {
+    .labelText {
+      font-size: 11px;
+      line-height: 14px;
+      white-space: normal;
+      max-width: 110px;
+    }
+  }
+
+  .phoneFrame {
+    width: 44px;
+
+    .guiCenterText {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .diagramStage {
+    height: 360px;
+  }
+}

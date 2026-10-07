@@ -1,11 +1,24 @@
 import { ProdDetails } from "@/src/app/data/products/data";
+import { findProduct } from "@/src/app/data/products/new-products-data";
 import ProductPage from "@/src/app/product/components/productpage";
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
 
     const allProducts = Object.values(ProdDetails).flat();
-    const product = allProducts.find((p) => p.slug === slug);
+    let product = allProducts.find((p) => p.slug === slug);
+
+    if (!product) {
+        const newProd = findProduct(slug);
+        if (newProd) {
+            product = {
+                slug: newProd.slug,
+                tit: newProd.title,
+                desc: newProd.topParagraph || "",
+                images: [newProd.mainImage],
+            };
+        }
+    }
 
     if (!product) {
         return {

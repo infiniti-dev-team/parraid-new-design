@@ -1,24 +1,11 @@
 .findOutSection {
   position: relative;
   width: 100%;
-  min-height: 822px;
-  padding: 110px 0 120px;
+  padding: clamp(60px, 7.76vw, 149px) 0 clamp(80px, 9.11vw, 175px);
   scroll-margin-top: 112px;
-  background: #000000;
-  background-image: radial-gradient(circle at 75% 50%, rgba(15, 30, 65, 0.45) 0%, rgba(0, 0, 0, 0.98) 70%);
+  background: transparent;
   overflow: hidden;
-
-  // Ambient gradient
-  .bgImage {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
-    pointer-events: none;
-    z-index: 0;
-  }
+  box-sizing: border-box;
 
   .container {
     position: relative;
@@ -26,35 +13,50 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 clamp(20px, 4.17vw, 80px);
+    box-sizing: border-box;
   }
 
   .gridWrapper {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(40px, 5.2vw, 100px);
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: clamp(40px, 9.32vw, 179px);
+    width: 100%;
+    box-sizing: border-box;
 
     @media (max-width: 1199px) {
-      grid-template-columns: 1fr;
-      gap: 60px;
+      flex-direction: column;
+      gap: 50px;
     }
   }
 
-  // Left Form Column
+  // Left Form Column (Figma node 218:194, width: 863px)
   .formCol {
-    width: 100%;
+    flex: 1 1 863px;
     max-width: 863px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    @media (max-width: 1199px) {
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
 
     .form {
       display: flex;
       flex-direction: column;
       gap: 24px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .formRow {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 27px;
+      width: 100%;
+      box-sizing: border-box;
 
       @media (max-width: 640px) {
         grid-template-columns: 1fr;
@@ -68,7 +70,8 @@
       background-color: #0034a4;
       border: 1px solid transparent;
       border-radius: 100px;
-      padding: 0 32px;
+      padding: 0 28px;
+      box-sizing: border-box;
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
       font-weight: 400 !important;
@@ -76,21 +79,23 @@
       line-height: 55px;
       color: #ffffff;
       outline: none;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
 
       &::placeholder {
         color: #ffffff;
+        opacity: 1;
         text-transform: uppercase;
         font-family: var(--font-montserrat), sans-serif !important;
         font-style: normal !important;
         font-weight: 400 !important;
+        font-size: clamp(16px, 1.04vw, 20px);
         letter-spacing: 0.02em;
       }
 
       &:focus {
-        border-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.6);
         background-color: #003cc2;
-        box-shadow: 0 0 15px rgba(0, 52, 164, 0.4);
+        box-shadow: 0 0 16px rgba(0, 52, 164, 0.45);
       }
     }
 
@@ -100,45 +105,52 @@
       background-color: #0034a4;
       border: 1px solid transparent;
       border-radius: 20px;
-      padding: 20px 32px;
+      padding: 20px 28px;
+      box-sizing: border-box;
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
       font-weight: 400 !important;
       font-size: clamp(16px, 1.04vw, 20px);
-      line-height: 1.5;
+      line-height: 1.45;
       color: #ffffff;
       outline: none;
       resize: none;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
 
       &::placeholder {
         color: #ffffff;
+        opacity: 1;
         text-transform: uppercase;
         font-family: var(--font-montserrat), sans-serif !important;
         font-style: normal !important;
         font-weight: 400 !important;
+        font-size: clamp(16px, 1.04vw, 20px);
         letter-spacing: 0.02em;
       }
 
       &:focus {
-        border-color: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.6);
         background-color: #003cc2;
-        box-shadow: 0 0 15px rgba(0, 52, 164, 0.4);
+        box-shadow: 0 0 16px rgba(0, 52, 164, 0.45);
       }
     }
 
     .btnWrapper {
       display: flex;
-      margin-top: 10px;
+      margin-top: 3px; // 24px + 3px = 27px gap to match Figma exactly
+      width: 100%;
     }
 
+    // Submit button (Figma node 218:205 / 218:206, width: 390px, height: 55px)
     .submitBtn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 195px;
+      width: 390px;
+      max-width: 100%;
       height: 55px;
-      padding: 0 42px;
+      padding: 0 32px;
+      box-sizing: border-box;
       background-color: #ffffff;
       color: #0034a4;
       font-family: var(--font-poppins), sans-serif !important;
@@ -156,7 +168,7 @@
       &:hover:not(:disabled) {
         background-color: #f0f4ff;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+        box-shadow: 0 6px 22px rgba(255, 255, 255, 0.28);
       }
 
       &:active:not(:disabled) {
@@ -173,8 +185,9 @@
       color: #ff6b6b;
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
-      font-size: 14px;
-      margin-top: 8px;
+      font-size: 15px;
+      margin-top: 10px;
+      line-height: 1.4;
     }
 
     .successMsg {
@@ -182,20 +195,23 @@
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
       font-size: 16px;
-      margin-top: 8px;
+      margin-top: 10px;
+      line-height: 1.4;
     }
   }
 
-  // Right Text Column
+  // Right Text Column (Figma node 218:190, width: 592px)
   .textCol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 620px;
+    flex: 0 1 592px;
+    max-width: 592px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 
     @media (max-width: 1199px) {
       max-width: 100%;
-      order: -1;
+      flex: 1 1 100%;
+      order: -1; // Heading appears above form on tablet/mobile
     }
 
     .headline {
@@ -203,11 +219,17 @@
       font-style: normal !important;
       font-weight: 700 !important;
       font-size: clamp(38px, 5.35vw, 102.7px);
-      line-height: 1.09;
+      line-height: 1.088; // 111.689px / 102.671px = 1.088
       text-transform: uppercase;
       color: #ffffff;
-      margin: 0 0 24px;
+      margin: 0;
       letter-spacing: -0.01em;
+      max-width: 543px; // Matching Figma node 218:191 width 543px
+      overflow-wrap: break-word;
+
+      @media (max-width: 1199px) {
+        max-width: 100%;
+      }
 
       @media (max-width: 767px) {
         line-height: 1.15;
@@ -219,9 +241,11 @@
       font-style: normal !important;
       font-weight: 400 !important;
       font-size: clamp(16px, 1.05vw, 20px);
-      line-height: 1.35;
+      line-height: 1.35; // 27px / 20px = 1.35
       color: #ffffff;
-      margin: 0;
+      margin: clamp(20px, 2.4vw, 46px) 0 0; // Matching Figma 46px gap
+      max-width: 592px;
+      overflow-wrap: break-word;
     }
   }
 }
