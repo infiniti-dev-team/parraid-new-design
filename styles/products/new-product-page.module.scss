@@ -71,6 +71,7 @@
     .ellipseRightContainer {
       top: 1162px;
     }
+
     .ellipseLeftContainer {
       top: 1095px;
     }
@@ -87,6 +88,7 @@
       width: 450px;
       height: 900px;
     }
+
     .ellipseLeftContainer {
       left: -100px;
       top: clamp(450px, 40vw, 750px);
@@ -102,6 +104,7 @@
       width: 320px;
       height: 600px;
     }
+
     .ellipseLeftContainer {
       left: -120px;
       top: 450px;
@@ -216,7 +219,7 @@
     font-style: normal !important;
     font-size: clamp(18px, 4.03vw, 77.34px);
     color: #ffffff;
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   .headingDash {
@@ -243,9 +246,11 @@
       font-size: clamp(26px, 7vw, 36px);
       margin-bottom: 6px;
     }
+
     .headingDash {
       display: none;
     }
+
     .headingLight {
       display: block;
       font-size: clamp(17px, 4.8vw, 22px);
@@ -344,7 +349,7 @@
   line-height: 33px;
   color: #ffffff;
   text-align: right;
-  max-width: 884px;
+  max-width: 870px;
   width: 100%;
   margin: 0;
   word-break: break-word;
@@ -361,8 +366,12 @@
 // ==========================================
 .bulletsSection {
   width: 100%;
-  max-width: 884px;
+  max-width: 1777px;
   margin-bottom: clamp(60px, 7.76vw, 149px);
+
+  &.narrowBullets {
+    max-width: 870px;
+  }
 }
 
 .bulletList {
@@ -372,6 +381,11 @@
   padding-left: clamp(24px, 2vw, 36px) !important;
   margin: 0 !important;
   display: block !important;
+
+  &.poppinsBullets .bulletItem {
+    font-family: var(--font-finder), sans-serif !important;
+    line-height: 47px;
+  }
 }
 
 .bulletItem {
@@ -501,7 +515,7 @@
 // ==========================================
 .subsectionsArea {
   width: 100%;
-  max-width: 870px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   gap: clamp(40px, 2.76vw, 53px);
@@ -518,7 +532,7 @@
     font-weight: 600 !important;
     font-size: clamp(22px, 1.56vw, 30px);
     color: #ffffff;
-    text-transform: uppercase;
+    text-transform: none;
     margin: 0 0 16px 0;
     line-height: 33px;
     letter-spacing: 0;
@@ -592,6 +606,10 @@
     line-height: 33px;
     color: #ffffff;
     margin: 0;
+
+    &.poppinsParagraph {
+      font-family: var(--font-poppins), sans-serif !important;
+    }
   }
 }
 

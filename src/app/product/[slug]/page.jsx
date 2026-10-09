@@ -5,19 +5,18 @@ import ProductPage from "@/src/app/product/components/productpage";
 export async function generateMetadata({ params }) {
     const { slug } = await params;
 
-    const allProducts = Object.values(ProdDetails).flat();
-    let product = allProducts.find((p) => p.slug === slug);
-
-    if (!product) {
-        const newProd = findProduct(slug);
-        if (newProd) {
-            product = {
-                slug: newProd.slug,
-                tit: newProd.title,
-                desc: newProd.topParagraph || "",
-                images: [newProd.mainImage],
-            };
-        }
+    let product = null;
+    const newProd = findProduct(slug);
+    if (newProd) {
+        product = {
+            slug: newProd.slug,
+            tit: newProd.title,
+            desc: newProd.topParagraph || "",
+            images: [newProd.mainImage],
+        };
+    } else {
+        const allProducts = Object.values(ProdDetails).flat();
+        product = allProducts.find((p) => p.slug === slug);
     }
 
     if (!product) {

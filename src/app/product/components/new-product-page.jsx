@@ -160,8 +160,16 @@ export default function NewProductPage({ product }) {
           {/* 4. Left-Aligned Content (Bullets / Dual Section / Subsections / OWL Diagram) */}
           {/* 4a. Bullets Section */}
           {product.bullets && product.bullets.length > 0 && (
-            <section className={styles.bulletsSection}>
-              <ul className={styles.bulletList}>
+            <section
+              className={`${styles.bulletsSection} ${
+                product.bulletMaxWidth === 870 ? styles.narrowBullets : ""
+              }`}
+            >
+              <ul
+                className={`${styles.bulletList} ${
+                  product.bulletFont === "poppins" ? styles.poppinsBullets : ""
+                }`}
+              >
                 {product.bullets.map((bullet, idx) => (
                   <li key={idx} className={styles.bulletItem}>
                     <span className={styles.bulletText}>{bullet}</span>
@@ -196,8 +204,8 @@ export default function NewProductPage({ product }) {
                           product.secondSection.title ||
                           "Product Feature"
                         }
-                        width={688}
-                        height={380}
+                        width={product.secondSection.imageWidth || 688}
+                        height={product.secondSection.imageHeight || 380}
                         priority
                         className={styles.secondImg}
                       />
@@ -234,7 +242,15 @@ export default function NewProductPage({ product }) {
           {/* 4d. Extra paragraph for S-5000e, NRG RM-XX, RUH3 */}
           {product.secondParagraph && (
             <section className={styles.extraParagraphSection}>
-              <p className={styles.secondParagraph}>{product.secondParagraph}</p>
+              <p
+                className={`${styles.secondParagraph} ${
+                  product.secondParagraphFont === "poppins"
+                    ? styles.poppinsParagraph
+                    : ""
+                }`}
+              >
+                {product.secondParagraph}
+              </p>
             </section>
           )}
 
