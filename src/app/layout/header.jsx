@@ -30,12 +30,19 @@ const telemetryData = {
           imgWidth: 120,
           imgHeight: 28,
         },
+        // {
+        //   name: "IMUX G2eHybrid",
+        //   href: "/product/imux-g2e-and-g2eh-recorders",
+        //   image: "/products/dropdown/imux-g2e-hybrid.webp",
+        //   imgWidth: 80,
+        //   imgHeight: 32,
+        // },
         {
-          name: "IMUX G2eHybrid",
-          href: "/product/imux-g2e-and-g2eh-recorders",
-          image: "/products/dropdown/imux-g2e-hybrid.webp",
-          imgWidth: 80,
-          imgHeight: 32,
+          name: "IMUX G3",
+          href: "/product/imux-g3",
+          image: "/products/cat3/pro4/G3-Main.webp",
+          imgWidth: 100,
+          imgHeight: 26,
         },
       ],
     },
@@ -125,6 +132,13 @@ const communicationsData = {
           imgWidth: 60,
           imgHeight: 32,
         },
+        {
+          name: "NRG® LS-04v2",
+          href: "/product/nrg-ls-04v2",
+          image: "/products/new-images/New Website Photo_LS-04v2.png",
+          imgWidth: 42,
+          imgHeight: 28,
+        },
       ],
     },
     {
@@ -145,13 +159,13 @@ const communicationsData = {
           imgWidth: 70,
           imgHeight: 30,
         },
-        {
-          name: "Radio Adapter Cables (RDA)",
-          href: "/product/radio-data-adapter-rda-cables",
-          image: "/products/cat1/pro5/Radio-Adapter-Cable-RDA-Main.webp",
-          imgWidth: 50,
-          imgHeight: 32,
-        },
+        // {
+        //   name: "Radio Adapter Cables (RDA)",
+        //   href: "/product/radio-data-adapter-rda-cables",
+        //   image: "/products/cat1/pro5/Radio-Adapter-Cable-RDA-Main.webp",
+        //   imgWidth: 50,
+        //   imgHeight: 32,
+        // },
       ],
     },
     {
@@ -301,15 +315,15 @@ const Header = () => {
     hoveredTab === "TELEMETRY"
       ? telemetryData
       : hoveredTab === "COMMUNICATIONS"
-      ? communicationsData
-      : null;
+        ? communicationsData
+        : null;
 
   const currentActiveCategory =
     hoveredTab === "TELEMETRY"
       ? activeTelemetryCategory
       : hoveredTab === "COMMUNICATIONS"
-      ? activeCommCategory
-      : "recorders";
+        ? activeCommCategory
+        : "recorders";
 
   const currentCategoryObj =
     currentDropdownData?.categories.find((c) => c.id === currentActiveCategory) ||
@@ -431,9 +445,8 @@ const Header = () => {
           {/* Desktop Mega Dropdown Menu - Clean, balanced, matching mockup */}
           {currentDropdownData && (
             <div
-              className={`${styles.megaDropdown} ${
-                hoveredTab === "COMMUNICATIONS" ? styles.megaDropdownComm : ""
-              }`}
+              className={`${styles.megaDropdown} ${hoveredTab === "COMMUNICATIONS" ? styles.megaDropdownComm : ""
+                }`}
               style={dropdownLeft !== null ? { left: `${dropdownLeft}px` } : undefined}
               onMouseEnter={handleMouseEnterDropdown}
               onMouseLeave={handleMouseLeaveDropdown}
@@ -465,9 +478,8 @@ const Header = () => {
                         return (
                           <div
                             key={cat.id}
-                            className={`${styles.categoryItem} ${
-                              isCatActive ? styles.catActive : ""
-                            }`}
+                            className={`${styles.categoryItem} ${isCatActive ? styles.catActive : ""
+                              }`}
                             onMouseEnter={() => {
                               if (hoveredTab === "TELEMETRY") {
                                 setActiveTelemetryCategory(cat.id);
@@ -528,9 +540,8 @@ const Header = () => {
 
         {/* Mobile Navigation Drawer */}
         <div
-          className={`${styles.mobileDrawer} ${
-            isMobileMenuOpen ? styles.mobileDrawerActive : ""
-          }`}
+          className={`${styles.mobileDrawer} ${isMobileMenuOpen ? styles.mobileDrawerActive : ""
+            }`}
         >
           <div className={styles.mobileInner}>
             <ul className={styles.mobileNavList}>
