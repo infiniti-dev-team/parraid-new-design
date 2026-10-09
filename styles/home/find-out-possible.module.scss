@@ -198,6 +198,14 @@
       order: -1;
     }
 
+    .desktopBr {
+      display: inline;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
     .headline {
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
@@ -210,7 +218,10 @@
       letter-spacing: -0.01em;
 
       @media (max-width: 767px) {
-        line-height: 1.15;
+        font-size: clamp(18px, 5.6vw, 36px);
+        line-height: 1.2;
+        white-space: nowrap;
+        margin: 0 0 14px;
       }
     }
 

@@ -214,6 +214,14 @@
       order: -1; // Heading appears above form on tablet/mobile
     }
 
+    .desktopBr {
+      display: inline;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
     .headline {
       font-family: var(--font-montserrat), sans-serif !important;
       font-style: normal !important;
@@ -232,7 +240,9 @@
       }
 
       @media (max-width: 767px) {
-        line-height: 1.15;
+        font-size: clamp(18px, 5.6vw, 36px);
+        line-height: 1.2;
+        white-space: nowrap;
       }
     }
 
@@ -246,6 +256,10 @@
       margin: clamp(20px, 2.4vw, 46px) 0 0; // Matching Figma 46px gap
       max-width: 592px;
       overflow-wrap: break-word;
+
+      @media (max-width: 767px) {
+        margin-top: 14px;
+      }
     }
   }
 }

@@ -8,8 +8,8 @@ export const newProductsData = [
     titleLight: "OMEGA DATA ENVIRONMENT",
     subheading: "OMEGA DATA ENVIRONMENT",
     mainImage: "/products/new-images/New Website Photo_ODE.png",
-    imageWidth: 714,
-    imageHeight: 672,
+    imageWidth: 600,
+    imageHeight: 600,
     flyer: "/products/cat3/pro7/OMEGA_Data_Environment_(ODE)_Product_Flyer.pdf",
     topParagraph:
       "The OMEGA Data Environment software is available as a single-user or a multi-user distributed post mission data processing and time-series data mining solution. The OMEGA Data Environment architecture is designed to be data format agnostic. Several formats are included out of the box and programmatic interfaces are provided to accept any data format that you may require for both input and output. ODE provides user controls at the data set level or down to the individual parameter level and can integrate with your existing Active Directory infrastructure to provide customizable security for data access.",
@@ -149,8 +149,8 @@ export const newProductsData = [
     titleLight: "",
     subheading: "Real-Time Data Processing Software",
     mainImage: "/products/new-images/New Website Photo_OMEGA NExT.png",
-    imageWidth: 714,
-    imageHeight: 672,
+    imageWidth: 600,
+    imageHeight: 600,
     flyer: "/products/cat3/pro8/OMEGA_NExT_Processing_Software_Product_Flyer.pdf",
     topParagraph:
       "The OMEGA NExT software suite provides Real-time Processing, EU conversion, Data Distribution, Display, and Chapter 10 compliant Data Recording and is one of the most powerful and easy to use telemetry data processing software ever produced. Developed specifically for IRIG 106 Chapter 10 packet processing on a modern Service Oriented Architecture (SOA), OMEGA NExT provides unparalleled stability, performance, and flexibility.",
@@ -188,8 +188,8 @@ export const newProductsData = [
     titleLight: "BEST DATA ENGINE",
     subheading: "A Method of Best Source Selection (BSS)",
     mainImage: "/products/new-images/New Website Photo_BDE.png",
-    imageWidth: 714,
-    imageHeight: 672,
+    imageWidth: 600,
+    imageHeight: 600,
     flyer: "/products/cat3/pro1/Best-Data-Engine-BDE-Product-Flyer.pdf",
     topParagraph:
       "Best Data Engine (BDE) is a method of Best Source Selection that accepts multiple PCM input channels, compares them, then creates a new “composite” output PCM channel that represents the best data based on the selected Best Data algorithm. BDE has several instantiations, they include File BDE, G2 BDE, and OMEGA NExT™ BDE.",

@@ -159,10 +159,10 @@ export default function FindOutPossible() {
           {/* Right: Bold Heading matching Figma */}
           <div className={styles.textCol}>
             <h2 className={styles.headline}>
-              FIND OUT
-              <br />
-              WHAT’S
-              <br />
+              FIND OUT{" "}
+              <br className={styles.desktopBr} />
+              WHAT’S{" "}
+              <br className={styles.desktopBr} />
               POSSIBLE
             </h2>
             <p className={styles.subtext}>
