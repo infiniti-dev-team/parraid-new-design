@@ -56,7 +56,7 @@ export default function NewProductPage({ product }) {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* Exact Figma SVG blurred ambient ellipse glows */}
+      {/* Exact Figma ambient blue glowing atmospheric auras */}
       <div
         className={`${styles.auraOverlay} ${
           product.slug === "ode" || product.slug === "edge2"
@@ -65,23 +65,9 @@ export default function NewProductPage({ product }) {
         }`}
         aria-hidden="true"
       >
-        <div className={styles.ellipseRightContainer}>
-          <div className={styles.ellipseRightInner}>
-            <img
-              src="/products/new-images/ellipse-bg-1.svg"
-              alt=""
-              className={styles.ellipseImg}
-            />
-          </div>
-        </div>
-        <div className={styles.ellipseLeftContainer}>
-          <div className={styles.ellipseLeftInner}>
-            <img
-              src="/products/new-images/ellipse-bg-2.svg"
-              alt=""
-              className={styles.ellipseImg}
-            />
-          </div>
+        <div className={styles.auraInner}>
+          <div className={styles.ellipseRight} />
+          <div className={styles.ellipseLeft} />
         </div>
       </div>
 
