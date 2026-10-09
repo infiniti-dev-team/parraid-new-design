@@ -272,6 +272,10 @@
 
 .actionRow {
   margin-top: 0;
+
+  @media (max-width: 640px) {
+    margin-top: 4px;
+  }
 }
 
 .downloadBtn {
@@ -284,7 +288,7 @@
   font-style: normal !important;
   font-weight: 300 !important;
   font-size: clamp(16px, 1.056vw, 20.28px);
-  line-height: 31.5px;
+  line-height: 1.2;
   width: 247px;
   max-width: 100%;
   height: 60px;
@@ -292,12 +296,32 @@
   border-radius: 100px;
   text-decoration: none;
   border: none;
+  white-space: nowrap;
+  box-sizing: border-box;
   transition: all 0.25s ease;
 
   &:hover {
     background-color: #004fe0;
     color: #ffffff;
     transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    width: 210px;
+    height: 50px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    width: 190px;
+    height: 46px;
+    padding: 0 20px;
+    font-size: 15px;
   }
 }
 
