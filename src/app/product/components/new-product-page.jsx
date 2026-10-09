@@ -90,17 +90,19 @@ export default function NewProductPage({ product }) {
           {/* 1. Hero Product Photo (Centered at top) */}
           <section className={styles.heroImageSection}>
             <div className={styles.imageStage}>
-              <div className={styles.mainImgWrapper}>
+              <div
+                className={styles.mainImgWrapper}
+                style={{
+                  maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
+                }}
+              >
                 <Image
                   src={product.mainImage}
                   alt={product.title}
                   width={product.imageWidth || 960}
                   height={product.imageHeight || 680}
                   priority
-                  style={{
-                    maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
-                    maxHeight: product.imageHeight ? `${product.imageHeight}px` : undefined,
-                  }}
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1100px"
                   className={styles.mainImg}
                 />
               </div>
