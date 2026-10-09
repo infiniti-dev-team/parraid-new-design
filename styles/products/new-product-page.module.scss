@@ -501,10 +501,10 @@
 // ==========================================
 .subsectionsArea {
   width: 100%;
-  max-width: 884px;
+  max-width: 870px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(40px, 2.76vw, 53px);
   margin-bottom: clamp(60px, 6vw, 110px);
 }
 
@@ -534,7 +534,7 @@
     line-height: 33px;
     color: #ffffff;
     margin: 0;
-    max-width: 884px;
+    max-width: 870px;
     word-break: break-word;
     overflow-wrap: break-word;
   }
