@@ -140,9 +140,9 @@ export const newProductsData = [
     aliases: ["omega-next-real-time-data-processing-software"],
     title: "OMEGA NExT™",
     subheading: "Real-Time Data Processing Software",
-    mainImage: "/products/new-images/New Website Photo_IMUX G2e.png",
-    imageWidth: 896,
-    imageHeight: 278,
+    mainImage: "/products/new-images/New Website Photo_OMEGA NExT.png",
+    imageWidth: 714,
+    imageHeight: 672,
     flyer: "/products/cat3/pro8/OMEGA_NExT_Processing_Software_Product_Flyer.pdf",
     topParagraph:
       "The OMEGA NExT software suite provides Real-time Processing, EU conversion, Data Distribution, Display, and Chapter 10 compliant Data Recording and is one of the most powerful and easy to use telemetry data processing software ever produced. Developed specifically for IRIG 106 Chapter 10 packet processing on a modern Service Oriented Architecture (SOA), OMEGA NExT provides unparalleled stability, performance, and flexibility.",
