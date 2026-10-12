@@ -8,8 +8,9 @@ export const newProductsData = [
     titleLight: "OMEGA DATA ENVIRONMENT",
     subheading: "OMEGA DATA ENVIRONMENT",
     mainImage: "/products/new-images/New Website Photo_ODE.png",
-    imageWidth: 600,
-    imageHeight: 600,
+    imageWidth: 714,
+    imageHeight: 672,
+    topDescWidth: 884,
     flyer: "/products/cat3/pro7/OMEGA_Data_Environment_(ODE)_Product_Flyer.pdf",
     topParagraph:
       "The OMEGA Data Environment software is available as a single-user or a multi-user distributed post mission data processing and time-series data mining solution. The OMEGA Data Environment architecture is designed to be data format agnostic. Several formats are included out of the box and programmatic interfaces are provided to accept any data format that you may require for both input and output. ODE provides user controls at the data set level or down to the individual parameter level and can integrate with your existing Active Directory infrastructure to provide customizable security for data access.",
@@ -36,13 +37,14 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_Edge2.png",
     imageWidth: 938,
     imageHeight: 433,
+    topDescWidth: 884,
     flyer: "/products/cat3/pro3/Edge2_Telemetry_Network_Appliance_Product_Flyer.pdf",
     topParagraph:
-      "The Edge2 is engineered to provide network telemetry processing at the edge in a portable or rack mountable 2 channel unit. Three Edge2 appliances may be rack mounted side-by-side supporting up to 6 channels of RF, BitSync, or Decom processing in a 1U rack space. Each Edge2 unit provides LED status indicators for; Receiver Status, BitSync Status, Frame Sync Status, Time Status, and Ethernet activity.",
+      "The Edge2 is engineered to provide network telemetry processing\nat the edge in a portable or rack mountable 2 channel unit. Three Edge2 appliances may be rack mounted side-by-side supporting up to 6 channels of RF, BitSync, or Decom processing in a 1U rack space. Each Edge2 unit provides LED status indicators for; Receiver Status, BitSync Status, Frame Sync Status, Time Status, and Ethernet activity.",
     secondSection: {
       title: null,
       paragraph:
-        "The Edge2 unit when configured with receiver modules provides users with complete single or dual stream RF-to-Ethernet telemetry data processing. Capable of supporting all telemetry frequency bands from 200 MHz to beyond 5.15 GHz, these systems provide complete RF input to TMoIP (IRIG 106 Chapter 10/11 or IRIG 218-20) Ethernet output in a single compact 1U rack mount industrial enclosure.",
+        "The Edge2 unit when configured with receiver modules\nprovides users with complete single or dual stream\nRF-to-Ethernet telemetry data processing. Capable\nof supporting all telemetry frequency bands\nfrom 200 MHz to beyond 5.15 GHz, these systems\nprovide complete RF input to TMoIP (IRIG 106 Chapter\n10/11 or IRIG 218-20) Ethernet output in a single compact\n1U rack mount industrial enclosure.",
       image: "/products/new-images/New Website Photo_Edge2 Diagram.png",
       imageAlt: "Edge2 RF-to-Ethernet Processing Diagram",
       imageWidth: 629,
@@ -60,9 +62,10 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_IMUX G3.png",
     imageWidth: 884,
     imageHeight: 285,
+    topDescWidth: 882,
     flyer: "/products/cat3/pro4/IMUX_G3_Recorder_Product_Flyer.pdf",
     topParagraph:
-      "The G3 Recorder-Processing system represents the next generation of telemetry data recording and processing platforms. It supports over 24 input channels, including 20 PCM streams received as IRIG standard TMoIP Ethernet input(s). G3 includes extreme real-time processing capability with the integrated NExT™ Best Data Engine (BDE™) and NExT™ raw data distribution and parameter processing capabilities. G3 provides both 1G and 10G Ethernet ports and includes TPM 2.0.",
+      "The G3 Recorder-Processing system represents the next generation of telemetry data recording and processing platforms. It supports over 24 input channels, including 20 PCM streams received as IRIG standard TMoIP Ethernet input(s). G3 includes extreme real-time processing capability with the integrated NExT™ Best Data Engine (BDE™) and NExT™ raw data distribution and parameter processing capabilities. G3\nprovides both 1G and 10G Ethernet ports and includes TPM 2.0.",
     bullets: [
       "TMoIP Input / IRIG 106 Ch 10 Archive",
       "Selectable IRIG Codes, In and Out",
@@ -84,6 +87,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_OWL.png",
     imageWidth: 693,
     imageHeight: 618,
+    topDescWidth: 870,
     flyer: "/products/cat1/pro3/Outsource_the_Workload_(OWL)_Product_Flyer.pdf",
     topParagraph:
       "Outsource the Workload (OWL™) is a compact, intelligent device designed for complete battlefield awareness. This pouch-sized hub replaces multiple separate technologies, simplifying a soldier’s equipment and workload. The OWL™ provides comprehensive data translation and protocol conversion, secure connectivity, and radio control with bridging. OWL™ offers edge computing and mass storage, freeing users to focus on their mission, while allowing for swift seamless equipment integration and future technology expansion.",
@@ -100,9 +104,10 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_BSR-100.png",
     imageWidth: 771,
     imageHeight: 438,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro2/Best_Source_Reproducer_(BSR-100)_Product_Flyer.pdf",
     topParagraph:
-      "Experience seamless Best Source post-processing and reproduction with the BSR-100. This cutting-edge technology effortlessly processes up to 32 recorded PCM streams from multiple diverse receiving / recording locations. The BSR-100 includes the Parraid 2-channel PSIMe PCM output board for PCM signal reproduction or simulation.",
+      "Experience seamless Best Source post-processing and reproduction with the BSR-100. This cutting-edge technology effortlessly processes up to 32 recorded PCM streams from multiple diverse receiving / recording locations. The BSR-100 includes the Parraid\n2-channel PSIMe PCM output board for PCM signal reproduction or simulation.",
     subsections: [
       {
         title: "FILE BDE™",
@@ -127,13 +132,15 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_IMUX G2e.png",
     imageWidth: 896,
     imageHeight: 278,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro5/G2eH_Data_Recorder_Product_Flyer.pdf",
     topParagraph:
       "The IMUX G2e is capable of supporting all industry-standard telemetry signal types, recording two Chapter 10 files simultaneously – local and/or remote, simultaneous playback, and on-the-fly channel adjustment. All units can be equipped with optional integrated RF receivers, bit synchronizers, best source selection, and real-time decom, processing, and display capabilities.",
     secondSection: {
       title: null,
+      textMaxWidth: 583,
       paragraph:
-        "The G2eH dynamically converts TMoIP 218-20 inputs to Chapter 10 packets while recording, allowing for the G2eH, G2e, or any other CH10 reproducer to output baseband (PCM Data & Clock) from the recorded CH10 file. The recorded file will also work with any CH10 / 11 compliant tool set for processing and analysis. This gives the user a single box solution to record and/or reproduce legacy and present-day channel types all together. The G2e/G2eH can be configured as a rack mount or portable unit, including a compact 2U chassis for up to 4 channels and a robust 4U chassis for up to 32 channels. Touch screen and ruggedized systems for mobile applications and transport cases are available.",
+        "The G2eH dynamically converts TMoIP 218-20 inputs to\n Chapter 10 packets while recording, allowing for the G2eH,\n G2e, or any other CH10 reproducer to output baseband\n (PCM Data & Clock) from the recorded CH10 file. The\n recorded file will also work with any CH10 / 11 compliant\n tool set for processing and analysis. This gives the user a\n single box solution to record and/or reproduce legacy\n and present-day channel types all together. The G2e/G2eH\n can be configured as a rack mount or portable unit, including\n a compact 2U chassis for up to 4 channels and a robust\n 4U chassis for up to 32 channels. Touch screen and ruggedized\n systems for mobile applications and transport cases are available.",
       image: "/products/new-images/New Website Photo_G2eH.png",
       imageAlt: "G2eHYBRID Data Recorder",
       imageWidth: 688,
@@ -149,8 +156,9 @@ export const newProductsData = [
     titleLight: "",
     subheading: "Real-Time Data Processing Software",
     mainImage: "/products/new-images/New Website Photo_OMEGA NExT.png",
-    imageWidth: 600,
-    imageHeight: 600,
+    imageWidth: 714,
+    imageHeight: 672,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro8/OMEGA_NExT_Processing_Software_Product_Flyer.pdf",
     topParagraph:
       "The OMEGA NExT software suite provides Real-time Processing, EU conversion, Data Distribution, Display, and Chapter 10 compliant Data Recording and is one of the most powerful and easy to use telemetry data processing software ever produced. Developed specifically for IRIG 106 Chapter 10 packet processing on a modern Service Oriented Architecture (SOA), OMEGA NExT provides unparalleled stability, performance, and flexibility.",
@@ -173,6 +181,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_S5000e.png",
     imageWidth: 876,
     imageHeight: 490,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro10/Series-5000e_Real-time_Processor_Product_Flyer.pdf",
     topParagraph:
       "The S-5000e is real-time data processing platform available in portable and rack mount configurations: 2U and 4U, ruggedized and industrial. Multi-stream support ranges from 2 to 16 simultaneous serial PCM inputs with no-latency hot mic PCM-embedded audio output(s). S-5000e’s may include optional 1dB Bit Syncs and/or RF Receivers for accepting noisy data-only or digital data/clock inputs. Integrated programmable data timestamping is supported with selectable IRIG A, B, and G, external time input, serial PCM-embedded and network-embedded data inputs, and local system time. Time Data Resolution of +/-100nS enables inter-channel skew of less than 1uS.",
@@ -188,8 +197,9 @@ export const newProductsData = [
     titleLight: "BEST DATA ENGINE",
     subheading: "A Method of Best Source Selection (BSS)",
     mainImage: "/products/new-images/New Website Photo_BDE.png",
-    imageWidth: 600,
-    imageHeight: 600,
+    imageWidth: 714,
+    imageHeight: 672,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro1/Best-Data-Engine-BDE-Product-Flyer.pdf",
     topParagraph:
       "Best Data Engine (BDE) is a method of Best Source Selection that accepts multiple PCM input channels, compares them, then creates a new “composite” output PCM channel that represents the best data based on the selected Best Data algorithm. BDE has several instantiations, they include File BDE, G2 BDE, and OMEGA NExT™ BDE.",
@@ -216,9 +226,10 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_IMUX RECON.png",
     imageWidth: 921,
     imageHeight: 273,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro6/IMUX_RE-CON_Network_Recorder_Product_Flyer.pdf",
     topParagraph:
-      "The IMUX RE/CON network recorder is a telemetry specific ground network recorder ideally suited for ranges moving to IP telemetry. The RE/CON ground network recorder auto-detects telemetry packets, prioritizes telemetry streams over other network traffic, and converts common network telemetry formats to IRIG 106 Chapter 10 files on-the-fly. The RE/CON provides the ability to re-direct the recorded data to any network endpoint on playback. RE/CON is available in multiple 2U and 4U rack mount configurations and supports a variety of network interface options.",
+      "The IMUX RE/CON network recorder is a telemetry specific ground network recorder ideally suited for ranges moving to IP telemetry. The RE/CON ground network recorder auto-detects telemetry packets, prioritizes telemetry streams over other network traffic, and converts common network telemetry formats to IRIG 106 Chapter 10 files on-the-fly. The RE/CON provides the ability to re-direct the recorded data to any network endpoint on playback. RE/CON is available in multiple 2U and 4U rack mount configurations and\nsupports a variety of network interface options.",
     bullets: [
       "IP recording capabilities with telemetry specific on-the-fly conversion capability",
       "Provides automatic format detection",
@@ -237,9 +248,10 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_Rx2.png",
     imageWidth: 803,
     imageHeight: 409,
+    topDescWidth: 870,
     flyer: "/products/cat3/pro9/Rx2.pdf",
     topParagraph:
-      "Parraid offers the Rx2 rack mount multi-channel receiver and combiner as well as PCI card level receivers and combiners. All of our receiver products use the latest in digital radio technology.",
+      "Parraid offers the Rx2 rack mount multi-channel receiver and combiner as well as PCI card level receivers and combiners. All of our receiver products use the\nlatest in digital radio technology.",
     subsections: [
       {
         title: "LATEST TECHNOLOGY FOR RF TO ETHERNET",
@@ -273,6 +285,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_NRG DS04v3.png",
     imageWidth: 866,
     imageHeight: 416,
+    topDescWidth: 870,
     flyer: "/products/cat1/pro1/NRG_Deployable_Systems_(DS-04v3)_Product_Flyer.pdf",
     topParagraph:
       "Introducing the NRG DS-04v3—the latest powerhouse in Parraid’s groundbreaking Radio over IP (RoIP) solutions. This all-in-one, standalone network appliance revolutionizes communication by seamlessly integrating voice conferencing, HPW data, and remote radio configuration and control into a single, robust platform. Our latest Network Radio Gateway software, NRG5, and any hardware offerings using the new Compact Radio Interface Board (CRIB) or derivative products based on it, and the Legacy Data Adapter (LDA) are Non-ITAR export classification ECCN 5A991 and 5D991.",
@@ -303,6 +316,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_NRG Rack Mount.png",
     imageWidth: 1166,
     imageHeight: 296,
+    topDescWidth: 870,
     flyer: "/products/cat1/pro2/NRG_Software_Product_Flyer.pdf",
     topParagraph:
       "The NRG® rack mount systems support up to 400 endpoints (any combination of users and radios) and any number of radios in several configurations. The NRG® RM-12 supports up to 12 connected radios while the RM-08 and RM-04 support 8 and 4 radios respectively. All configurations are made to fit into standard 19” equipment racks and all are 1U high. The NRG® rack mount systems are designed to meet the most challenging radio networking situations.",
@@ -326,6 +340,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_PacStar 466.png",
     imageWidth: 596,
     imageHeight: 547,
+    topDescWidth: 870,
     flyer: "/products/cat1/pro4/NRG_PacStar_466_Product_Flyer.pdf",
     topParagraph:
       "The PacStar 466 incorporates Parraid’s NRG, a Program of Record (PoR) fielded Radio over IP (RoIP) interoperability ecosystem that bridges tactical radios, coalition systems, Land Mobile Radios, MANET, SATCOM, and IP networks into a unified voice and data architecture, without replacing existing radio infrastructure. The PacStar 466 provides the latest Compact Radio Interface Board (CRIB) and NRG Software to seamlessly integrate radios across forces, platforms, and networks.",
@@ -352,6 +367,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_LS-04v2.png",
     imageWidth: 587,
     imageHeight: 406,
+    topDescWidth: 870,
     flyer: "/products/cat1/pro1/NRG_Deployable_Systems_(DS-04v3)_Product_Flyer.pdf",
     topParagraph:
       "The NRG LS-04v2 provides the latest Compact Radio Interface Board (CRIB) and NRG Software to seamlessly integrate radios across forces, platforms, and networks. Integrate the CRIB and interface panel boards into your existing hardware platform, or utilize the Parraid enclosure to meet your integration requirements.",
@@ -386,12 +402,13 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_RUH 3.png",
     imageWidth: 848,
     imageHeight: 406,
+    topDescWidth: 870,
     flyer: "/products/cat2/pro1/Rugged_Enhancements_RUH_Combined_Product_Flyer.pdf",
     topParagraph:
       "The Parraid Rugged USB Hub 3.0 is the toughest four port hub on the market. Designed from the ground-up for the most extreme operating environments encountered by modern advanced mobile IT systems, the Rugged USB Hub 3.0 is certified to MIL-STD-810 for temperature, vibration, and pyroshock; MIL-STD-461 for emissions and susceptibility. The sturdy and dependable RUH 3.0 is the strongest way to interconnect your deployable systems and is fast and reliable under the harshest conditions.",
     secondParagraphFont: "poppins",
     secondParagraph:
-      "The Parraid Rugged USB 2.0 Hub is the first USB hub designed to meet a full range of environmental requirements for mobile and deployed systems. It has been tested to MIL-STD-810F for shock, vibration, temperature, sand, and dust. The RUH2 has also been tested to MIL-STD-461E for conducted and radiated emissions and susceptibility. With the ability to be mounted and deployed in a number of environments, the Rugged USB 2.0 Hub is one of the most versatile, rugged peripherals in your IT arsenal.",
+      "The Parraid Rugged USB 2.0 Hub is the first USB\nhub designed to meet a full range of environmental\nrequirements for mobile and deployed systems.\nIt has been tested to MIL-STD-810F for shock,\nvibration, temperature, sand, and dust. The RUH2\nhas also been tested to MIL-STD-461E for conducted\nand radiated emissions and susceptibility.\nWith the ability to be mounted and deployed in\na number of environments, the Rugged USB 2.0 Hub is\none of the most versatile, rugged peripherals in your IT arsenal.",
   },
   {
     slug: "rur",
@@ -404,6 +421,7 @@ export const newProductsData = [
     mainImage: "/products/new-images/New Website Photo_RUR.png",
     imageWidth: 708,
     imageHeight: 421,
+    topDescWidth: 870,
     flyer: "/products/cat2/pro3/Rugged_Enhancements_RUR_Product_Flyer.pdf",
     topParagraph:
       "The Parraid Rugged USB Repeater (RUR) is a device that allows USB connections to be reliably extended. While USB is a widely used connection, it does suffer from a length limitation of 5 meters (16.4 feet). Many installations need a longer cable run. Each RUR extends a connection between USB host and USB device; and multiple RUR devices can be added end-to-end to provide even more interface distance. The RUR is USB bus powered and requires no external power sources. The product is fully USB 2.0 high-speed compliant and designed to operate in harsh battlefield conditions.",

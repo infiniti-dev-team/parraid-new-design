@@ -66,8 +66,24 @@ export default function NewProductPage({ product }) {
         aria-hidden="true"
       >
         <div className={styles.auraInner}>
-          <div className={styles.ellipseRight} />
-          <div className={styles.ellipseLeft} />
+          <div className={styles.ellipseRightContainer}>
+            <div className={styles.ellipseRightInner}>
+              <img
+                src="/products/new-images/ellipse-bg-1.png"
+                alt=""
+                className={styles.ellipseImg}
+              />
+            </div>
+          </div>
+          <div className={styles.ellipseLeftContainer}>
+            <div className={styles.ellipseLeftInner}>
+              <img
+                src="/products/new-images/ellipse-bg-2.png"
+                alt=""
+                className={styles.ellipseImg}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -139,7 +155,16 @@ export default function NewProductPage({ product }) {
           {/* 3. Staggered Top Description (Right-Aligned below Download Details) */}
           {product.topParagraph && (
             <section className={styles.topDescSection}>
-              <p className={styles.topParagraph}>{product.topParagraph}</p>
+              <p
+                className={styles.topParagraph}
+                style={{
+                  maxWidth: product.topDescWidth
+                    ? `${product.topDescWidth}px`
+                    : undefined,
+                }}
+              >
+                {product.topParagraph}
+              </p>
             </section>
           )}
 
@@ -169,7 +194,14 @@ export default function NewProductPage({ product }) {
           {product.secondSection && (
             <section className={styles.secondSection}>
               <div className={styles.secondSectionRow}>
-                <div className={styles.secondTextCol}>
+                <div
+                  className={styles.secondTextCol}
+                  style={{
+                    maxWidth: product.secondSection.textMaxWidth
+                      ? `${product.secondSection.textMaxWidth}px`
+                      : undefined,
+                  }}
+                >
                   {product.secondSection.title && (
                     <h2 className={styles.secondHeading}>
                       {product.secondSection.title}
@@ -181,7 +213,17 @@ export default function NewProductPage({ product }) {
                 </div>
 
                 {product.secondSection.image && (
-                  <div className={styles.secondImageCol}>
+                  <div
+                    className={styles.secondImageCol}
+                    style={{
+                      flex: product.secondSection.imageWidth
+                        ? `0 0 ${product.secondSection.imageWidth}px`
+                        : undefined,
+                      maxWidth: product.secondSection.imageWidth
+                        ? `${product.secondSection.imageWidth}px`
+                        : undefined,
+                    }}
+                  >
                     <div className={styles.secondImgWrapper}>
                       <Image
                         src={product.secondSection.image}
