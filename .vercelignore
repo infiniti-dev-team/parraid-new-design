@@ -1,0 +1,7 @@
+.claude
+testing
+.git
+.next
+node_modules
+*.log
+.codex-docx-review
