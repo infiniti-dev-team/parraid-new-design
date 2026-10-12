@@ -29,8 +29,8 @@ export const newProductsData = [
   {
     slug: "edge2",
     aliases: ["edge2-telemetry-receiver"],
-    title: "EDGE2™",
-    titleBold: "EDGE2™",
+    title: "Edge²™",
+    titleBold: "Edge²™",
     titleDash: false,
     titleLight: "",
     subheading: "Receiver Network Appliance — Portable and Rack Mount",

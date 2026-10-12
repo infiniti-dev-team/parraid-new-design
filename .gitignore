@@ -46,3 +46,6 @@ testing
 
 .vercel
 .env*
+
+.vercel
+.env*
