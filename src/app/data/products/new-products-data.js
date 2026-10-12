@@ -6,7 +6,7 @@ export const newProductsData = [
     titleBold: "ODE™",
     titleDash: true,
     titleLight: "OMEGA DATA ENVIRONMENT",
-    subheading: "OMEGA DATA ENVIRONMENT",
+    subheading: "Post Processing Software",
     mainImage: "/products/new-images/New Website Photo_ODE.png",
     imageWidth: 714,
     imageHeight: 672,
@@ -40,11 +40,11 @@ export const newProductsData = [
     topDescWidth: 884,
     flyer: "/products/cat3/pro3/Edge2_Telemetry_Network_Appliance_Product_Flyer.pdf",
     topParagraph:
-      "The Edge2 is engineered to provide network telemetry processing\nat the edge in a portable or rack mountable 2 channel unit. Three Edge2 appliances may be rack mounted side-by-side supporting up to 6 channels of RF, BitSync, or Decom processing in a 1U rack space. Each Edge2 unit provides LED status indicators for; Receiver Status, BitSync Status, Frame Sync Status, Time Status, and Ethernet activity.",
+      "The Edge² is engineered to provide network telemetry processing\nat the edge in a portable or rack mountable 2 channel unit. Three Edge² appliances may be rack mounted side-by-side supporting up to 6 channels of RF, BitSync, or Decom processing in a 1U rack space. Each Edge² unit provides LED status indicators for; Receiver Status, BitSync Status, Frame Sync Status, Time Status, and Ethernet activity.",
     secondSection: {
       title: null,
       paragraph:
-        "The Edge2 unit when configured with receiver modules\nprovides users with complete single or dual stream\nRF-to-Ethernet telemetry data processing. Capable\nof supporting all telemetry frequency bands\nfrom 200 MHz to beyond 5.15 GHz, these systems\nprovide complete RF input to TMoIP (IRIG 106 Chapter\n10/11 or IRIG 218-20) Ethernet output in a single compact\n1U rack mount industrial enclosure.",
+        "The Edge² unit when configured with receiver modules\nprovides users with complete single or dual stream\nRF-to-Ethernet telemetry data processing. Capable\nof supporting all telemetry frequency bands\nfrom 200 MHz to beyond 5.15 GHz, these systems\nprovide complete RF input to TMoIP (IRIG 106 Chapter\n10/11 or IRIG 218-20) Ethernet output in a single compact\n1U rack mount industrial enclosure.",
       image: "/products/new-images/New Website Photo_Edge2 Diagram.png",
       imageAlt: "Edge2 RF-to-Ethernet Processing Diagram",
       imageWidth: 629,
@@ -83,7 +83,7 @@ export const newProductsData = [
     titleBold: "OWL™",
     titleDash: true,
     titleLight: "OUTSOURCE THE WORKLOAD",
-    subheading: "Post-Processor / Reproducer",
+    subheading: "Wearable TAK Hub",
     mainImage: "/products/new-images/New Website Photo_OWL.png",
     imageWidth: 693,
     imageHeight: 618,
@@ -100,7 +100,7 @@ export const newProductsData = [
     titleBold: "BSR-100™",
     titleDash: true,
     titleLight: "BEST SOURCE REPRODUCER",
-    subheading: "Wearable TAK Hub",
+    subheading: "Post-Processor / Reproducer",
     mainImage: "/products/new-images/New Website Photo_BSR-100.png",
     imageWidth: 771,
     imageHeight: 438,
@@ -336,7 +336,7 @@ export const newProductsData = [
     titleBold: "PACSTAR® 466 WITH NRG®",
     titleDash: true,
     titleLight: "NETWORK RADIO GATEWAY",
-    subheading: "Rack Mount RoIP Gateway",
+    subheading: null,
     mainImage: "/products/new-images/New Website Photo_PacStar 466.png",
     imageWidth: 596,
     imageHeight: 547,
@@ -344,7 +344,6 @@ export const newProductsData = [
     flyer: "/products/cat1/pro4/NRG_PacStar_466_Product_Flyer.pdf",
     topParagraph:
       "The PacStar 466 incorporates Parraid’s NRG, a Program of Record (PoR) fielded Radio over IP (RoIP) interoperability ecosystem that bridges tactical radios, coalition systems, Land Mobile Radios, MANET, SATCOM, and IP networks into a unified voice and data architecture, without replacing existing radio infrastructure. The PacStar 466 provides the latest Compact Radio Interface Board (CRIB) and NRG Software to seamlessly integrate radios across forces, platforms, and networks.",
-    bulletFont: "poppins",
     bulletLineHeight: 47,
     bullets: [
       "Four (4) radio interface ports",
@@ -371,7 +370,6 @@ export const newProductsData = [
     flyer: "/products/cat1/pro1/NRG_Deployable_Systems_(DS-04v3)_Product_Flyer.pdf",
     topParagraph:
       "The NRG LS-04v2 provides the latest Compact Radio Interface Board (CRIB) and NRG Software to seamlessly integrate radios across forces, platforms, and networks. Integrate the CRIB and interface panel boards into your existing hardware platform, or utilize the Parraid enclosure to meet your integration requirements.",
-    bulletFont: "poppins",
     bulletLineHeight: 47,
     bullets: [
       "Voice packet routing, protocol conversion, and radio voice bridging (crossbanding)",
@@ -406,7 +404,6 @@ export const newProductsData = [
     flyer: "/products/cat2/pro1/Rugged_Enhancements_RUH_Combined_Product_Flyer.pdf",
     topParagraph:
       "The Parraid Rugged USB Hub 3.0 is the toughest four port hub on the market. Designed from the ground-up for the most extreme operating environments encountered by modern advanced mobile IT systems, the Rugged USB Hub 3.0 is certified to MIL-STD-810 for temperature, vibration, and pyroshock; MIL-STD-461 for emissions and susceptibility. The sturdy and dependable RUH 3.0 is the strongest way to interconnect your deployable systems and is fast and reliable under the harshest conditions.",
-    secondParagraphFont: "poppins",
     secondParagraph:
       "The Parraid Rugged USB 2.0 Hub is the first USB\nhub designed to meet a full range of environmental\nrequirements for mobile and deployed systems.\nIt has been tested to MIL-STD-810F for shock,\nvibration, temperature, sand, and dust. The RUH2\nhas also been tested to MIL-STD-461E for conducted\nand radiated emissions and susceptibility.\nWith the ability to be mounted and deployed in\na number of environments, the Rugged USB 2.0 Hub is\none of the most versatile, rugged peripherals in your IT arsenal.",
   },

@@ -176,11 +176,7 @@ export default function NewProductPage({ product }) {
                 product.bulletMaxWidth === 870 ? styles.narrowBullets : ""
               }`}
             >
-              <ul
-                className={`${styles.bulletList} ${
-                  product.bulletFont === "poppins" ? styles.poppinsBullets : ""
-                }`}
-              >
+              <ul className={styles.bulletList}>
                 {product.bullets.map((bullet, idx) => (
                   <li key={idx} className={styles.bulletItem}>
                     <span className={styles.bulletText}>{bullet}</span>
@@ -270,13 +266,7 @@ export default function NewProductPage({ product }) {
           {/* 4d. Extra paragraph for S-5000e, NRG RM-XX, RUH3 */}
           {product.secondParagraph && (
             <section className={styles.extraParagraphSection}>
-              <p
-                className={`${styles.secondParagraph} ${
-                  product.secondParagraphFont === "poppins"
-                    ? styles.poppinsParagraph
-                    : ""
-                }`}
-              >
+              <p className={styles.secondParagraph}>
                 {product.secondParagraph}
               </p>
             </section>

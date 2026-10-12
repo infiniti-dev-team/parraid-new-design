@@ -165,9 +165,9 @@
 }
 
 .labelText {
-  font-family: var(--font-poppins), sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: var(--font-finder), "Finder", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
   font-size: clamp(15px, 1.04vw, 20px);
   line-height: 33px;
   color: #ffffff;
@@ -215,9 +215,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: var(--font-poppins), sans-serif;
-    font-style: normal;
-    font-weight: 700;
+    font-family: var(--font-finder), "Finder", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 300 !important;
     font-size: clamp(18px, 1.6vw, 24px);
     color: #ffffff;
     letter-spacing: 0.04em;
