@@ -332,9 +332,10 @@ export const newProductsData = [
   {
     slug: "pacstar-466",
     aliases: ["our-featured-network-radio-gateway", "pacstar466"],
-    title: "PACSTAR® 466 WITH NRG® - NETWORK RADIO GATEWAY",
+    title: "PACSTAR® 466 WITH NRG® — NETWORK RADIO GATEWAY",
     titleBold: "PACSTAR® 466 WITH NRG®",
     titleDash: true,
+    titleDashChar: "—",
     titleLight: "NETWORK RADIO GATEWAY",
     subheading: null,
     mainImage: "/products/new-images/New Website Photo_PacStar 466.png",

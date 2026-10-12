@@ -22,11 +22,15 @@ export default function NewProductPage({ product }) {
   // Render title into Bold Brand + Regular Hyphen + Light Subtitle matching Figma
   const renderProductHeading = (prod) => {
     if (!prod) return null;
+    const dashChar =
+      prod.titleDashChar ||
+      (prod.title && prod.title.includes("—") ? "—" : "-");
+
     if (prod.titleBold) {
       return (
         <h1 className={styles.productHeading}>
           <span className={styles.headingBold}>{prod.titleBold}</span>
-          {prod.titleDash && <span className={styles.headingDash}>-</span>}
+          {prod.titleDash && <span className={styles.headingDash}>{dashChar}</span>}
           {prod.titleLight && (
             <span className={styles.headingLight}>{prod.titleLight}</span>
           )}
@@ -35,8 +39,18 @@ export default function NewProductPage({ product }) {
     }
 
     const title = prod.title || "";
-    const parts = title.split(/\s+[-—]\s+/);
+    if (title.includes(" — ")) {
+      const parts = title.split(/\s+—\s+/);
+      return (
+        <h1 className={styles.productHeading}>
+          <span className={styles.headingBold}>{parts[0]}</span>
+          <span className={styles.headingDash}>—</span>
+          <span className={styles.headingLight}>{parts.slice(1).join(" — ")}</span>
+        </h1>
+      );
+    }
 
+    const parts = title.split(/\s+-\s+/);
     if (parts.length > 1) {
       return (
         <h1 className={styles.productHeading}>
