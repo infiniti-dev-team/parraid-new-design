@@ -68,103 +68,111 @@ export default function NewProductPage({ product }) {
     );
   };
 
+  const EXEMPT_HERO_SLUGS = ["bde", "omega-next", "ode"];
+  const isExemptHero = EXEMPT_HERO_SLUGS.includes(product.slug);
+
   return (
     <div className={styles.pageWrapper}>
-      {/* Exact Figma ambient blue glowing atmospheric auras */}
-      <div
-        className={`${styles.auraOverlay} ${
-          product.slug === "ode" || product.slug === "edge2"
-            ? styles.tallHeroAura
-            : ""
+      <main
+        className={`${styles.mainContent} ${
+          isExemptHero ? styles.exemptHeroContent : styles.enlargedHeroContent
         }`}
-        aria-hidden="true"
       >
-        <div className={styles.auraInner}>
-          <div className={styles.ellipseRightContainer}>
-            <div className={styles.ellipseRightInner}>
-              <img
-                src="/products/new-images/ellipse-bg-1.png"
-                alt=""
-                className={styles.ellipseImg}
-              />
-            </div>
-          </div>
-          <div className={styles.ellipseLeftContainer}>
-            <div className={styles.ellipseLeftInner}>
-              <img
-                src="/products/new-images/ellipse-bg-2.png"
-                alt=""
-                className={styles.ellipseImg}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <main className={styles.mainContent}>
-        <div className={styles.productContainer}>
-          {/* 1. Hero Product Photo (Centered at top) */}
-          <section className={styles.heroImageSection}>
-            <div className={styles.imageStage}>
+          <div className={styles.productContainer}>
+            {/* 1. Hero Product Photo (Centered at top) */}
+            <section
+              className={`${styles.heroImageSection} ${
+                isExemptHero ? styles.exemptHeroSection : styles.enlargedHeroSection
+              }`}
+            >
               <div
-                className={styles.mainImgWrapper}
-                style={{
-                  maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
-                }}
-              >
-                <Image
-                  src={product.mainImage}
-                  alt={product.title}
-                  width={product.imageWidth || 960}
-                  height={product.imageHeight || 680}
-                  priority
-                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1100px"
-                  className={styles.mainImg}
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* 2. Product Title Block (Wide on Left) */}
-          <section className={styles.titleSection}>
-            {renderProductHeading(product)}
-            {product.subheading && (
-              <p
-                className={`${styles.subheading} ${
-                  product.titleLight &&
-                  product.titleLight.toLowerCase().trim() ===
-                    product.subheading.toLowerCase().trim()
-                    ? styles.hideOnMobileIfDuplicate
-                    : ""
+                className={`${styles.imageStage} ${
+                  isExemptHero ? styles.exemptImageStage : styles.enlargedImageStage
                 }`}
               >
-                {product.subheading}
-              </p>
-            )}
+                <div
+                  className={styles.mainImgWrapper}
+                  style={{
+                    maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
+                  }}
+                >
+                  <Image
+                    src={product.mainImage}
+                    alt={product.title}
+                    width={product.imageWidth || 960}
+                    height={product.imageHeight || 680}
+                    priority
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 85vw, 1440px"
+                    className={styles.mainImg}
+                  />
+                </div>
+              </div>
+            </section>
 
-            <div className={styles.actionRow}>
-              {product.flyer ? (
-                <a
-                  href={product.flyer}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.downloadBtn}
-                  aria-label={`Download details flyer for ${product.title}`}
-                >
-                  Download Details
-                </a>
-              ) : (
-                <a
-                  href="#Contact"
-                  className={styles.downloadBtn}
-                  aria-label="Request product details"
-                >
-                  Download Details
-                </a>
-              )}
+            {/* Exact Figma ambient blue glowing atmospheric auras — anchored below hero so height changes never shift its position relative to content */}
+            <div className={styles.auraOverlay} aria-hidden="true">
+              <div className={styles.auraInner}>
+                <div className={styles.ellipseRightContainer}>
+                  <div className={styles.ellipseRightInner}>
+                    <img
+                      src="/products/new-images/ellipse-bg-1.webp"
+                      alt=""
+                      className={styles.ellipseImg}
+                    />
+                  </div>
+                </div>
+                <div className={styles.ellipseLeftContainer}>
+                  <div className={styles.ellipseLeftInner}>
+                    <img
+                      src="/products/new-images/ellipse-bg-2.webp"
+                      alt=""
+                      className={styles.ellipseImg}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </section>
+
+            {/* 2. Product Title Block (Wide on Left) */}
+            <section className={styles.titleSection}>
+              {renderProductHeading(product)}
+              {product.subheading && (
+                <p
+                  className={`${styles.subheading} ${
+                    product.titleLight &&
+                    product.titleLight.toLowerCase().trim() ===
+                      product.subheading.toLowerCase().trim()
+                      ? styles.hideOnMobileIfDuplicate
+                      : ""
+                  }`}
+                >
+                  {product.subheading}
+                </p>
+              )}
+
+              <div className={styles.actionRow}>
+                {product.flyer ? (
+                  <a
+                    href={product.flyer}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.downloadBtn}
+                    aria-label={`Download details flyer for ${product.title}`}
+                  >
+                    DOWNLOAD DETAILS
+                  </a>
+                ) : (
+                  <a
+                    href="#Contact"
+                    className={styles.downloadBtn}
+                    aria-label="Request product details"
+                  >
+                    DOWNLOAD DETAILS
+                  </a>
+                )}
+              </div>
+            </section>
 
           {/* 3. Staggered Top Description (Right-Aligned below Download Details) */}
           {product.topParagraph && (

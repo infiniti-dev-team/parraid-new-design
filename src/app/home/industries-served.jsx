@@ -6,28 +6,28 @@ const industriesData = [
   {
     id: "military",
     title: "Military and defense",
-    image: "/home/figma/industry-military.png",
+    image: "/home/figma/industry-military.webp",
     description:
       "We equip defense forces with tactical communications solutions that deliver secure interoperability across multi-band radios and IP networks. From field deployments to command centers, our rugged, MIL-STD compliant, and mission-ready technologies sustain uninterrupted communication and situational awareness.",
   },
   {
     id: "aerospace-1",
     title: "Aerospace and aviation",
-    image: "/home/figma/industry-aerospace-jet.png",
+    image: "/home/figma/industry-aerospace-jet.webp",
     description:
       "Parraid supports flight test and aerospace programs with telemetry data systems that ensure precise data capture and real-time performance analysis. Our systems integrate seamlessly with existing range instrumentation, enabling faster mission validation and enhanced operational efficiency.",
   },
   {
     id: "aerospace-2",
     title: "Aerospace and aviation",
-    image: "/home/figma/industry-aerospace-telemetry.png",
+    image: "/home/figma/industry-aerospace-telemetry.webp",
     description:
       "Government and federal operators rely on Parraid’s deployable communication products to maintain connectivity in high-demand, time-sensitive missions. Our solutions provide scalable, secure data and voice transmission, ensuring information flow and command coordination wherever duty calls.",
   },
   {
     id: "rd-orgs",
     title: "R&D organizations",
-    image: "/home/figma/industry-rd-orgs.png",
+    image: "/home/figma/industry-rd-orgs.webp",
     description:
       "Research and development institutions trust Parraid’s telemetry data systems for data acquisition, testing, and simulation environments. Our high-fidelity systems support experimentation, post-processing, and performance validation critical to innovation and technological advancement.",
   },

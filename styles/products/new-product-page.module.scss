@@ -8,15 +8,15 @@
 }
 
 // Background with exact Figma blue atmospheric auras across all 17 product pages
+// Anchored immediately below .heroImageSection so increasing/decreasing hero height
+// never shifts the blue shade position relative to the title, button, and description.
 .auraOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 0;
   pointer-events: none;
-  overflow: hidden; // Prevents horizontal scroll on all screen widths
-  z-index: 1;
+  overflow: visible;
+  z-index: 0;
 
   .auraInner {
     position: absolute;
@@ -24,17 +24,16 @@
     left: 50%;
     transform: translateX(-50%);
     width: 1920px;
-    height: 100%;
+    height: 0;
     pointer-events: none;
   }
 
   // Exact Figma Ellipse 1 (right vertical atmospheric aura: fill #0E4F9F, blur 327)
-  // Figma node: width: 524px, height: 1224px, left: 1525px, top: 893.5px
-  // Inset: top/bottom -53.43%, left/right -124.81% expands container to exact 1832x2532px blurred SVG
+  // Positioned 259px below .titleSection top (matches Figma 1162px - 903px = 259px and 893.5px - 634.5px = 259px)
   .ellipseRightContainer {
     position: absolute;
     left: 1525px;
-    top: 893.5px;
+    top: 259px;
     width: 524px;
     height: 1224px;
     pointer-events: none;
@@ -50,12 +49,11 @@
   }
 
   // Exact Figma Ellipse 2 (left radiant atmospheric aura: fill #0659BF, blur 327)
-  // Figma node: width: 504px, height: 506px, left: 373px, top: 826.5px
-  // Inset: top/bottom -129.25%, left/right -129.76% expands container to exact 1812x1814px blurred SVG
+  // Positioned 192px below .titleSection top (matches Figma 1095px - 903px = 192px and 826.5px - 634.5px = 192px)
   .ellipseLeftContainer {
     position: absolute;
     left: 373px;
-    top: 826.5px;
+    top: 192px;
     width: 504px;
     height: 506px;
     pointer-events: none;
@@ -79,46 +77,26 @@
     user-select: none;
   }
 
-  // Modifier for ODE & EDGE2 tall hero layout (from Figma: node-id 218:58 and 220:292)
-  &.tallHeroAura {
-    .ellipseRightContainer {
-      top: 1162px;
-    }
-
-    .ellipseLeftContainer {
-      top: 1095px;
-    }
-  }
-
   // Tablet & Medium Screens
   @media (max-width: 1200px) {
     .auraInner {
-      width: 100%;
-      left: 0;
-      transform: none;
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .ellipseRightContainer {
       left: 60%;
-      top: 750px;
+      top: 220px;
       width: 440px;
       height: 980px;
     }
 
     .ellipseLeftContainer {
       left: 5%;
-      top: 700px;
+      top: 170px;
       width: 400px;
       height: 400px;
-    }
-
-    &.tallHeroAura {
-      .ellipseRightContainer {
-        top: 950px;
-      }
-      .ellipseLeftContainer {
-        top: 900px;
-      }
     }
   }
 
@@ -126,25 +104,16 @@
   @media (max-width: 768px) {
     .ellipseRightContainer {
       left: 30%;
-      top: 550px;
+      top: 160px;
       width: 300px;
       height: 650px;
     }
 
     .ellipseLeftContainer {
       left: -10%;
-      top: 450px;
+      top: 80px;
       width: 260px;
       height: 260px;
-    }
-
-    &.tallHeroAura {
-      .ellipseRightContainer {
-        top: 700px;
-      }
-      .ellipseLeftContainer {
-        top: 600px;
-      }
     }
   }
 }
@@ -154,6 +123,14 @@
   z-index: 2;
   padding-top: clamp(140px, 9.68vw, 186px);
   padding-bottom: 0;
+
+  &.exemptHeroContent {
+    padding-top: clamp(140px, 9.68vw, 186px);
+  }
+
+  &.enlargedHeroContent {
+    padding-top: clamp(190px, 15vw, 292px);
+  }
 }
 
 .productContainer {
@@ -164,6 +141,11 @@
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+
+  > section {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 // ==========================================
@@ -184,9 +166,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1440px;
   width: 100%;
   min-width: 0;
+
+  &.exemptImageStage {
+    max-width: 1100px;
+  }
 }
 
 .mainImgWrapper {
@@ -205,24 +191,24 @@
     width: auto;
     max-width: 100% !important;
     height: auto;
-    max-height: 672px;
+    max-height: 720px;
     object-fit: contain;
     display: block;
 
     @media (max-width: 1200px) {
-      max-height: 520px;
+      max-height: 560px;
     }
 
     @media (max-width: 991px) {
-      max-height: 440px;
+      max-height: 480px;
     }
 
     @media (max-width: 768px) {
-      max-height: 380px;
+      max-height: 400px;
     }
 
     @media (max-width: 480px) {
-      max-height: 300px;
+      max-height: 320px;
     }
   }
 }
@@ -329,12 +315,14 @@
   font-weight: 300 !important;
   font-size: clamp(16px, 1.056vw, 20.28px);
   line-height: 1.2;
-  width: 247px;
+  width: 260px;
   max-width: 100%;
   height: 60px;
-  padding: 0 34px;
+  padding: 0 28px;
   border-radius: 100px;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   border: none;
   white-space: nowrap;
   box-sizing: border-box;

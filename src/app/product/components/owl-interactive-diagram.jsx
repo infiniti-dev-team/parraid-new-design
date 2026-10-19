@@ -50,7 +50,7 @@ const pins = [
     top: 40.4,
     left: 86.0,
     isGui: true,
-    guiImage: "/products/new-images/owl-phone-gui-crisp.png",
+    guiImage: "/products/new-images/owl-phone-gui-crisp.webp",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function OwlInteractiveDiagram() {
         {/* Soldier Silhouette Centerpiece */}
         <div className={styles.soldierContainer}>
           <Image
-            src="/products/new-images/OWL Soldier Silhouette.png"
+            src="/products/new-images/OWL Soldier Silhouette.webp"
             alt="OWL Soldier Silhouette"
             width={328}
             height={837}

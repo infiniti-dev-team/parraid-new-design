@@ -135,7 +135,7 @@ const communicationsData = {
         {
           name: "NRG® LS-04v2",
           href: "/product/nrg-ls-04v2",
-          image: "/products/new-images/New Website Photo_LS-04v2.png",
+          image: "/products/new-images/New Website Photo_LS-04v2.webp",
           imgWidth: 42,
           imgHeight: 28,
         },
