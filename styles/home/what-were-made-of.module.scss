@@ -194,10 +194,8 @@
   text-align: center;
   z-index: 3;
   pointer-events: none;
-  transform: translateY(clamp(-65px, -3.38vw, -35px));
 
   @media (max-width: 991px) {
-    transform: none;
     height: auto;
   }
 }
