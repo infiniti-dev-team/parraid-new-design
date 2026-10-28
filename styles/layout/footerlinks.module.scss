@@ -7,6 +7,21 @@
         margin-bottom: 20px;
       }
 
+      // Header logo artwork (logo-white.webp, 1644x459) rendered in brand blue via mask
+      .footerLogoMark {
+        display: block;
+        width: 230px;
+        aspect-ratio: 1644 / 459;
+        margin-bottom: 20px;
+        background-color: #0034a4;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-position: left center;
+        mask-position: left center;
+      }
+
       svg {
         margin-bottom: 20px;
       }

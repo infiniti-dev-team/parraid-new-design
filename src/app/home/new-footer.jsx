@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/home/new-footer.module.scss";
+import LogoWhite from "@/public/logo-white.webp";
 
 export default function NewFooter() {
   return (
@@ -10,12 +11,14 @@ export default function NewFooter() {
         {/* Top Row: Logo & Tagline */}
         <div className={styles.topRow}>
           <Link href="/" className={styles.logoWrapper}>
+            {/* Same official logo file as the header (public/logo-white.webp) */}
             <Image
-              src="/home/figma/logo-parraid-footer.svg"
+              src={LogoWhite}
               alt="Parraid Logo"
-              width={240}
-              height={74}
+              width={362}
+              height={101}
               priority={false}
+              unoptimized
             />
           </Link>
           <p className={styles.tagline}>Engineering without limits</p>

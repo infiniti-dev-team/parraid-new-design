@@ -29,8 +29,8 @@ export const newProductsData = [
   {
     slug: "edge2",
     aliases: ["edge2-telemetry-receiver"],
-    title: "Edge²™",
-    titleBold: "Edge²™",
+    title: "EDGE²™",
+    titleBold: "EDGE²™",
     titleDash: false,
     titleLight: "",
     subheading: "Receiver Network Appliance — Portable and Rack Mount",
@@ -107,7 +107,7 @@ export const newProductsData = [
     topDescWidth: 870,
     flyer: "/products/cat3/pro2/Best_Source_Reproducer_(BSR-100)_Product_Flyer.pdf",
     topParagraph:
-      "Experience seamless Best Source post-processing and reproduction with the BSR-100. This cutting-edge technology effortlessly processes up to 32 recorded PCM streams from multiple diverse receiving / recording locations. The BSR-100 includes the Parraid\n2-channel PSIMe PCM output board for PCM signal reproduction or simulation.",
+      "Experience seamless Best Source post-processing and reproduction with the BSR-100. This cutting-edge technology effortlessly processes up to 32 recorded PCM streams from multiple diverse receiving / recording locations. The BSR-100 includes the Parraid 2-channel PSIMe PCM output board for PCM signal reproduction or simulation.",
     subsections: [
       {
         title: "FILE BDE™",
@@ -251,7 +251,7 @@ export const newProductsData = [
     topDescWidth: 870,
     flyer: "/products/cat3/pro9/Rx2.pdf",
     topParagraph:
-      "Parraid offers the Rx2 rack mount multi-channel receiver and combiner as well as PCI card level receivers and combiners. All of our receiver products use the\nlatest in digital radio technology.",
+      "Parraid offers the Rx2 rack mount multi-channel receiver and combiner\nas well as PCI card level receivers and combiners.\nAll of our receiver products use the latest in digital radio technology.",
     subsections: [
       {
         title: "LATEST TECHNOLOGY FOR RF TO ETHERNET",
@@ -315,7 +315,9 @@ export const newProductsData = [
     subheading: "Rack Mount RoIP Gateway",
     mainImage: "/products/new-images/New Website Photo_NRG Rack Mount.webp",
     imageWidth: 1420,
-    imageHeight: 360,
+    imageHeight: 400,
+    // Source photo is only 1166px wide, so force it to fill imageWidth to match other product pages' proportions
+    imageFill: true,
     topDescWidth: 870,
     flyer: "/products/cat1/pro2/NRG_Software_Product_Flyer.pdf",
     topParagraph:

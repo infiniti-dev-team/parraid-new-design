@@ -2,7 +2,7 @@ import styles from "@/styles/layout/footerlinks.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { EmailIcon, LocationIcon, MainLogo, PhoneIcon, TimingIcon } from "@/src/app/app-constants";
 import Link from "next/link";
-import Logo from "media/logo.webp"
+import LogoWhite from "media/logo-white.webp"
 import Image from "next/image";
 
 const FooterLinks = () => {
@@ -12,7 +12,16 @@ const FooterLinks = () => {
                 <Row>
                     <Col md={12} lg={3}>
                         <div className={styles.MianLogo}>
-                            <Image src={Logo.src} alt="Parraid Logo" width={230} height={60} />
+                            {/* Same logo artwork as the header (public/logo-white.webp), tinted brand blue for the white footer */}
+                            <span
+                                role="img"
+                                aria-label="Parraid Logo"
+                                className={styles.footerLogoMark}
+                                style={{
+                                    WebkitMaskImage: `url(${LogoWhite.src})`,
+                                    maskImage: `url(${LogoWhite.src})`,
+                                }}
+                            />
                             <p>Parraid delivers mission-critical telemetry and tactical communications solutions designed to perform when failure is not an option.</p>
                         </div>
                     </Col>

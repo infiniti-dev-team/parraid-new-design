@@ -198,7 +198,7 @@ const leftNavLinks = [
 ];
 
 const rightNavLinks = [
-  { name: "CALENDAR", href: "/events", hasDropdown: false },
+  // CALENDAR removed from the top banner — calendar is moving into the News page
   { name: "NEWS", href: "/press-release", hasDropdown: false },
   { name: "DESIGNLINX", suffix: "TM", href: "/about-us#designlinx", hasDropdown: false },
   { name: "CONTACT US", href: "/contact-us", hasDropdown: false },

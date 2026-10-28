@@ -261,6 +261,17 @@
     text-transform: uppercase;
   }
 
+  // Superscript registered mark (e.g. NRG®) — scaled relative to the heading text
+  .headingReg {
+    font-size: 0.45em;
+    line-height: 0;
+    position: relative;
+    top: -0.05em;
+    vertical-align: super;
+    margin-left: 0.04em;
+    font-weight: inherit;
+  }
+
   @media (max-width: 640px) {
     .headingBold {
       display: block;

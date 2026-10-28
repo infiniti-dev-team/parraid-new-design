@@ -82,7 +82,8 @@
 }
 
 .headline {
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-montserrat), sans-serif !important;
+  font-style: normal !important; // override global italic h1–h6 rule
   font-weight: 700;
   font-size: clamp(40px, 5.35vw, 102.7px);
   line-height: 1.09;

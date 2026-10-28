@@ -19,6 +19,16 @@ export default function NewProductPage({ product }) {
     );
   }
 
+  // Render registered marks (®) in headings as superscript (e.g. NRG®, PACSTAR®)
+  const withSuperscriptMarks = (text) => {
+    if (typeof text !== "string" || !text.includes("®")) return text;
+    return text.split("®").flatMap((part, idx, arr) =>
+      idx < arr.length - 1
+        ? [part, <sup key={`reg-${idx}`} className={styles.headingReg}>®</sup>]
+        : [part]
+    );
+  };
+
   // Render title into Bold Brand + Regular Hyphen + Light Subtitle matching Figma
   const renderProductHeading = (prod) => {
     if (!prod) return null;
@@ -29,10 +39,10 @@ export default function NewProductPage({ product }) {
     if (prod.titleBold) {
       return (
         <h1 className={styles.productHeading}>
-          <span className={styles.headingBold}>{prod.titleBold}</span>
+          <span className={styles.headingBold}>{withSuperscriptMarks(prod.titleBold)}</span>
           {prod.titleDash && <span className={styles.headingDash}>{dashChar}</span>}
           {prod.titleLight && (
-            <span className={styles.headingLight}>{prod.titleLight}</span>
+            <span className={styles.headingLight}>{withSuperscriptMarks(prod.titleLight)}</span>
           )}
         </h1>
       );
@@ -104,6 +114,7 @@ export default function NewProductPage({ product }) {
                     priority
                     sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 85vw, 1440px"
                     className={styles.mainImg}
+                    style={product.imageFill ? { width: "100%" } : undefined}
                   />
                 </div>
               </div>
