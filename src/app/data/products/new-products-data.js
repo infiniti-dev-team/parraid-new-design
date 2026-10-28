@@ -251,7 +251,7 @@ export const newProductsData = [
     topDescWidth: 870,
     flyer: "/products/cat3/pro9/Rx2.pdf",
     topParagraph:
-      "Parraid offers the Rx2 rack mount multi-channel receiver and combiner\nas well as PCI card level receivers and combiners.\nAll of our receiver products use the latest in digital radio technology.",
+      "Parraid offers the Rx2 rack mount multi-channel receiver and \ncombiner as well as PCI card level receivers and combiners.\nAll of our receiver products use the latest in digital radio technology.",
     subsections: [
       {
         title: "LATEST TECHNOLOGY FOR RF TO ETHERNET",
