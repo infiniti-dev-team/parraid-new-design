@@ -93,8 +93,8 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 43.125%; // exactly 530px / 1229px
-  width: 50.26%; // exactly 965px / 1920px
+  top: 40.125%; // exactly 530px / 1229px
+  width: 48.26%; // exactly 965px / 1920px
   aspect-ratio: 1 / 1;
   pointer-events: none;
   z-index: 2;
@@ -134,8 +134,8 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 43.125%; // exactly 530px / 1229px (matches emblem footprint)
-  width: 50.26%; // exactly 965px / 1920px
+  top: 40.125%; // exactly 530px / 1229px (matches emblem footprint)
+  width: 48.26%; // exactly 965px / 1920px
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
