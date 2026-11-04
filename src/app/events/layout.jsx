@@ -1,22 +1,20 @@
-
 export const metadata = {
-  title: "Events - Parraid",
-  description: "Discover where Parraid will showcase its telemetry data systems and mission-critical communications at upcoming industry events worldwide.",
-  //===== OG Tags =====
+  title: "Events Calendar - Parraid",
+  description:
+    "Explore Parraid's upcoming events, defense and aerospace exhibitions, and telemetry conferences.",
   openGraph: {
-    title: "Events - Parraid",
-    description: "Discover where Parraid will showcase its telemetry data systems and mission-critical communications at upcoming industry events worldwide.",
+    title: "Events Calendar - Parraid",
+    description:
+      "Explore Parraid's upcoming events, defense and aerospace exhibitions, and telemetry conferences.",
     url: "/events",
     siteName: "Parraid",
     locale: "en_US",
     type: "website",
     images: "#",
   },
-  //===== Canonical =====
   alternates: { canonical: "/events" },
-
 };
 
-export default function RootLayout({ children }) {
-  return (children)
+export default function EventsLayout({ children }) {
+  return children;
 }

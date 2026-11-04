@@ -157,8 +157,14 @@
   justify-content: center;
   align-items: center;
   padding-bottom: clamp(20px, 2.5vw, 45px);
-  overflow: hidden;
+  overflow: visible;
   background: transparent;
+
+  @media (min-width: 1800px) {
+    margin-left: -22px;
+    margin-right: -22px;
+    width: calc(100% + 44px);
+  }
 }
 
 .imageStage {
@@ -191,24 +197,24 @@
     width: auto;
     max-width: 100% !important;
     height: auto;
-    max-height: 720px;
+    max-height: var(--hero-max-height, 720px);
     object-fit: contain;
     display: block;
 
     @media (max-width: 1200px) {
-      max-height: 560px;
+      max-height: min(var(--hero-max-height, 560px), 560px);
     }
 
     @media (max-width: 991px) {
-      max-height: 480px;
+      max-height: min(var(--hero-max-height, 480px), 480px);
     }
 
     @media (max-width: 768px) {
-      max-height: 400px;
+      max-height: min(var(--hero-max-height, 400px), 400px);
     }
 
     @media (max-width: 480px) {
-      max-height: 320px;
+      max-height: min(var(--hero-max-height, 320px), 320px);
     }
   }
 }
@@ -221,6 +227,14 @@
   margin-top: 0;
   margin-bottom: 20px;
   text-align: left;
+
+  @media (min-width: 1200px) {
+    margin-top: calc(var(--hero-overlap, 0px) * -1);
+  }
+
+  @media (min-width: 769px) and (max-width: 1199px) {
+    margin-top: calc(var(--hero-overlap, 0px) * -0.4);
+  }
 }
 
 .productHeading {
@@ -247,9 +261,10 @@
     font-family: var(--font-montserrat), sans-serif !important;
     font-weight: 400 !important;
     font-style: normal !important;
-    font-size: clamp(18px, 4.03vw, 77.34px);
+    font-size: 0.48em;
+    vertical-align: 0.15em;
     color: #ffffff;
-    margin: 0 clamp(4px, 0.5vw, 10px);
+    margin: 0 clamp(8px, 1.2vw, 24px);
   }
 
   .headingLight {
@@ -261,15 +276,16 @@
     text-transform: uppercase;
   }
 
-  // Superscript registered mark (e.g. NRG®) — scaled relative to the heading text
+  // Superscript marks (e.g. NRG®, RTG™) — scaled relative to the heading text
   .headingReg {
-    font-size: 0.45em;
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-size: 0.32em;
     line-height: 0;
     position: relative;
-    top: -0.05em;
+    top: -0.55em;
     vertical-align: super;
-    margin-left: 0.04em;
-    font-weight: inherit;
+    margin-left: 0.06em;
+    font-weight: 800 !important;
   }
 
   @media (max-width: 640px) {
@@ -321,15 +337,15 @@
   justify-content: center;
   background-color: #0034a4;
   color: #ffffff;
-  font-family: var(--font-montserrat), sans-serif !important;
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif !important;
   font-style: normal !important;
   font-weight: 300 !important;
   font-size: clamp(16px, 1.056vw, 20.28px);
   line-height: 1.2;
-  width: 260px;
+  width: clamp(210px, 12.87vw, 247px);
   max-width: 100%;
   height: 60px;
-  padding: 0 28px;
+  padding: 0 24px;
   border-radius: 100px;
   text-decoration: none;
   text-transform: uppercase;
@@ -660,6 +676,23 @@
   width: 100%;
   margin-top: clamp(20px, 3vw, 50px);
   margin-bottom: clamp(60px, 6vw, 110px);
+}
+
+// ==========================================
+// 8b. RESERVED DIAGRAM SPACE (Digital Demod)
+// ==========================================
+.reservedDiagramSection {
+  width: 100%;
+  min-height: var(--reserved-space, clamp(260px, 30vw, 560px));
+  pointer-events: none;
+
+  @media (max-width: 1200px) {
+    min-height: calc(var(--reserved-space, 500px) * 0.6);
+  }
+
+  @media (max-width: 768px) {
+    min-height: clamp(140px, 20vw, 280px);
+  }
 }
 
 // ==========================================

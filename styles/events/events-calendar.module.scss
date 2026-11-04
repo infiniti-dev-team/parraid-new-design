@@ -1,0 +1,227 @@
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+// Atmospheric Blue Glowing Background Auras (Figma nodes 508:699 & 508:700)
+.auraOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+
+  .auraInner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920px;
+    height: 3474px;
+    pointer-events: none;
+  }
+
+  // Left glow: Ellipse 2 (Figma node 508:700: x=373, y=1314.27, w=504, h=506)
+  .ellipseTwo {
+    position: absolute;
+    left: 373px;
+    top: 1314px;
+    width: 504px;
+    height: 506px;
+    pointer-events: none;
+
+    img {
+      position: absolute;
+      top: -129.25%;
+      bottom: -129.25%;
+      left: -129.76%;
+      right: -129.76%;
+      width: 1812px;
+      height: 1814px;
+      max-width: none;
+      pointer-events: none;
+    }
+  }
+
+  // Right glow: Ellipse 1 (Figma node 508:699: x=1525, y=1653.5, w=524, h=1224)
+  .ellipseOne {
+    position: absolute;
+    left: 1525px;
+    top: 1653px;
+    width: 524px;
+    height: 1224px;
+    pointer-events: none;
+
+    img {
+      position: absolute;
+      top: -53.43%;
+      bottom: -53.43%;
+      left: -124.81%;
+      right: -124.81%;
+      width: 1832px;
+      height: 2532px;
+      max-width: none;
+      pointer-events: none;
+    }
+  }
+}
+
+.mainContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  // Header is 112px fixed; Title in Figma is at y=286.2px -> delta is 174.2px
+  padding-top: clamp(140px, 14.9vw, 286px);
+  padding-bottom: 0;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4.11vw, 79px); // Matching Figma left=79px
+  box-sizing: border-box;
+}
+
+// Top Page Title: "EVENTS CALENDAR" (Figma node 508:703: x=79, y=286.2, font: Montserrat:Bold 77.34px)
+.titleSection {
+  margin: 0;
+
+  .pageTitle {
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-style: normal !important;
+    font-size: clamp(36px, 4.03vw, 77.34px);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+// Month Selector: ‹ NOVEMBER › (Figma node 509:759: top=602.37px, centered, width=1368.6px)
+.monthNavSection {
+  position: relative;
+  width: 100%;
+  max-width: 1368.6px;
+  margin: clamp(60px, 11.56vw, 222px) auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+  user-select: none;
+  box-sizing: border-box;
+  padding: 0 clamp(8px, 1.5vw, 16px);
+
+  .navBtn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: clamp(36px, 2.49vw, 47.75px);
+    height: clamp(36px, 2.49vw, 47.75px);
+    border-radius: 50%;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+    opacity: 0.95;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+    }
+
+    &.prevBtn img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .monthTitle {
+    flex: 1;
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important; // Montserrat:Regular
+    font-size: clamp(40px, 9.49vw, 182.26px);
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 0 40px rgba(0, 52, 164, 0.4);
+  }
+}
+
+// Events List Section (Figma nodes 509:765, 509:766, 509:770: starts at y=1013.97px)
+.eventsListSection {
+  width: 100%;
+  margin-top: clamp(60px, 9.88vw, 189.6px);
+
+  .eventsList {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 4.48vw, 86.12px); // 319.71px delta - 233.59px card height = 86.12px
+    max-width: 650px;
+  }
+
+  .eventCard {
+    display: flex;
+    flex-direction: column;
+
+    .eventTitle {
+      font-family: var(--font-montserrat), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 700 !important; // Montserrat:Bold
+      font-size: clamp(22px, 2.13vw, 40.95px);
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 0 0 clamp(16px, 1.4vw, 26.8px) 0;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .eventDate,
+    .eventLocation {
+      font-family: var(--font-poppins), sans-serif !important;
+      font-style: normal !important;
+      font-weight: 300 !important; // Poppins:Light
+      font-size: clamp(20px, 2.03vw, 38.96px);
+      line-height: clamp(32px, 3.35vw, 64.28px);
+      color: #ffffff;
+      margin: 0;
+      white-space: nowrap;
+      letter-spacing: 0;
+    }
+  }
+}
+
+// Contact section at bottom (Figma node 508:667: gap from Event 3 is 409px)
+.contactWrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  // Form starts at y=2296, Event 3 ends at 1887px -> 409px distance
+  // ProductFindOutPossible section already has padding-top 149px, so wrapper adds 260px on desktop
+  margin-top: clamp(40px, 13.54vw, 260px);
+}

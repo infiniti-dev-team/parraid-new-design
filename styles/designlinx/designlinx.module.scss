@@ -1,0 +1,270 @@
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+// Background blue atmospheric aura overlays matching Figma node 509:895 & 509:896
+.auraOverlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 2447px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+
+  // Ellipse 1 (Right Glow, Figma node 509:895, x: 1525, y: 626.93, width: 524, height: 1224)
+  .ellipseRightContainer {
+    position: absolute;
+    left: 1525px;
+    top: 627px;
+    width: 524px;
+    height: 1224px;
+    pointer-events: none;
+
+    .ellipseRightInner {
+      position: absolute;
+      top: -53.43%;
+      bottom: -53.43%;
+      left: -124.81%;
+      right: -124.81%;
+      pointer-events: none;
+    }
+  }
+
+  // Ellipse 2 (Left Glow, Figma node 509:896, x: 373, y: 1314.27, width: 504, height: 506)
+  .ellipseLeftContainer {
+    position: absolute;
+    left: 373px;
+    top: 1314px;
+    width: 504px;
+    height: 506px;
+    pointer-events: none;
+
+    .ellipseLeftInner {
+      position: absolute;
+      top: -129.25%;
+      bottom: -129.25%;
+      left: -129.76%;
+      right: -129.76%;
+      pointer-events: none;
+    }
+  }
+
+  .ellipseImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    pointer-events: none;
+  }
+}
+
+.mainContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(140px, 11.5vw, 220px);
+  padding-bottom: clamp(40px, 11vw, 211px);
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4.17vw, 80px);
+  box-sizing: border-box;
+}
+
+// Title at top left matching Figma node 509:897 & 509:960 "DESIGNLINX™"
+.titleSection {
+  margin-bottom: clamp(28px, 2.66vw, 51px);
+
+  .pageTitle {
+    font-family: var(--font-montserrat), sans-serif !important;
+    font-style: normal !important;
+    font-size: clamp(38px, 4.03vw, 77.34px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: flex-start;
+
+    .trademark {
+      font-family: var(--font-montserrat), sans-serif !important;
+      font-size: clamp(18px, 1.89vw, 36.31px);
+      font-weight: 800;
+      line-height: 1;
+      margin-left: clamp(4px, 0.42vw, 8px);
+      position: relative;
+      top: clamp(2px, 0.21vw, 4px);
+    }
+  }
+}
+
+// Side by side row
+.contentRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(40px, 5vw, 120px);
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+
+// Left text column (Figma node 509:962 & 509:975, width: 512.49px)
+.textCol {
+  flex: 0 1 513px;
+  max-width: 513px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 1199px) {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .description {
+    font-family: var(--font-finder-local), var(--font-montserrat), sans-serif;
+    font-size: clamp(18px, 1.56vw, 30px);
+    font-weight: 300;
+    line-height: clamp(26px, 2.08vw, 40px);
+    color: #ffffff;
+    margin: 0 0 clamp(32px, 2.66vw, 51px) 0;
+
+    .registeredMark {
+      font-size: 0.55em;
+      vertical-align: super;
+      font-weight: 400;
+    }
+  }
+
+  .learnMoreBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(160px, 9.53vw, 183px);
+    height: clamp(50px, 3.125vw, 60px);
+    background-color: #0034a4;
+    color: #ffffff;
+    font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
+    font-size: clamp(15px, 1.05vw, 20.28px);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 4px 18px rgba(0, 52, 164, 0.4);
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+
+    &:hover {
+      background-color: #0659bf;
+      color: #ffffff;
+      box-shadow: 0 6px 24px rgba(6, 89, 191, 0.6);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Right graphic column: Logo + Badges (Figma node 509:974, width: 863.58px)
+.graphicCol {
+  flex: 0 1 864px;
+  max-width: 864px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: clamp(0px, 4.47vw, 86px);
+
+  @media (max-width: 1199px) {
+    width: 100%;
+    max-width: 720px;
+    padding-top: 0;
+    margin: 0 auto;
+  }
+
+  .logoWrapper {
+    width: 100%;
+    max-width: 864px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .brandLogo {
+      width: 100%;
+      height: auto;
+      max-width: 864px;
+      object-fit: contain;
+    }
+  }
+
+  // Two partner badges centered horizontally under the logo
+  .badgesRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: clamp(20px, 1.83vw, 35px);
+    gap: clamp(24px, 2.98vw, 57px);
+    width: 100%;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .circularBadgeWrapper {
+      flex: 0 0 auto;
+      width: clamp(100px, 7.66vw, 147px);
+      height: clamp(100px, 7.66vw, 147px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .circularBadge {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .platinumBadgeWrapper {
+      flex: 0 0 auto;
+      width: clamp(220px, 18.93vw, 363px);
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .platinumBadge {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+// Contact Section at bottom
+.contactWrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}

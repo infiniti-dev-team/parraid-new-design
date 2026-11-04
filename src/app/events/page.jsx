@@ -1,60 +1,205 @@
-import Banner from "@/src/app/events/components/banner"
-import Blogs from "@/src/app/home/blogs"
-import Faqs from "@/src/app/about-us/components/faqs"
-import Events from "@/src/app/home/events"
+"use client";
 
+import { useState } from "react";
+import styles from "@/styles/events/events-calendar.module.scss";
+import ProductFindOutPossible from "@/src/app/product/components/product-find-out-possible";
 
-const EventData = {
-  title: "Events",
-  txt: "At Parraid, we bring innovation to the forefront of every event we attend. Our participation in global defense, aerospace, and telemetry conferences reflects our commitment to advancing mission-critical communication technologies that redefine connectivity, data accuracy, and operational readiness."
-}
-
-export const FaqsMain = {
-  tit: "Frequently Asked Questions",
-  desc: ""
-
-}
-
-export const faqsData = [
-  {
-    title: "What type of events does Parraid participate in?",
-    txt: (
-      <p>We regularly take part in global aerospace, defense, and technology exhibitions, as well as industry conferences focused on telemetry, data systems, and tactical communication innovations.</p>
-    ),
-  },
-  {
-    title: "How can I find out which events Parraid will attend this year?",
-    txt: (<p>Our upcoming events are listed on this page and updated throughout the year. Each listing includes event dates, locations, and booth details. You can also subscribe to our newsletter to receive direct notifications about our event schedule and product showcases.</p>),
-  },
-  {
-    title: "Does Parraid host its own technical demonstrations or webinars?",
-    txt: (<p>Yes. Parraid conducts both in-person and virtual sessions highlighting our telemetry communication solutions, deployable systems, and network integration capabilities. </p>),
-  },
-  {
-    title: "Can I schedule a meeting with the Parraid team during an event?",
-    txt: (<p>Absolutely. Attendees can book one-on-one consultations with our engineering, business development, or technical support representatives.</p>),
-  },
-  {
-    title: "Are Parraid event presentations or materials available afterward?",
-    txt: (<p>Yes. Following select conferences or showcases, Parraid offers post-event summaries, presentations, and technical briefs. Registered participants and newsletter subscribers gain early access to these materials through our communications portal.</p>),
-  },
-  {
-    title: "Does Parraid collaborate with other organizations for event participation?",
-    txt: (<p>Indeed. Parraid frequently partners with defense contractors, research institutions, and government agencies to present joint innovations and integrated solutions. These collaborations are featured at key events and highlight our role in advancing mission-critical communication technology.</p>),
-  },
-
+const MONTHS = [
+  "JANUARY",
+  "FEBRUARY",
+  "MARCH",
+  "APRIL",
+  "MAY",
+  "JUNE",
+  "JULY",
+  "AUGUST",
+  "SEPTEMBER",
+  "OCTOBER",
+  "NOVEMBER",
+  "DECEMBER",
 ];
 
+const MONTH_NAMES_TITLECASE = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
-const Page = () => {
+export default function EventsCalendarPage() {
+  // Default to November (index 10) matching the Figma mockup
+  const [currentMonthIndex, setCurrentMonthIndex] = useState(10);
+
+  const handlePrevMonth = () => {
+    setCurrentMonthIndex((prev) => (prev === 0 ? 11 : prev - 1));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentMonthIndex((prev) => (prev === 11 ? 0 : prev + 1));
+  };
+
+  const activeMonthName = MONTHS[currentMonthIndex];
+  const activeMonthTitle = MONTH_NAMES_TITLECASE[currentMonthIndex];
+
+  // Event entries matching Figma nodes 509:765, 509:766, 509:770
+  const events = [
+    {
+      nodeId: "509:765",
+      titleNodeId: "509:762",
+      dateNodeId: "509:763",
+      locationNodeId: "509:764",
+      title: "EVENTS EXAMPLE 1",
+      date: `${activeMonthTitle} 1-2`,
+      location: "Las Vegas, NV",
+    },
+    {
+      nodeId: "509:766",
+      titleNodeId: "509:769",
+      dateNodeId: "509:767",
+      locationNodeId: "509:768",
+      title: "EVENTS EXAMPLE 1",
+      date: `${activeMonthTitle} 1-2`,
+      location: "Las Vegas, NV",
+    },
+    {
+      nodeId: "509:770",
+      titleNodeId: "509:773",
+      dateNodeId: "509:771",
+      locationNodeId: "509:772",
+      title: "EVENTS EXAMPLE 1",
+      date: `${activeMonthTitle} 1-2`,
+      location: "Las Vegas, NV",
+    },
+  ];
+
   return (
-    <>
-      <Banner />
-      <Events page={true} />
-      <Blogs />
-      <Faqs data={faqsData} dataTitle={FaqsMain} />
-    </>
-  )
-}
+    <div
+      className={styles.pageWrapper}
+      data-node-id="508:578"
+      data-name="Eevent"
+    >
+      {/* Background blue atmospheric aura glows matching Figma nodes 508:700 & 508:699 */}
+      <div className={styles.auraOverlay} aria-hidden="true">
+        <div className={styles.auraInner}>
+          {/* Ellipse 2 glow (Figma node 508:700: x=373, y=1314) */}
+          <div className={styles.ellipseTwo} data-node-id="508:700" data-name="Ellipse 2">
+            <img
+              src="/events/ellipse-2.svg"
+              alt=""
+              width={1812}
+              height={1814}
+            />
+          </div>
 
-export default Page
+          {/* Ellipse 1 glow (Figma node 508:699: x=1525, y=1653) */}
+          <div className={styles.ellipseOne} data-node-id="508:699" data-name="Ellipse 1">
+            <img
+              src="/events/ellipse-1.svg"
+              alt=""
+              width={1832}
+              height={2532}
+            />
+          </div>
+        </div>
+      </div>
+
+      <main className={styles.mainContent}>
+        <div className={styles.container}>
+          {/* Top Title: EVENTS CALENDAR (Figma node 508:703) */}
+          <section className={styles.titleSection}>
+            <h1 className={styles.pageTitle} data-node-id="508:703">
+              EVENTS CALENDAR
+            </h1>
+          </section>
+
+          {/* Month Selector: ‹ NOVEMBER › (Figma node 509:759) */}
+          <section
+            className={styles.monthNavSection}
+            aria-label="Month Navigation"
+            data-node-id="509:759"
+            data-name="Group 1000006818"
+          >
+            {/* Left Button (Rotated 180deg) */}
+            <button
+              type="button"
+              className={`${styles.navBtn} ${styles.prevBtn}`}
+              onClick={handlePrevMonth}
+              aria-label="Previous month"
+              data-node-id="509:754"
+              data-name="Group 1000006816"
+            >
+              <img
+                src="/events/arrow-circle.svg"
+                alt="Previous"
+                width={48}
+                height={48}
+              />
+            </button>
+
+            {/* Month Name */}
+            <h2
+              className={styles.monthTitle}
+              data-node-id="508:748"
+              data-name="November"
+            >
+              {activeMonthName}
+            </h2>
+
+            {/* Right Button */}
+            <button
+              type="button"
+              className={styles.navBtn}
+              onClick={handleNextMonth}
+              aria-label="Next month"
+              data-node-id="509:752"
+              data-name="Group 1000006815"
+            >
+              <img
+                src="/events/arrow-circle.svg"
+                alt="Next"
+                width={48}
+                height={48}
+              />
+            </button>
+          </section>
+
+          {/* Events List Section (Figma nodes 509:765, 509:766, 509:770) */}
+          <section className={styles.eventsListSection}>
+            <div className={styles.eventsList}>
+              {events.map((ev, index) => (
+                <div
+                  key={index}
+                  className={styles.eventCard}
+                  data-node-id={ev.nodeId}
+                >
+                  <h3 className={styles.eventTitle} data-node-id={ev.titleNodeId}>
+                    {ev.title}
+                  </h3>
+                  <p className={styles.eventDate} data-node-id={ev.dateNodeId}>
+                    {ev.date}
+                  </p>
+                  <p className={styles.eventLocation} data-node-id={ev.locationNodeId}>
+                    {ev.location}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
+      {/* Bottom Contact Form matching Figma node 508:667 */}
+      <div className={styles.contactWrapper} data-node-id="508:667">
+        <ProductFindOutPossible />
+      </div>
+    </div>
+  );
+}

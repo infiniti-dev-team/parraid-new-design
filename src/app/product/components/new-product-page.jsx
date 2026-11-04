@@ -19,14 +19,22 @@ export default function NewProductPage({ product }) {
     );
   }
 
-  // Render registered marks (®) in headings as superscript (e.g. NRG®, PACSTAR®)
+  // Render registered marks (®) and trademarks (™) in headings as superscript (e.g. NRG®, RTG™, PACSTAR®)
   const withSuperscriptMarks = (text) => {
-    if (typeof text !== "string" || !text.includes("®")) return text;
-    return text.split("®").flatMap((part, idx, arr) =>
-      idx < arr.length - 1
-        ? [part, <sup key={`reg-${idx}`} className={styles.headingReg}>®</sup>]
-        : [part]
-    );
+    if (typeof text !== "string") return text;
+    const regex = /(®|™)/g;
+    if (!regex.test(text)) return text;
+    const parts = text.split(regex);
+    return parts.map((part, idx) => {
+      if (part === "®" || part === "™") {
+        return (
+          <sup key={`mark-${idx}`} className={styles.headingReg}>
+            {part}
+          </sup>
+        );
+      }
+      return part;
+    });
   };
 
   // Render title into Bold Brand + Regular Hyphen + Light Subtitle matching Figma
@@ -99,11 +107,19 @@ export default function NewProductPage({ product }) {
                 className={`${styles.imageStage} ${
                   isExemptHero ? styles.exemptImageStage : styles.enlargedImageStage
                 }`}
+                style={
+                  product.imageWidth && product.imageWidth > 1440
+                    ? { maxWidth: `${product.imageWidth}px` }
+                    : undefined
+                }
               >
                 <div
                   className={styles.mainImgWrapper}
                   style={{
                     maxWidth: product.imageWidth ? `${product.imageWidth}px` : undefined,
+                    ...(product.heroMaxHeight
+                      ? { "--hero-max-height": `${product.heroMaxHeight}px` }
+                      : {}),
                   }}
                 >
                   <Image
@@ -145,7 +161,14 @@ export default function NewProductPage({ product }) {
             </div>
 
             {/* 2. Product Title Block (Wide on Left) */}
-            <section className={styles.titleSection}>
+            <section
+              className={styles.titleSection}
+              style={
+                product.heroOverlap
+                  ? { "--hero-overlap": `${product.heroOverlap}px` }
+                  : undefined
+              }
+            >
               {renderProductHeading(product)}
               {product.subheading && (
                 <p
@@ -208,6 +231,11 @@ export default function NewProductPage({ product }) {
               className={`${styles.bulletsSection} ${
                 product.bulletMaxWidth === 870 ? styles.narrowBullets : ""
               }`}
+              style={
+                product.bulletMaxWidth
+                  ? { maxWidth: `${product.bulletMaxWidth}px` }
+                  : undefined
+              }
             >
               <ul className={styles.bulletList}>
                 {product.bullets.map((bullet, idx) => (
@@ -310,6 +338,18 @@ export default function NewProductPage({ product }) {
             <section className={styles.owlSection}>
               <OwlInteractiveDiagram />
             </section>
+          )}
+
+          {/* 4f. Reserved space for future interactive diagram (e.g. Digital Demod) */}
+          {product.reservedDiagramSpace && (
+            <section
+              className={styles.reservedDiagramSection}
+              style={{
+                "--reserved-space": `${product.reservedDiagramSpace}px`,
+                minHeight: `${product.reservedDiagramSpace}px`,
+              }}
+              aria-hidden="true"
+            />
           )}
         </div>
       </main>

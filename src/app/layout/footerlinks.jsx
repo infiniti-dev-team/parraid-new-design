@@ -37,6 +37,8 @@ const FooterLinks = () => {
                                 <li><Link href="/product/outsource-the-workload-owl">Outsource the Workload (OWL™)</Link></li>
                                 <li><Link href="/product/series-5000-data-processors">S-5000e™ – Data Processor and Recorder</Link></li>
                                 <li><Link href="/product/network-radio-gateway-nrg-deployable-systems">Network Radio Gateway rack mount systems</Link></li>
+                                <li><Link href="/product/rtg">RTG™ – Reliable Transport Gateway</Link></li>
+                                <li><Link href="/product/digital-demod">Digital Demod – Digital Demodulator</Link></li>
                             </ul>
                         </div>
                     </Col>
@@ -46,9 +48,11 @@ const FooterLinks = () => {
                             <ul>
                                 <li><Link href="/">Home</Link></li>
                                 <li><Link href="/about-us">About Us</Link></li>
+                                <li><Link href="/designlinx">DesignLinx™</Link></li>
+                                <li><Link href="/events">Events Calendar</Link></li>
                                 <li><a href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=0342344f-f0a8-4de6-b4c9-05cd95b670db&ccId=19000101_000001&lang=en_US">Open Position</a></li>
-                                <li><Link href="/blogs">Blogs</Link></li>
-                                <li><Link href="/press-release">Press</Link></li>
+                                <li><Link href="/blogs">Insights</Link></li>
+                                <li><Link href="/press-release">Newsroom</Link></li>
                             </ul>
                         </div>
                     </Col>

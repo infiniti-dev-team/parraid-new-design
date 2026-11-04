@@ -71,6 +71,13 @@ const telemetryData = {
           imgWidth: 85,
           imgHeight: 30,
         },
+        {
+          name: "Digital Demod",
+          href: "/product/digital-demod",
+          image: "/products/new-images/New Website Photo_Digital Demod.webp",
+          imgWidth: 60,
+          imgHeight: 48,
+        },
       ],
     },
     {
@@ -139,6 +146,13 @@ const communicationsData = {
           imgWidth: 42,
           imgHeight: 28,
         },
+        {
+          name: "RTG™ Gateway",
+          href: "/product/rtg",
+          image: "/products/new-images/New Website Photo_RTG.webp",
+          imgWidth: 100,
+          imgHeight: 22,
+        },
       ],
     },
     {
@@ -198,10 +212,27 @@ const leftNavLinks = [
 ];
 
 const rightNavLinks = [
-  // CALENDAR removed from the top banner — calendar is moving into the News page
-  { name: "NEWS", href: "/press-release", hasDropdown: false },
-  { name: "DESIGNLINX", suffix: "TM", href: "/about-us#designlinx", hasDropdown: false },
+  { name: "NEWS", href: "/press-release", hasDropdown: true },
+  { name: "DESIGNLINX", suffix: "TM", href: "/designlinx", hasDropdown: false },
   { name: "CONTACT US", href: "/contact-us", hasDropdown: false },
+];
+
+const newsDropdownLinks = [
+  {
+    title: "Calendar",
+    subtitle: "Events & Exhibitions",
+    href: "/events",
+  },
+  {
+    title: "Newsroom",
+    subtitle: "Press Releases & Announcements",
+    href: "/press-release",
+  },
+  {
+    title: "Insights",
+    subtitle: "Technical Articles & Blogs",
+    href: "/blogs",
+  },
 ];
 
 const Header = () => {
@@ -413,6 +444,9 @@ const Header = () => {
                 return (
                   <li
                     key={item.name}
+                    ref={(el) => {
+                      if (el) navItemRefs.current[item.name] = el;
+                    }}
                     className={`${styles.navItem} ${isActive ? styles.navItemActive : ""}`}
                     onMouseEnter={() => handleMouseEnterTab(item.name)}
                     onMouseLeave={handleMouseLeaveTab}
@@ -426,6 +460,67 @@ const Header = () => {
                         <sup className={styles.trademark}>{item.suffix}</sup>
                       )}
                     </Link>
+
+                    {/* Active Underline, Peak Arrow, and Sloped Notch Roof */}
+                    {isActive && item.hasDropdown && (
+                      <div className={styles.activeIndicator}>
+                        <span className={styles.activeLine}></span>
+                        <span className={styles.activeArrow}>▲</span>
+                        <svg
+                          className={styles.activeRoof}
+                          width="34"
+                          height="16"
+                          viewBox="0 0 34 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M 0 16 L 17 1 L 34 16 Z" fill="#0034A4" />
+                          <path
+                            d="M 0 16 L 17 1 L 34 16"
+                            stroke="rgba(255, 255, 255, 0.25)"
+                            strokeWidth="1"
+                          />
+                          <line
+                            x1="0"
+                            y1="16"
+                            x2="34"
+                            y2="16"
+                            stroke="#0034A4"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                      </div>
+                    )}
+
+                    {/* News Dropdown Menu */}
+                    {isActive && item.name === "NEWS" && (
+                      <div
+                        className={styles.newsDropdown}
+                        onMouseEnter={handleMouseEnterDropdown}
+                        onMouseLeave={handleMouseLeaveDropdown}
+                      >
+                        <div className={styles.newsDropdownInner}>
+                          {newsDropdownLinks.map((sub, idx) => (
+                            <Link
+                              key={idx}
+                              href={sub.href}
+                              className={styles.newsDropdownItem}
+                              onClick={() => setHoveredTab(null)}
+                            >
+                              <div className={styles.newsItemContent}>
+                                <span className={styles.newsItemTitle}>
+                                  {sub.title}
+                                </span>
+                                <span className={styles.newsItemSubtitle}>
+                                  {sub.subtitle}
+                                </span>
+                              </div>
+                              <span className={styles.newsItemArrow}>→</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </li>
                 );
               })}
@@ -615,23 +710,54 @@ const Header = () => {
                 )}
               </li>
 
+              {/* News Mobile */}
+              <li className={styles.mobileNavItem}>
+                <div
+                  className={styles.mobileNavHeader}
+                  onClick={() =>
+                    setMobileExpandedDropdown(
+                      mobileExpandedDropdown === "NEWS" ? null : "NEWS"
+                    )
+                  }
+                >
+                  <span>NEWS</span>
+                  <span>{mobileExpandedDropdown === "NEWS" ? "−" : "+"}</span>
+                </div>
+                {mobileExpandedDropdown === "NEWS" && (
+                  <ul className={styles.mobileSubList}>
+                    {newsDropdownLinks.map((item, idx) => (
+                      <li key={idx} className={styles.mobileSubCategory}>
+                        <Link
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className={styles.mobileProductLink}
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+
               {/* Other Navigation Links */}
-              {[...leftNavLinks.filter((i) => !i.hasDropdown), ...rightNavLinks].map(
-                (item) => (
-                  <li key={item.name} className={styles.mobileNavItem}>
-                    <Link
-                      href={item.href}
-                      onClick={closeMobileMenu}
-                      className={styles.mobileNavLink}
-                    >
-                      {item.name}
-                      {item.suffix && (
-                        <sup className={styles.trademark}>{item.suffix}</sup>
-                      )}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                ...leftNavLinks.filter((i) => !i.hasDropdown),
+                ...rightNavLinks.filter((i) => !i.hasDropdown),
+              ].map((item) => (
+                <li key={item.name} className={styles.mobileNavItem}>
+                  <Link
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className={styles.mobileNavLink}
+                  >
+                    {item.name}
+                    {item.suffix && (
+                      <sup className={styles.trademark}>{item.suffix}</sup>
+                    )}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

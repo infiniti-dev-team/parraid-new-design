@@ -443,6 +443,56 @@ export const newProductsData = [
       "Transparent to software applications",
     ],
   },
+  {
+    slug: "rtg",
+    aliases: [
+      "reliable-transport-gateway",
+      "rtg-reliable-transport-gateway",
+      "rtg-gateway",
+    ],
+    title: "RTG™ - RELIABLE TRANSPORT GATEWAY",
+    titleBold: "RTG™",
+    titleDash: true,
+    titleDashChar: "-",
+    titleLight: "RELIABLE TRANSPORT GATEWAY",
+    subheading: "Move mission data across unreliable networks",
+    mainImage: "/products/new-images/New Website Photo_RTG.webp",
+    imageWidth: 1809,
+    imageHeight: 372,
+    topDescWidth: 870,
+    bulletMaxWidth: 874,
+    flyer: "/products/cat3/pro3/Edge2_with_Integrated_RTG_Product_Flyer.pdf",
+    topParagraph:
+      "Built to overcome packet loss, jitter, congestion, and intermittent connectivity, Parraid’s Reliable Transport Gateway (RTG™) adds an adaptable reliability layer to UDP-based data transport. With adaptive recovery, configurable transport profiles, optional multipath redundancy, and built-in AES encryption, RTG supports dependable data movement across demanding network environments without requiring changes to existing telemetry endpoints.",
+    bullets: [
+      "Protect critical telemetry data — Maintain integrity of  TMoIP and TmNS data streams across lossy RF, SATCOM (LEO, GEO, MEO), and VPN links",
+      "Selectable transport behaviors — Optimized delivery modes supporting adaptive packet recovery and sub-second latency; standards-aligned intelligent recovery for maximum resilience",
+      "Transparent to existing TMoIP/TmNS devices — Works as a gateway: encapsulates UDP telemetry packets, applies a reliability layer, and decapsulates original packets at the destination",
+      "Secure & standards-aligned — Built-in selectable AES encryption; integrates with secure topologies for range security requirements",
+    ],
+  },
+  {
+    slug: "digital-demod",
+    aliases: [
+      "digital-demodulator",
+      "digitaldemod",
+      "digital-demod-product",
+    ],
+    title: "DIGITAL DEMOD",
+    titleBold: "DIGITAL DEMOD",
+    titleDash: false,
+    titleLight: "",
+    subheading: "Digital RF in. Mission-ready telemetry out.",
+    mainImage: "/products/new-images/New Website Photo_Digital Demod.webp",
+    imageWidth: 1171,
+    imageHeight: 1253,
+    heroMaxHeight: 1253,
+    heroOverlap: 294,
+    topDescWidth: 884,
+    reservedDiagramSpace: 830,
+    topParagraph:
+      "Modern telemetry architectures are moving RF digitization and processing closer to the antenna, creating an opportunity to  replace traditional analog RF/IF distribution with standards-based digital networks. Parraid’s Digital Demodulator bridges digital RF antenna systems with existing telemetry infrastructure, accepting native digital I/Q data and converting it into recovered telemetry for local or remote processing, recording, analysis, and distribution.",
+  },
 ];
 
 export function findProduct(slug) {
